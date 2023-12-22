@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
+
 import java.util.ArrayList;
 
 public class AttorneyRepositoryImpl implements AttorneyRepository {
