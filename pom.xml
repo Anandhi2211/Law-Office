@@ -12,7 +12,11 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <log4jVersion>2.21.1</log4jVersion>
     </properties>
+
+
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
@@ -20,6 +24,12 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4jVersion}</version>
         </dependency>
 
     </dependencies>

@@ -1,4 +1,6 @@
 package com.solvd.law_office.dao.impl;
 
-public class ClientRepositoryImpl {
+import com.solvd.law_office.dao.ClientRepository;
+
+public class ClientRepositoryImpl implements ClientRepository {
 }

@@ -1,4 +1,4 @@
-package com.solvd.law_office.dao;
+package com.solvd.law_office;
 
 
 import java.sql.Connection;
@@ -28,14 +28,14 @@ public class ConnectionPool {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/law_office", "root", "password");
             System.out.println("Connection: "+ connection);
         }
-        catch(SQLException sqle)
+        catch(SQLException sqlException)
         {
-            System.err.println("SQLException: "+sqle);
+            System.err.println("SQLException: "+sqlException);
             return null;
         }
-        catch(ClassNotFoundException cnfe)
+        catch(ClassNotFoundException classNotFoundException)
         {
-            System.err.println("ClassNotFoundException: "+cnfe);
+            System.err.println("ClassNotFoundException: "+classNotFoundException);
             return null;
         }
         return connection;
@@ -50,13 +50,11 @@ public class ConnectionPool {
 
     public synchronized Connection getConnection() {
         Connection connection = null;
-
         if(connectionsList.size() > 0 )
         {
             connection = connectionsList.get(0);
             connectionsList.remove(connection);
         }
-//        releaseConnection(connection);
         return connection;
     }
 

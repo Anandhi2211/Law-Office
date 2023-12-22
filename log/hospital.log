@@ -1,0 +1,19 @@
+2023-12-21 23:36:19.899 [main] INFO  com.solvd.law_office.Main - Inserting data into Association_Bars Table
+2023-12-21 23:36:19.937 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.941 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.946 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.950 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.954 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.955 [main] INFO  com.solvd.law_office.Main - Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables
+2023-12-21 23:36:19.963 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
+2023-12-21 23:36:19.968 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.973 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.977 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
+2023-12-21 23:36:19.982 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.986 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.991 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.995 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:19.999 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:20.003 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-21 23:36:20.003 [main] INFO  com.solvd.law_office.Main - Displaying LawFirms Table
+2023-12-21 23:36:20.021 [main] INFO  com.solvd.law_office.Main - Law Firm Id: 100
