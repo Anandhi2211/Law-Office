@@ -33,11 +33,9 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
-
     @Override
     public ArrayList<Attorney> findAll() {
         ArrayList<Attorney> attorneyList;
-
         Connection connection = CONNECTION_POOL.getConnection();
         try {
             PreparedStatement preparedStatement = connection
