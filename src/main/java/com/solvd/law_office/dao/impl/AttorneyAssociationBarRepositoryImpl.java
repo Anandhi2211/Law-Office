@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class AttorneyAssociationBarRepositoryImpl implements AttorneyAssociationBarRepository {
     private static final Logger logger = LogManager.getLogger(AttorneyAssociationBarRepositoryImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
+
     @Override
     public void insert(int associationBar, Attorney attorney) {
 
@@ -20,14 +21,13 @@ public class AttorneyAssociationBarRepositoryImpl implements AttorneyAssociation
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into attorney_association_bars values (?,?)");
-            preparedStatement.setInt(1,attorney.getAttorney_id());
-            preparedStatement.setInt(2,associationBar);
+            preparedStatement.setInt(1, attorney.getAttorney_id());
+            preparedStatement.setInt(2, associationBar);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
-            logger.info("Number of rows inserted: "+numberOfRowsCreated);
+            logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }

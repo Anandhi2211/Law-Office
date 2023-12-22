@@ -7,14 +7,10 @@ import com.solvd.law_office.service.ClientService;
 
 public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
-
     public ClientServiceImpl() {
         clientRepository = new ClientRepositoryImpl();
     }
-
     @Override
     public void insert(CaseFiled caseFiled, int lawFirmId) {
-
-
     }
 }

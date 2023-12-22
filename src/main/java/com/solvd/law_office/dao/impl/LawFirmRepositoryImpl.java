@@ -15,33 +15,34 @@ import java.util.ArrayList;
 public class LawFirmRepositoryImpl implements LawFirmRepository {
     private static final Logger logger = LogManager.getLogger(LawFirmRepositoryImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
+
     @Override
     public void insert(LawFirm lawFirm) {
         Connection connection = CONNECTION_POOL.getConnection();
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("INSERT INTO law_firms VALUES (?,?,?,?,?)");
-            preparedStatement.setInt(1,lawFirm.getLawFirmId());
-            preparedStatement.setString(2,lawFirm.getLawFirmName());
-            preparedStatement.setString(3,lawFirm.getAddress());
-            preparedStatement.setString(4,lawFirm.getCountry());
-            preparedStatement.setString(5,lawFirm.getCity());
+            preparedStatement.setInt(1, lawFirm.getLawFirmId());
+            preparedStatement.setString(2, lawFirm.getLawFirmName());
+            preparedStatement.setString(3, lawFirm.getAddress());
+            preparedStatement.setString(4, lawFirm.getCountry());
+            preparedStatement.setString(5, lawFirm.getCity());
             int numberOfRecords = preparedStatement.executeUpdate();
-            logger.info("No of Record inserted: "+numberOfRecords);
+            logger.info("No of Record inserted: " + numberOfRecords);
         } catch (SQLException e) {
-            if(connection!=null){
+            if (connection != null) {
                 try {
                     connection.rollback();
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
             }
-        }
-        finally {
+        } finally {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
-    public ArrayList<LawFirm> findAll(){
+
+    public ArrayList<LawFirm> findAll() {
         ArrayList<LawFirm> lawFirmsList;
         Connection connection = CONNECTION_POOL.getConnection();
         try {
@@ -60,7 +61,7 @@ public class LawFirmRepositoryImpl implements LawFirmRepository {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
 
         try {
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 LawFirm lawFirm = new LawFirm();
                 lawFirm.setLawFirmId(resultSet.getInt("law_firm_id"));
                 lawFirm.setLawFirmName(resultSet.getString("law_firm_name"));
@@ -69,7 +70,6 @@ public class LawFirmRepositoryImpl implements LawFirmRepository {
                 lawFirm.setCity(resultSet.getString("city"));
                 lawFirmList.add(lawFirm);
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

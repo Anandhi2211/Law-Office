@@ -6,16 +6,6 @@ public class AssociationBar {
     private int associationBarId;
     private String associationBarName;
 
-    public ArrayList<Attorney> getAttorneyList() {
-        return attorneyList;
-    }
-
-    public void setAttorneyList(ArrayList<Attorney> attorneyList) {
-        this.attorneyList = attorneyList;
-    }
-
-    private ArrayList<Attorney> attorneyList;
-
     public int getAssociationBarId() {
         return associationBarId;
     }

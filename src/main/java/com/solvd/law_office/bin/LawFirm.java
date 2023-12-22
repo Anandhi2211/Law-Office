@@ -10,30 +10,24 @@ public class LawFirm {
     private String city;
     private ArrayList<Attorney> attorneyList;
     private ArrayList<Client> clientList;
-
     public int getLawFirmId() {
         return this.lawFirmId;
     }
-
     public void setLawFirmId(int lawFirmId) {
         this.lawFirmId = lawFirmId;
     }
-
     public String getLawFirmName() {
         return this.lawFirmName;
     }
-
     public void setLawFirmName(String lawFirmName) {
         this.lawFirmName = lawFirmName;
     }
     public String getAddress() {
         return this.address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
-
     public String getCountry() {
         return this.country;
     }
@@ -43,15 +37,12 @@ public class LawFirm {
     public String getCity() {
         return this.city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
-
     public ArrayList<Attorney> getAttorneyList() {
         return this.attorneyList;
     }
-
     public void setAttorneyList(Attorney attorney) {
         if(this.attorneyList==null)
         {
@@ -59,11 +50,9 @@ public class LawFirm {
         }
         this.attorneyList.add(attorney);
     }
-
     public ArrayList<Client> getClientList() {
         return this.clientList;
     }
-
     public void setClientList(Client client) {
         if(this.clientList == null)
         {

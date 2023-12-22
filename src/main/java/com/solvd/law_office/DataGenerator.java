@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 public class DataGenerator {
 
-    public ArrayList<LawFirm> lawFirmCreation()
-    {
+    public ArrayList<LawFirm> lawFirmCreation() {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
         LawFirm lawFirm = new LawFirm();
         Client client = new Client();
@@ -96,6 +95,7 @@ public class DataGenerator {
         return lawFirmList;
 
     }
+
     public ArrayList<AssociationBar> associationBarCreation() {
         ArrayList<AssociationBar> associationBarArrayList = new ArrayList<>();
         AssociationBar associationBar = new AssociationBar();

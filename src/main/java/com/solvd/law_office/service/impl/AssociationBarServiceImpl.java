@@ -7,15 +7,12 @@ import com.solvd.law_office.service.AssociationBarService;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 
 public class AssociationBarServiceImpl implements AssociationBarService {
-
     private final AssociationBarRepository associationBarRepository;
     private final AttorneyAssociationBarService attorneyAssociationBarService;
-
-    public AssociationBarServiceImpl( ) {
+    public AssociationBarServiceImpl() {
         this.associationBarRepository = new AssociationBarRepositoryImpl();
         this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
     }
-
     @Override
     public AssociationBar insert(AssociationBar associationBar) {
         associationBarRepository.insert(associationBar);

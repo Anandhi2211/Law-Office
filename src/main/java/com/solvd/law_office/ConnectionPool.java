@@ -11,7 +11,6 @@ import java.util.stream.IntStream;
 public class ConnectionPool {
     private static ConnectionPool connectionPool = null;
     private List<Connection> connectionsList = new ArrayList<>();
-
     public ConnectionPool() {
         IntStream.range(1, 5).forEach(i -> {
 //            Connection connection = new Connection();
@@ -20,22 +19,16 @@ public class ConnectionPool {
     }
 
     private Connection createNewConnectionForPool() {
-
         Connection connection = null;
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/law_office", "root", "password");
-            System.out.println("Connection: "+ connection);
-        }
-        catch(SQLException sqlException)
-        {
-            System.err.println("SQLException: "+sqlException);
+            System.out.println("Connection: " + connection);
+        } catch (SQLException sqlException) {
+            System.err.println("SQLException: " + sqlException);
             return null;
-        }
-        catch(ClassNotFoundException classNotFoundException)
-        {
-            System.err.println("ClassNotFoundException: "+classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            System.err.println("ClassNotFoundException: " + classNotFoundException);
             return null;
         }
         return connection;
@@ -50,8 +43,7 @@ public class ConnectionPool {
 
     public synchronized Connection getConnection() {
         Connection connection = null;
-        if(connectionsList.size() > 0 )
-        {
+        if (connectionsList.size() > 0) {
             connection = connectionsList.get(0);
             connectionsList.remove(connection);
         }

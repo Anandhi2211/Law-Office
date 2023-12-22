@@ -7,6 +7,8 @@ import com.solvd.law_office.dao.impl.AttorneyRepositoryImpl;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;
 
+import java.util.ArrayList;
+
 public class AttorneyServiceImpl implements AttorneyService {
     private final AttorneyRepository attorneyRepository;
     private final AttorneyAssociationBarService attorneyAssociationBarService;
@@ -15,15 +17,20 @@ public class AttorneyServiceImpl implements AttorneyService {
         this.attorneyRepository = new AttorneyRepositoryImpl();
         this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
     }
+
     @Override
     public Attorney insert(Attorney attorney, int lawFirmId) {
-        attorneyRepository.insert(attorney,lawFirmId);
-        if(attorney.getAssociationBarIdList()!=null)
-        {
-            for(int associationBarId : attorney.getAssociationBarIdList()) {
-                attorneyAssociationBarService.insert(associationBarId,attorney);
+        attorneyRepository.insert(attorney, lawFirmId);
+        if (attorney.getAssociationBarIdList() != null) {
+            for (int associationBarId : attorney.getAssociationBarIdList()) {
+                attorneyAssociationBarService.insert(associationBarId, attorney);
             }
         }
         return attorney;
+    }
+
+    public ArrayList<Attorney> findAll() {
+        ArrayList<Attorney> attorneyList = attorneyRepository.findAll();
+        return attorneyList;
     }
 }
