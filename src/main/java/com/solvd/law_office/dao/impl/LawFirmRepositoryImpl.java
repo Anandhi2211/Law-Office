@@ -47,6 +47,9 @@ public class LawFirmRepositoryImpl implements LawFirmRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        finally {
+            CONNECTION_POOL.releaseConnection(connection);
+        }
         return lawFirmsList;
     }
     private ArrayList<LawFirm> displayTheResults(ResultSet resultSet) {

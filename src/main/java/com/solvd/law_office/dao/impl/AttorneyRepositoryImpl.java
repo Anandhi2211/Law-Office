@@ -1,7 +1,6 @@
 package com.solvd.law_office.dao.impl;
 
 import com.solvd.law_office.bin.Attorney;
-import com.solvd.law_office.bin.LawFirm;
 import com.solvd.law_office.dao.AttorneyRepository;
 import com.solvd.law_office.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
@@ -37,7 +36,7 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
 
     @Override
     public ArrayList<Attorney> findAll() {
-        ArrayList<Attorney> attorneyList = new ArrayList<>();
+        ArrayList<Attorney> attorneyList;
 
         Connection connection = CONNECTION_POOL.getConnection();
         try {
@@ -48,7 +47,9 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        finally {
+            CONNECTION_POOL.releaseConnection(connection);
+        }
         return attorneyList;
     }
 
