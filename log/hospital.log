@@ -1,43 +1,56 @@
-2023-12-22 00:45:18.905 [main] INFO  com.solvd.law_office.Main - Inserting data into Association_Bars Table
-2023-12-22 00:45:18.944 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.947 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.951 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.954 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.958 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.959 [main] INFO  com.solvd.law_office.Main - Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables
-2023-12-22 00:45:18.967 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
-2023-12-22 00:45:18.971 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.975 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.979 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
-2023-12-22 00:45:18.983 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.988 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.992 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:18.996 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:19.000 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:19.004 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
-2023-12-22 00:45:19.004 [main] INFO  com.solvd.law_office.Main - Displaying LawFirms Table
-2023-12-22 00:45:19.022 [main] INFO  com.solvd.law_office.Main - Law Firm Id: 100
-2023-12-22 00:45:19.022 [main] INFO  com.solvd.law_office.Main - Law Firm Name: Amarchand Co
-2023-12-22 00:45:19.023 [main] INFO  com.solvd.law_office.Main - Address: 14th Ava street
-2023-12-22 00:45:19.024 [main] INFO  com.solvd.law_office.Main - City: Charlotte
-2023-12-22 00:45:19.024 [main] INFO  com.solvd.law_office.Main - Displaying Attorney Table
-2023-12-22 00:45:19.027 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1000
-2023-12-22 00:45:19.028 [main] INFO  com.solvd.law_office.Main - Attorney Name: Lakshmi
-2023-12-22 00:45:19.028 [main] INFO  com.solvd.law_office.Main - Address: USA
-2023-12-22 00:45:19.029 [main] INFO  com.solvd.law_office.Main - City: cincinnati
-2023-12-22 00:45:19.030 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 101
-2023-12-22 00:45:19.030 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1001
-2023-12-22 00:45:19.030 [main] INFO  com.solvd.law_office.Main - Attorney Name: Nithya
-2023-12-22 00:45:19.030 [main] INFO  com.solvd.law_office.Main - Address: USA
-2023-12-22 00:45:19.031 [main] INFO  com.solvd.law_office.Main - City: Dayton
-2023-12-22 00:45:19.031 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 101
-2023-12-22 00:45:19.031 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1002
-2023-12-22 00:45:19.032 [main] INFO  com.solvd.law_office.Main - Attorney Name: Kanmani
-2023-12-22 00:45:19.032 [main] INFO  com.solvd.law_office.Main - Address: USA
-2023-12-22 00:45:19.032 [main] INFO  com.solvd.law_office.Main - City: Charlotte
-2023-12-22 00:45:19.033 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 100
-2023-12-22 00:45:19.033 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1003
-2023-12-22 00:45:19.033 [main] INFO  com.solvd.law_office.Main - Attorney Name: Kavitha
-2023-12-22 00:45:19.033 [main] INFO  com.solvd.law_office.Main - Address: USA
-2023-12-22 00:45:19.034 [main] INFO  com.solvd.law_office.Main - City: Harrisburg
-2023-12-22 00:45:19.034 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 100
+2023-12-22 01:04:37.995 [main] INFO  com.solvd.law_office.Main - Inserting data into Association_Bars Table
+2023-12-22 01:04:38.033 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.037 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.042 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.045 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.049 [main] INFO  com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.050 [main] INFO  com.solvd.law_office.Main - Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables
+2023-12-22 01:04:38.058 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
+2023-12-22 01:04:38.063 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.067 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.071 [main] INFO  com.solvd.law_office.dao.impl.LawFirmRepositoryImpl - No of Record inserted: 1
+2023-12-22 01:04:38.075 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.080 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.084 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.087 [main] INFO  com.solvd.law_office.dao.impl.AttorneyRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.091 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.094 [main] INFO  com.solvd.law_office.dao.impl.AttorneyAssociationBarRepositoryImpl - Number of rows inserted: 1
+2023-12-22 01:04:38.094 [main] INFO  com.solvd.law_office.Main - **********************
+2023-12-22 01:04:38.094 [main] INFO  com.solvd.law_office.Main - Displaying LawFirms Table
+2023-12-22 01:04:38.115 [main] INFO  com.solvd.law_office.Main - Law Firm Id: 100
+2023-12-22 01:04:38.116 [main] INFO  com.solvd.law_office.Main - Law Firm Name: Amarchand Co
+2023-12-22 01:04:38.117 [main] INFO  com.solvd.law_office.Main - Address: 14th Ava street
+2023-12-22 01:04:38.117 [main] INFO  com.solvd.law_office.Main - City: Charlotte
+2023-12-22 01:04:38.118 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.118 [main] INFO  com.solvd.law_office.Main - Law Firm Id: 101
+2023-12-22 01:04:38.118 [main] INFO  com.solvd.law_office.Main - Law Firm Name: Anand & Anand
+2023-12-22 01:04:38.119 [main] INFO  com.solvd.law_office.Main - Address: 90 BROADWAY LANE
+2023-12-22 01:04:38.119 [main] INFO  com.solvd.law_office.Main - City: ohio
+2023-12-22 01:04:38.119 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.119 [main] INFO  com.solvd.law_office.Main - **********************
+2023-12-22 01:04:38.120 [main] INFO  com.solvd.law_office.Main - Displaying Attorney Table
+2023-12-22 01:04:38.122 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1000
+2023-12-22 01:04:38.123 [main] INFO  com.solvd.law_office.Main - Attorney Name: Lakshmi
+2023-12-22 01:04:38.124 [main] INFO  com.solvd.law_office.Main - Address: USA
+2023-12-22 01:04:38.124 [main] INFO  com.solvd.law_office.Main - City: cincinnati
+2023-12-22 01:04:38.125 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 101
+2023-12-22 01:04:38.125 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.125 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1001
+2023-12-22 01:04:38.125 [main] INFO  com.solvd.law_office.Main - Attorney Name: Nithya
+2023-12-22 01:04:38.125 [main] INFO  com.solvd.law_office.Main - Address: USA
+2023-12-22 01:04:38.126 [main] INFO  com.solvd.law_office.Main - City: Dayton
+2023-12-22 01:04:38.126 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 101
+2023-12-22 01:04:38.126 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.126 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1002
+2023-12-22 01:04:38.127 [main] INFO  com.solvd.law_office.Main - Attorney Name: Kanmani
+2023-12-22 01:04:38.127 [main] INFO  com.solvd.law_office.Main - Address: USA
+2023-12-22 01:04:38.127 [main] INFO  com.solvd.law_office.Main - City: Charlotte
+2023-12-22 01:04:38.127 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 100
+2023-12-22 01:04:38.128 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.128 [main] INFO  com.solvd.law_office.Main - Attorney Id: 1003
+2023-12-22 01:04:38.128 [main] INFO  com.solvd.law_office.Main - Attorney Name: Kavitha
+2023-12-22 01:04:38.129 [main] INFO  com.solvd.law_office.Main - Address: USA
+2023-12-22 01:04:38.129 [main] INFO  com.solvd.law_office.Main - City: Harrisburg
+2023-12-22 01:04:38.129 [main] INFO  com.solvd.law_office.Main - Attorney Law Firm: 100
+2023-12-22 01:04:38.130 [main] INFO  com.solvd.law_office.Main - -----
+2023-12-22 01:04:38.130 [main] INFO  com.solvd.law_office.Main - **********************

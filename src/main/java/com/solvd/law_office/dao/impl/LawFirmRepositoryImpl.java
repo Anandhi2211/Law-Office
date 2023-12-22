@@ -30,18 +30,12 @@ public class LawFirmRepositoryImpl implements LawFirmRepository {
             int numberOfRecords = preparedStatement.executeUpdate();
             logger.info("No of Record inserted: " + numberOfRecords);
         } catch (SQLException e) {
-            if (connection != null) {
-                try {
-                    connection.rollback();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        } finally {
+            throw new RuntimeException(e);
+        }
+        finally {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
-
     public ArrayList<LawFirm> findAll() {
         ArrayList<LawFirm> lawFirmsList;
         Connection connection = CONNECTION_POOL.getConnection();
@@ -55,13 +49,10 @@ public class LawFirmRepositoryImpl implements LawFirmRepository {
         }
         return lawFirmsList;
     }
-
     private ArrayList<LawFirm> displayTheResults(ResultSet resultSet) {
-
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
-
         try {
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 LawFirm lawFirm = new LawFirm();
                 lawFirm.setLawFirmId(resultSet.getInt("law_firm_id"));
                 lawFirm.setLawFirmName(resultSet.getString("law_firm_name"));
