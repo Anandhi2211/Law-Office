@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import java.sql.*;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class AttorneyRepositoryImpl implements AttorneyRepository {
     private static final Logger logger = LogManager.getLogger(AttorneyRepositoryImpl.class);
@@ -21,8 +22,8 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into attorneys values (?,?,?,?,?)");
-            preparedStatement.setInt(1, attorney.getAttorney_id());
-            preparedStatement.setString(2, attorney.getAttorney_name());
+            preparedStatement.setInt(1, attorney.getAttorneyId());
+            preparedStatement.setString(2, attorney.getAttorneyName());
             preparedStatement.setString(3, attorney.getCountry());
             preparedStatement.setString(4, attorney.getCity());
             preparedStatement.setInt(5, lawFirmId);
@@ -34,6 +35,33 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
+
+    @Override
+    public Optional<Attorney> findById(int attorney_id) {
+
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Attorney> findByName(String attorneyName) {
+        return Optional.empty();
+    }
+
+    @Override
+    public void deleteById(int attorney_id) {
+
+    }
+
+    @Override
+    public void updateById(Attorney attorney, int attorney_id) {
+
+    }
+
+    @Override
+    public void addAssociationBar(int attorney_id, int associationBarId) {
+
+    }
+
     @Override
     public ArrayList<Attorney> findAll() {
         ArrayList<Attorney> attorneyList;
@@ -57,8 +85,8 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
         try {
             while (resultSet.next()) {
                 Attorney attorney = new Attorney();
-                attorney.setAttorney_id(resultSet.getInt("attorney_id"));
-                attorney.setAttorney_name(resultSet.getString("attorney_name"));
+                attorney.setAttorneyId(resultSet.getInt("attorney_id"));
+                attorney.setAttorneyName(resultSet.getString("attorney_name"));
                 attorney.setCountry(resultSet.getString("country"));
                 attorney.setCity(resultSet.getString("city"));
                 attorney.setLawFirmId(resultSet.getInt("attorney_law_firm_id"));

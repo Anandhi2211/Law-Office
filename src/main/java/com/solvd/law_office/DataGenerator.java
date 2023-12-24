@@ -33,15 +33,15 @@ public class DataGenerator {
 
 
         Attorney attorney = new Attorney();
-        attorney.setAttorney_id(1002);
-        attorney.setAttorney_name("Kanmani");
+        attorney.setAttorneyId(1002);
+        attorney.setAttorneyName("Kanmani");
         attorney.setCountry("USA");
         attorney.setCity("Charlotte");
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
-        attorney.setAttorney_id(1003);
-        attorney.setAttorney_name("Kavitha");
+        attorney.setAttorneyId(1003);
+        attorney.setAttorneyName("Kavitha");
         attorney.setCountry("USA");
         attorney.setCity("Harrisburg");
         lawFirm.setAttorneyList(attorney);
@@ -74,8 +74,8 @@ public class DataGenerator {
         lawFirm.setClientList(client);
 
         attorney = new Attorney();
-        attorney.setAttorney_id(1000);
-        attorney.setAttorney_name("Lakshmi");
+        attorney.setAttorneyId(1000);
+        attorney.setAttorneyName("Lakshmi");
         attorney.setCountry("USA");
         attorney.setCity("cincinnati");
         attorney.setAssociationBarIdList(100);
@@ -83,8 +83,8 @@ public class DataGenerator {
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
-        attorney.setAttorney_id(1001);
-        attorney.setAttorney_name("Nithya");
+        attorney.setAttorneyId(1001);
+        attorney.setAttorneyName("Nithya");
         attorney.setCountry("USA");
         attorney.setCity("Dayton");
         attorney.setAssociationBarIdList(102);

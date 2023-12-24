@@ -3,8 +3,8 @@ package com.solvd.law_office.bin;
 import java.util.ArrayList;
 
 public class Attorney    {
-    private int attorney_id;
-    private String attorney_name;
+    private int attorneyId;
+    private String attorneyName;
     private String country;
     private String city;
     public int getLawFirmId() {
@@ -41,17 +41,17 @@ public class Attorney    {
         this.associationBarList.add(associationBar);
     }
     private ArrayList<AssociationBar> associationBarList;
-    public int getAttorney_id() {
-        return attorney_id;
+    public int getAttorneyId() {
+        return attorneyId;
     }
-    public void setAttorney_id(int attorney_id) {
-        this.attorney_id = attorney_id;
+    public void setAttorneyId(int attorneyId) {
+        this.attorneyId = attorneyId;
     }
-    public String getAttorney_name() {
-        return this.attorney_name;
+    public String getAttorneyName() {
+        return this.attorneyName;
     }
-    public void setAttorney_name(String attorney_name) {
-        this.attorney_name = attorney_name;
+    public void setAttorneyName(String attorneyName) {
+        this.attorneyName = attorneyName;
     }
     public String getCountry() {
         return this.country;

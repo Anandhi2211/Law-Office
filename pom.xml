@@ -13,17 +13,15 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <log4jVersion>2.21.1</log4jVersion>
+        <mysql-Version>8.0.33</mysql-Version>
+        <mybatis-Version>3.5.15</mybatis-Version>
     </properties>
 
-
-
-
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
+            <version>${mysql-Version}</version>
         </dependency>
 
         <dependency>
@@ -32,6 +30,10 @@
             <version>${log4jVersion}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis-Version}</version>
+        </dependency>
     </dependencies>
-
 </project>

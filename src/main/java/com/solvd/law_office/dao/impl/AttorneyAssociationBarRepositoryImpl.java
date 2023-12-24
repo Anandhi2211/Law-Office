@@ -21,7 +21,7 @@ public class AttorneyAssociationBarRepositoryImpl implements AttorneyAssociation
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into attorney_association_bars values (?,?)");
-            preparedStatement.setInt(1, attorney.getAttorney_id());
+            preparedStatement.setInt(1, attorney.getAttorneyId());
             preparedStatement.setInt(2, associationBar);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);

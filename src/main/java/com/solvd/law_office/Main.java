@@ -40,8 +40,8 @@ public class Main {
         logger.info("Displaying Attorney Table");
         ArrayList<Attorney> attorneyList = attorneyService.findAll();
         for (Attorney attorney : attorneyList) {
-            logger.info("Attorney Id: " + attorney.getAttorney_id());
-            logger.info("Attorney Name: " + attorney.getAttorney_name());
+            logger.info("Attorney Id: " + attorney.getAttorneyId());
+            logger.info("Attorney Name: " + attorney.getAttorneyName());
             logger.info("Address: " + attorney.getCountry());
             logger.info("City: " + attorney.getCity());
             logger.info("Attorney Law Firm: " + attorney.getLawFirmId());
