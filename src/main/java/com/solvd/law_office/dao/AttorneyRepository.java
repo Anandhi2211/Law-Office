@@ -11,7 +11,6 @@ public interface AttorneyRepository {
     void insert(Attorney attorney, int lawFirmId);
     Optional<Attorney> findById(int attorneyId);
     Optional<Attorney> findByName(String attorneyName);
-
     void deleteById(int attorney_id);
     void updateById(@Param("attorney") Attorney attorney , @Param("attorneyId") int attorney_id);
     void addAssociationBar(int attorney_id, int associationBarId);

@@ -19,4 +19,13 @@
         </environment>
     </environments>
 
+    <mappers>
+        <mapper resource="mappers/AttorneyMapper.xml"/>
+        <mapper resource="mappers/LawFirmMapper.xml"/>
+        <mapper resource="mappers/AssociationBarMapper.xml"/>
+        <mapper resource="mappers/ClientMapper.xml"/>
+        <mapper resource="mappers/CaseFiledMapper.xml"/>
+
+    </mappers>
+
 </configuration>

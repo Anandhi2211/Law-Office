@@ -7,40 +7,29 @@ public class Attorney    {
     private String attorneyName;
     private String country;
     private String city;
+    private int lawFirmId;
+    private ArrayList<Client> clientList;
+    public void setAssociationBarIdList( Integer associationBarId) {
+        if(this.associationBarIdList==null){
+            this.associationBarIdList = new ArrayList<>();
+        }
+        this.associationBarIdList.add(associationBarId);    }
+    private ArrayList<Integer> associationBarIdList;
     public int getLawFirmId() {
         return this.lawFirmId;
     }
     public void setLawFirmId(int lawFirmId) {
         this.lawFirmId = lawFirmId;
     }
-    private int lawFirmId;
-    public ArrayList<Integer> getClientIdList() {
-        return this.clientIdList;
+    public ArrayList<Client> getClientIdList() {
+        return this.clientList;
     }
-    public void setClientIdList(Integer clientIdList) {
-        this.clientIdList.add(clientIdList);
+    public void setClientIdList(Client client) {
+        this.clientList.add(client);
     }
-    private ArrayList<Integer> clientIdList;
     public ArrayList<Integer> getAssociationBarIdList() {
         return this.associationBarIdList;
     }
-    public void setAssociationBarIdList(int associationBarId) {
-        if(this.associationBarIdList==null){
-            this.associationBarIdList = new ArrayList<>();
-        }
-        this.associationBarIdList.add(associationBarId);
-    }
-    private ArrayList<Integer> associationBarIdList;
-    public ArrayList<AssociationBar> getAssociationBarList() {
-        return this.associationBarList;
-    }
-    public void setAssociationBarList(AssociationBar associationBar) {
-        if(this.associationBarList == null){
-            this.associationBarList = new ArrayList<>();
-        }
-        this.associationBarList.add(associationBar);
-    }
-    private ArrayList<AssociationBar> associationBarList;
     public int getAttorneyId() {
         return attorneyId;
     }

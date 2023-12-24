@@ -78,8 +78,6 @@ public class DataGenerator {
         attorney.setAttorneyName("Lakshmi");
         attorney.setCountry("USA");
         attorney.setCity("cincinnati");
-        attorney.setAssociationBarIdList(100);
-        attorney.setAssociationBarIdList(101);
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
@@ -87,10 +85,7 @@ public class DataGenerator {
         attorney.setAttorneyName("Nithya");
         attorney.setCountry("USA");
         attorney.setCity("Dayton");
-        attorney.setAssociationBarIdList(102);
-        attorney.setAssociationBarIdList(104);
         lawFirm.setAttorneyList(attorney);
-
         lawFirmList.add(lawFirm);
         return lawFirmList;
 
@@ -99,6 +94,7 @@ public class DataGenerator {
     public ArrayList<AssociationBar> associationBarCreation() {
         ArrayList<AssociationBar> associationBarArrayList = new ArrayList<>();
         AssociationBar associationBar = new AssociationBar();
+
         associationBar.setAssociationBarId(100);
         associationBar.setAssociationBarName("Akron Bar");
         associationBarArrayList.add(associationBar);
