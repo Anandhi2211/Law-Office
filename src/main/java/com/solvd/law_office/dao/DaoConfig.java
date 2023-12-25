@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DaoConfig {
-
-
     private static final SqlSessionFactory sessionFactory ;
 
     static{

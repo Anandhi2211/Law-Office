@@ -5,7 +5,7 @@
 
     <insert id="insert" keyColumn="law_firm_id" keyProperty="lawFirmId" useGeneratedKeys="true">
         insert into law_firms(law_firm_id,law_firm_name,address,country,city)
-        values (#{lawFirmId},#{lawFirmName},#{address},#{country},#{city}))
+        values (#{lawFirmId},#{lawFirmName},#{address},#{country},#{city})
     </insert>
 
     <resultMap id="LawFirmResultMap" type="com.solvd.law_office.bin.LawFirm" autoMapping="false">

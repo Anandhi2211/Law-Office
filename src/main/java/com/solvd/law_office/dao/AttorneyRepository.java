@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface AttorneyRepository {
 
-    void insert(Attorney attorney, int lawFirmId);
+    void insert(@Param("attorney") Attorney attorney, @Param("lawFirmId") int lawFirmId);
     Optional<Attorney> findById(int attorneyId);
     Optional<Attorney> findByName(String attorneyName);
     void deleteById(int attorney_id);

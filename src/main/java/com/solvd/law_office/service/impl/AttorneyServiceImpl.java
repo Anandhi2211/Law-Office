@@ -5,6 +5,7 @@ import com.solvd.law_office.bin.Attorney;
 import com.solvd.law_office.dao.AssociationBarRepository;
 import com.solvd.law_office.dao.AttorneyRepository;
 import com.solvd.law_office.dao.impl.AttorneyRepositoryImpl;
+import com.solvd.law_office.dao.impl.AttorneyRepositoryMyBatisImpl;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;
 
@@ -15,7 +16,7 @@ public class AttorneyServiceImpl implements AttorneyService {
     private final AttorneyAssociationBarService attorneyAssociationBarService;
 
     public AttorneyServiceImpl() {
-        this.attorneyRepository = new AttorneyRepositoryImpl();
+        this.attorneyRepository = new AttorneyRepositoryMyBatisImpl();
         this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
     }
 

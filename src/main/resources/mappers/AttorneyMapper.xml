@@ -3,9 +3,9 @@
 
 <mapper namespace="com.solvd.law_office.dao.AttorneyRepository">
 
-    <insert id="insert" keyColumn="attorney_id" keyProperty="attorneyId" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="attorney_id" keyProperty="attorneyId" >
         insert into attorneys(attorney_id,attorney_name,country,city,attorney_law_firm_id)
-        values (#{attorneyId},#{attorneyName},#{country},#{city},#{lawFirmId}))
+        values (#{attorney.attorneyId},#{attorney.attorneyName},#{attorney.country},#{attorney.city},#{lawFirmId})
     </insert>
 
     <sql id="attorneySelect">

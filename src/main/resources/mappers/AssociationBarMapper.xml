@@ -2,10 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.solvd.law_office.dao.AssociationBarRepository">
+
+    <insert id="insert" keyColumn="association_bar_id" keyProperty="associationBarId" useGeneratedKeys="true">
+        insert into association_bars(association_bar_id,association_bar_name)
+        values (#{associationBarId},#{associationBarName})
+    </insert>
+
+
     <resultMap id="AssociationBarResultMap" type="com.solvd.law_office.bin.AssociationBar" autoMapping="false">
         <id column="association_bar_id" property="associationBarId"/>
-        <result column="association_bar_name" property="com.solvd.law_office.bin.AssociationBar"/>
+        <result column="association_bar_name" property="associationBarName"/>
     </resultMap>
+
 
 
 </mapper>

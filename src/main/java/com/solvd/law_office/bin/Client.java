@@ -7,7 +7,7 @@ public class Client {
     private String clientName;
     private String country;
     private String city;
-    private ArrayList<CaseFiled> caseFiledList;
+    private ArrayList<Integer> caseFiledIdList;
     public int getClientId() {
         return this.clientId;
     }
@@ -32,10 +32,10 @@ public class Client {
     public void setCity(String city) {
         this.city = city;
     }
-    public ArrayList<CaseFiled> getCaseList() {
-        return this.caseFiledList;
+    public ArrayList<Integer> getCaseFiledIdList() {
+        return this.caseFiledIdList;
     }
-    public void setCaseList(CaseFiled caseFiled) {
-        this.caseFiledList.add(caseFiled);
+    public void setCaseFiledIdList(Integer caseFiledId) {
+        this.caseFiledIdList.add(caseFiledId);
     }
 }

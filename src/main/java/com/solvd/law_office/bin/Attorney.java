@@ -8,25 +8,27 @@ public class Attorney    {
     private String country;
     private String city;
     private int lawFirmId;
-    private ArrayList<Client> clientList;
-    public void setAssociationBarIdList( Integer associationBarId) {
-        if(this.associationBarIdList==null){
-            this.associationBarIdList = new ArrayList<>();
-        }
-        this.associationBarIdList.add(associationBarId);    }
+    private ArrayList<Integer> clientIdList;
     private ArrayList<Integer> associationBarIdList;
+
+
     public int getLawFirmId() {
         return this.lawFirmId;
     }
     public void setLawFirmId(int lawFirmId) {
         this.lawFirmId = lawFirmId;
     }
-    public ArrayList<Client> getClientIdList() {
-        return this.clientList;
+    public ArrayList<Integer> getClientIdList() {
+        return this.clientIdList;
     }
-    public void setClientIdList(Client client) {
-        this.clientList.add(client);
+    public void setClientIdList(Integer clientId) {
+        this.clientIdList.add(clientId);
     }
+    public void setAssociationBarIdList( Integer associationBarId) {
+        if(this.associationBarIdList==null){
+            this.associationBarIdList = new ArrayList<>();
+        }
+        this.associationBarIdList.add(associationBarId);    }
     public ArrayList<Integer> getAssociationBarIdList() {
         return this.associationBarIdList;
     }

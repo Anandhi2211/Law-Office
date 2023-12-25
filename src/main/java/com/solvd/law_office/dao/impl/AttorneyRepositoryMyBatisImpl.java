@@ -16,7 +16,6 @@ public class AttorneyRepositoryMyBatisImpl implements AttorneyRepository {
             AttorneyRepository attorneyRepository = sqlSession.getMapper(AttorneyRepository.class);
             attorneyRepository.insert(attorney,lawFirmId);
         }
-
     }
 
     @Override

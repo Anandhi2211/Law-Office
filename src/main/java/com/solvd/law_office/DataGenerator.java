@@ -12,24 +12,24 @@ public class DataGenerator {
     public ArrayList<LawFirm> lawFirmCreation() {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
         LawFirm lawFirm = new LawFirm();
-        Client client = new Client();
+//        Client client = new Client();
         lawFirm.setLawFirmId(100);
         lawFirm.setLawFirmName("Amarchand Co");
         lawFirm.setAddress("14th Ava street");
         lawFirm.setCountry("USA");
         lawFirm.setCity("Charlotte");
 
-        client.setClientId(203);
-        client.setClientName("Raji");
-        client.setCountry("USA");
-        client.setCity("charlotte");
-        lawFirm.setClientList(client);
-
-        client.setClientId(207);
-        client.setClientName("Rajeev");
-        client.setCountry("USA");
-        client.setCity("charlotte");
-        lawFirm.setClientList(client);
+//        client.setClientId(203);
+//        client.setClientName("Raji");
+//        client.setCountry("USA");
+//        client.setCity("charlotte");
+//        lawFirm.setClientList(client);
+//
+//        client.setClientId(207);
+//        client.setClientName("Rajeev");
+//        client.setCountry("USA");
+//        client.setCity("charlotte");
+//        lawFirm.setClientList(client);
 
 
         Attorney attorney = new Attorney();
@@ -37,6 +37,9 @@ public class DataGenerator {
         attorney.setAttorneyName("Kanmani");
         attorney.setCountry("USA");
         attorney.setCity("Charlotte");
+        attorney.setAssociationBarIdList(100);
+        attorney.setAssociationBarIdList(101);
+        attorney.setAssociationBarIdList(102);
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
@@ -48,53 +51,69 @@ public class DataGenerator {
         lawFirmList.add(lawFirm);
 
         lawFirm = new LawFirm();
-        client = new Client();
+//        client = new Client();
         lawFirm.setLawFirmId(101);
         lawFirm.setLawFirmName("Anand & Anand");
         lawFirm.setAddress("90 BROADWAY LANE");
         lawFirm.setCountry("USA");
         lawFirm.setCity("ohio");
 
-        client.setClientId(200);
-        client.setClientName("Thamari");
-        client.setCountry("USA");
-        client.setCity("cincinnati");
-        lawFirm.setClientList(client);
-
-        client.setClientId(202);
-        client.setClientName("Vishnu");
-        client.setCountry("USA");
-        client.setCity("cincinnati");
-        lawFirm.setClientList(client);
-
-        client.setClientId(204);
-        client.setClientName("Som");
-        client.setCountry("USA");
-        client.setCity("cincinnati");
-        lawFirm.setClientList(client);
+//        client.setClientId(200);
+//        client.setClientName("Thamari");
+//        client.setCountry("USA");
+//        client.setCity("cincinnati");
+//        lawFirm.setClientList(client);
+//
+//        client.setClientId(202);
+//        client.setClientName("Vishnu");
+//        client.setCountry("USA");
+//        client.setCity("cincinnati");
+//        lawFirm.setClientList(client);
+//
+//        client.setClientId(204);
+//        client.setClientName("Som");
+//        client.setCountry("USA");
+//        client.setCity("cincinnati");
+//        lawFirm.setClientList(client);
 
         attorney = new Attorney();
         attorney.setAttorneyId(1000);
         attorney.setAttorneyName("Lakshmi");
         attorney.setCountry("USA");
         attorney.setCity("cincinnati");
+        attorney.setAssociationBarIdList(100);
+        attorney.setAssociationBarIdList(101);
+
+
+//        associationBar.setAssociationBarId(100);
+//        associationBar.setAssociationBarName("Akron Bar");
+//        attorney.setAssociationBarList(associationBar);
+//        associationBar.setAssociationBarId(101);
+//        associationBar.setAssociationBarName("Butler County Bar");
+//        attorney.setAssociationBarList(associationBar);
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
+//        associationBar = new AssociationBar();
         attorney.setAttorneyId(1001);
         attorney.setAttorneyName("Nithya");
         attorney.setCountry("USA");
         attorney.setCity("Dayton");
+        attorney.setAssociationBarIdList(102);
+        attorney.setAssociationBarIdList(104);
+//        associationBar.setAssociationBarId(102);
+//        attorney.setAssociationBarList(associationBar);
+//        associationBar.setAssociationBarId(104);
+//        attorney.setAssociationBarList(associationBar);
         lawFirm.setAttorneyList(attorney);
         lawFirmList.add(lawFirm);
-        return lawFirmList;
 
+        return lawFirmList;
     }
 
     public ArrayList<AssociationBar> associationBarCreation() {
         ArrayList<AssociationBar> associationBarArrayList = new ArrayList<>();
         AssociationBar associationBar = new AssociationBar();
-
         associationBar.setAssociationBarId(100);
         associationBar.setAssociationBarName("Akron Bar");
         associationBarArrayList.add(associationBar);

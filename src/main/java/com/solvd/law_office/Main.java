@@ -26,27 +26,27 @@ public class Main {
         for (LawFirm lawFirm : data.lawFirmCreation()) {
             lawFirmService.insert(lawFirm);
         }
-        logger.info("**********************");
-        logger.info("Displaying LawFirms Table");
-        ArrayList<LawFirm> lawFirmList = lawFirmService.findAll();
-        for (LawFirm lawFirm : lawFirmList) {
-            logger.info("Law Firm Id: " + lawFirm.getLawFirmId());
-            logger.info("Law Firm Name: " + lawFirm.getLawFirmName());
-            logger.info("Address: " + lawFirm.getAddress());
-            logger.info("City: " + lawFirm.getCity());
-            logger.info("--------------");
-        }
-        logger.info("**********************");
-        logger.info("Displaying Attorney Table");
-        ArrayList<Attorney> attorneyList = attorneyService.findAll();
-        for (Attorney attorney : attorneyList) {
-            logger.info("Attorney Id: " + attorney.getAttorneyId());
-            logger.info("Attorney Name: " + attorney.getAttorneyName());
-            logger.info("Address: " + attorney.getCountry());
-            logger.info("City: " + attorney.getCity());
-            logger.info("Attorney Law Firm: " + attorney.getLawFirmId());
-            logger.info("--------------");
-        }
-        logger.info("**********************");
+//        logger.info("**********************");
+//        logger.info("Displaying LawFirms Table");
+//        ArrayList<LawFirm> lawFirmList = lawFirmService.findAll();
+//        for (LawFirm lawFirm : lawFirmList) {
+//            logger.info("Law Firm Id: " + lawFirm.getLawFirmId());
+//            logger.info("Law Firm Name: " + lawFirm.getLawFirmName());
+//            logger.info("Address: " + lawFirm.getAddress());
+//            logger.info("City: " + lawFirm.getCity());
+//            logger.info("--------------");
+//        }
+//        logger.info("**********************");
+//        logger.info("Displaying Attorney Table");
+//        ArrayList<Attorney> attorneyList = attorneyService.findAll();
+//        for (Attorney attorney : attorneyList) {
+//            logger.info("Attorney Id: " + attorney.getAttorneyId());
+//            logger.info("Attorney Name: " + attorney.getAttorneyName());
+//            logger.info("Address: " + attorney.getCountry());
+//            logger.info("City: " + attorney.getCity());
+//            logger.info("Attorney Law Firm: " + attorney.getLawFirmId());
+//            logger.info("--------------");
+//        }
+//        logger.info("**********************");
     }
 }
