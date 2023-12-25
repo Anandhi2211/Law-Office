@@ -8,11 +8,7 @@
         values (#{attorney.attorneyId},#{associationBarId})
     </insert>
 
-
     <resultMap id="AttorneyAssociationBarResultMap" type="com.solvd.law_office.bin.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>
     </resultMap>
-
-
-
 </mapper>
