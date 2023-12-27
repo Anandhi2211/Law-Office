@@ -16,7 +16,6 @@ public class LawFirmRepositoryMyBatisImpl implements LawFirmRepository {
             lawFirmRepository.insert(lawFirm);
         }
     }
-
     @Override
     public ArrayList<LawFirm> findAll() {
         return null;

@@ -17,20 +17,20 @@
 
     <select id="findById" resultMap="AttorneyResultMap">
         <include refid="attorneySelect"/>
-        where attorney_Id = #{attorneyId}
+        where attorney_Id = #{attorney.attorneyId}
     </select>
 
     <select id="findByName" resultMap="AttorneyResultMap">
         <include refid="attorneySelect"/>
-        where attorney_name = #{attorneyName}
+        where attorney_name = #{attorney.attorneyName}
     </select>
 
-    <update id="updateById" >
-        UPDATE attorneys SET city = #{attorney.city} WHERE attorney_id = #{attorneyId};
+    <update id="updateCityById" >
+        UPDATE attorneys SET city = #{city.city} WHERE attorney_id = #{attorney.attorneyId};
     </update>
 
     <delete id="deleteById">
-        delete * from attorneys where attorney_id = #{attorneyId}
+        delete from attorneys where attorney_id = #{attorneyId}
     </delete>
 
     <resultMap id="AttorneyResultMap" type="com.solvd.law_office.bin.Attorney" autoMapping="false">
@@ -39,8 +39,6 @@
         <result column="country" property="country"/>
         <result column="city" property="city"/>
         <result column="attorney_law_firm_id" property="lawFirmId"/>
-        <collection property="clientIdList"
-                    resultMap="com.solvd.law_office.dao.ClientRepository.ClientResultMap"/>
         <collection property="associationBarList"
                     resultMap="com.solvd.law_office.dao.AssociationBarRepository.AssociationBarResultMap"/>
     </resultMap>

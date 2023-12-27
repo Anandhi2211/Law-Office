@@ -31,4 +31,9 @@ public class AttorneyAssociationBarRepositoryImpl implements AttorneyAssociation
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
+
+    @Override
+    public void deleteById(int attorneyId) {
+
+    }
 }

@@ -26,6 +26,11 @@ public class Main {
         for (LawFirm lawFirm : data.lawFirmCreation()) {
             lawFirmService.insert(lawFirm);
         }
+        logger.info("Updating Attorney's city by attorney ID");
+//        attorneyService.findById()
+        logger.info("Deleting from 1 record from attorney Table as well as Attorney Association bar table since attorney id is a foreign Key");
+        attorneyService.deleteById(1000);
+
 //        logger.info("**********************");
 //        logger.info("Displaying LawFirms Table");
 //        ArrayList<LawFirm> lawFirmList = lawFirmService.findAll();

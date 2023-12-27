@@ -15,4 +15,9 @@ public class AttorneyAssociationBarServiceImpl implements AttorneyAssociationBar
             this.attorneyAssociationBarRepository.insert(associationBarId, attorney);
         return attorney;
     }
+
+    @Override
+    public void deleteById(int attorneyId) {
+        this.attorneyAssociationBarRepository.deleteById(attorneyId);
+    }
 }

@@ -1,10 +1,7 @@
 package com.solvd.law_office.service.impl;
 
-import com.solvd.law_office.bin.AssociationBar;
 import com.solvd.law_office.bin.Attorney;
-import com.solvd.law_office.dao.AssociationBarRepository;
 import com.solvd.law_office.dao.AttorneyRepository;
-import com.solvd.law_office.dao.impl.AttorneyRepositoryImpl;
 import com.solvd.law_office.dao.impl.AttorneyRepositoryMyBatisImpl;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;
@@ -26,8 +23,21 @@ public class AttorneyServiceImpl implements AttorneyService {
         return attorney;
     }
 
+    @Override
+    public void deleteById(int attorneyId) {
+        attorneyAssociationBarService.deleteById(attorneyId);
+            attorneyRepository.deleteById(attorneyId);
+
+    }
+
+    public Attorney findById(int attorneyId) {
+        attorneyRepository.findById(attorneyId);
+        return null;
+    }
+
     public ArrayList<Attorney> findAll() {
         ArrayList<Attorney> attorneyList = attorneyRepository.findAll();
         return attorneyList;
     }
+
 }

@@ -53,7 +53,7 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
     }
 
     @Override
-    public void updateById(Attorney attorney, int attorney_id) {
+    public void updateCityById(int attorney_id, String city) {
 
     }
 
