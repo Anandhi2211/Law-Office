@@ -8,8 +8,10 @@ import com.solvd.law_office.service.impl.AttorneyServiceImpl;
 import com.solvd.law_office.service.impl.LawFirmServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.util.Assert;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -18,16 +20,43 @@ public class Main {
         LawFirmServiceImpl lawFirmService = new LawFirmServiceImpl();
         AttorneyServiceImpl attorneyService = new AttorneyServiceImpl();
         AssociationBarServiceImpl associationBarService = new AssociationBarServiceImpl();
-        logger.info("Inserting data into Association_Bars Table");
-        for (AssociationBar associationBar : data.associationBarCreation()) {
-            associationBarService.insert(associationBar);
+//        logger.info("Inserting data into Association_Bars Table");
+//        for (AssociationBar associationBar : data.associationBarCreation()) {
+//            associationBarService.insert(associationBar);
+//        }
+//        logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
+//        for (LawFirm lawFirm : data.lawFirmCreation()) {
+//            lawFirmService.insert(lawFirm);
+//        }
+//        logger.info("Updating Attorney's city by attorney ID");
+
+        ArrayList<Attorney> attorneyList =  attorneyService.findById(1001);
+
+        if(attorneyList!=null)
+        {
+            for(Attorney attorney : attorneyList){
+                logger.info("Name: "+attorney.getAttorneyName());
+                logger.info("Id: "+attorney.getAttorneyId());
+                logger.info("country: "+attorney.getCountry());
+                logger.info("city: "+attorney.getCity());
+                logger.info("LawFirm: "+attorney.getLawFirmId());
+            }
         }
-        logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
-        for (LawFirm lawFirm : data.lawFirmCreation()) {
-            lawFirmService.insert(lawFirm);
+
+
+        logger.info("Same country attorneys");
+        ArrayList<Attorney> attorneyList1 =  attorneyService.findByCountry("USA");
+        if(attorneyList1!=null){
+            for(Attorney attorney : attorneyList1){
+                logger.info("Name: "+attorney.getAttorneyName());
+                logger.info("Id: "+attorney.getAttorneyId());
+                logger.info("country: "+attorney.getCountry());
+                logger.info("city: "+attorney.getCity());
+                logger.info("LawFirm: "+attorney.getLawFirmId());
+            }
         }
-        logger.info("Updating Attorney's city by attorney ID");
-//        attorneyService.findById()
+
+
         logger.info("Deleting from 1 record from attorney Table as well as Attorney Association bar table since attorney id is a foreign Key");
         attorneyService.deleteById(1000);
 

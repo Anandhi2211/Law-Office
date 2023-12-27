@@ -30,10 +30,15 @@ public class AttorneyServiceImpl implements AttorneyService {
 
     }
 
-    public Attorney findById(int attorneyId) {
-        attorneyRepository.findById(attorneyId);
-        return null;
+    public ArrayList<Attorney> findById(int attorneyId) {
+        ArrayList<Attorney> attorneyList = attorneyRepository.findById(attorneyId);
+        return attorneyList;
     }
+
+    @Override
+    public ArrayList<Attorney> findByCountry(String country) {
+        ArrayList<Attorney> attorneyList = attorneyRepository.findByCountry(country);
+        return attorneyList;    }
 
     public ArrayList<Attorney> findAll() {
         ArrayList<Attorney> attorneyList = attorneyRepository.findAll();

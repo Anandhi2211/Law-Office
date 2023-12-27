@@ -18,7 +18,7 @@ public class AttorneyRepositoryMyBatisImpl implements AttorneyRepository {
     }
 
     @Override
-    public Optional<Attorney> findById(int attorneyId) {
+    public ArrayList<Attorney> findById(int attorneyId) {
 
         try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
             AttorneyRepository attorneyRepository = sqlSession.getMapper(AttorneyRepository.class);
@@ -65,4 +65,11 @@ public class AttorneyRepositoryMyBatisImpl implements AttorneyRepository {
     public ArrayList<Attorney> findAll() {
         return null;
     }
+
+    @Override
+    public ArrayList<Attorney> findByCountry(String country) {
+        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+            AttorneyRepository attorneyRepository = sqlSession.getMapper(AttorneyRepository.class);
+            return attorneyRepository.findByCountry(country);
+        }    }
 }

@@ -37,9 +37,9 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
     }
 
     @Override
-    public Optional<Attorney> findById(int attorney_id) {
+    public ArrayList<Attorney> findById(int attorney_id) {
 
-        return Optional.empty();
+        return null;
     }
 
     @Override
@@ -78,6 +78,11 @@ public class AttorneyRepositoryImpl implements AttorneyRepository {
             CONNECTION_POOL.releaseConnection(connection);
         }
         return attorneyList;
+    }
+
+    @Override
+    public ArrayList<Attorney> findByCountry(String country) {
+        return null;
     }
 
     private ArrayList<Attorney> displayTheResults(ResultSet resultSet) {

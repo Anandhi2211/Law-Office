@@ -10,8 +10,6 @@ public class Attorney    {
     private int lawFirmId;
     private ArrayList<Integer> clientIdList;
     private ArrayList<Integer> associationBarIdList;
-
-
     public int getLawFirmId() {
         return this.lawFirmId;
     }
