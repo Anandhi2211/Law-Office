@@ -13,9 +13,9 @@ public class DataGenerator {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
         LawFirm lawFirm = new LawFirm();
 //        Client client = new Client();
-        lawFirm.setLawFirmId(100);
-        lawFirm.setLawFirmName("Amarchand Co");
-        lawFirm.setAddress("14th Ava street");
+        lawFirm.setLawFirmId(105);
+        lawFirm.setLawFirmName("Amarnath Co");
+        lawFirm.setAddress("20 Glen street");
         lawFirm.setCountry("USA");
         lawFirm.setCity("Charlotte");
 
@@ -33,8 +33,8 @@ public class DataGenerator {
 
 
         Attorney attorney = new Attorney();
-        attorney.setAttorneyId(1002);
-        attorney.setAttorneyName("Kanmani");
+        attorney.setAttorneyId(1008);
+        attorney.setAttorneyName("Sumedha");
         attorney.setCountry("USA");
         attorney.setCity("Charlotte");
         attorney.setAssociationBarIdList(100);
@@ -43,8 +43,8 @@ public class DataGenerator {
         lawFirm.setAttorneyList(attorney);
 
         attorney = new Attorney();
-        attorney.setAttorneyId(1003);
-        attorney.setAttorneyName("Kavitha");
+        attorney.setAttorneyId(1009);
+        attorney.setAttorneyName("Kavinya");
         attorney.setCountry("USA");
         attorney.setCity("Harrisburg");
         lawFirm.setAttorneyList(attorney);
@@ -52,9 +52,9 @@ public class DataGenerator {
 
         lawFirm = new LawFirm();
 //        client = new Client();
-        lawFirm.setLawFirmId(101);
-        lawFirm.setLawFirmName("Anand & Anand");
-        lawFirm.setAddress("90 BROADWAY LANE");
+        lawFirm.setLawFirmId(107);
+        lawFirm.setLawFirmName("Anand and Laks");
+        lawFirm.setAddress("202 Paris LANE");
         lawFirm.setCountry("USA");
         lawFirm.setCity("ohio");
 
@@ -77,8 +77,8 @@ public class DataGenerator {
 //        lawFirm.setClientList(client);
 
         attorney = new Attorney();
-        attorney.setAttorneyId(1000);
-        attorney.setAttorneyName("Lakshmi");
+        attorney.setAttorneyId(1010);
+        attorney.setAttorneyName("Nithya");
         attorney.setCountry("USA");
         attorney.setCity("cincinnati");
         attorney.setAssociationBarIdList(100);
@@ -95,8 +95,8 @@ public class DataGenerator {
 
         attorney = new Attorney();
 //        associationBar = new AssociationBar();
-        attorney.setAttorneyId(1001);
-        attorney.setAttorneyName("Nithya");
+        attorney.setAttorneyId(1011);
+        attorney.setAttorneyName("Suganya");
         attorney.setCountry("USA");
         attorney.setCity("Dayton");
         attorney.setAssociationBarIdList(102);
@@ -114,28 +114,28 @@ public class DataGenerator {
     public ArrayList<AssociationBar> associationBarCreation() {
         ArrayList<AssociationBar> associationBarArrayList = new ArrayList<>();
         AssociationBar associationBar = new AssociationBar();
-        associationBar.setAssociationBarId(100);
-        associationBar.setAssociationBarName("Akron Bar");
+        associationBar.setAssociationBarId(111);
+        associationBar.setAssociationBarName("Union Bar");
         associationBarArrayList.add(associationBar);
 
         associationBar = new AssociationBar();
-        associationBar.setAssociationBarId(101);
-        associationBar.setAssociationBarName("Butler County Bar");
+        associationBar.setAssociationBarId(112);
+        associationBar.setAssociationBarName("Mason County Bar");
         associationBarArrayList.add(associationBar);
 
         associationBar = new AssociationBar();
-        associationBar.setAssociationBarId(102);
-        associationBar.setAssociationBarName("Cleveland Bar");
+        associationBar.setAssociationBarId(113);
+        associationBar.setAssociationBarName("Harrisburg Bar");
         associationBarArrayList.add(associationBar);
 
         associationBar = new AssociationBar();
-        associationBar.setAssociationBarId(103);
-        associationBar.setAssociationBarName("Dayton Bar");
+        associationBar.setAssociationBarId(114);
+        associationBar.setAssociationBarName("Troy Bar");
         associationBarArrayList.add(associationBar);
 
         associationBar = new AssociationBar();
-        associationBar.setAssociationBarId(104);
-        associationBar.setAssociationBarName("Cincinnati Bar");
+        associationBar.setAssociationBarId(115);
+        associationBar.setAssociationBarName("Miami Bar");
         associationBarArrayList.add(associationBar);
 
         return associationBarArrayList;
