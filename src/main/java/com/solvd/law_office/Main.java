@@ -20,18 +20,16 @@ public class Main {
         LawFirmServiceImpl lawFirmService = new LawFirmServiceImpl();
         AttorneyServiceImpl attorneyService = new AttorneyServiceImpl();
         AssociationBarServiceImpl associationBarService = new AssociationBarServiceImpl();
-//        logger.info("Inserting data into Association_Bars Table");
-//        for (AssociationBar associationBar : data.associationBarCreation()) {
-//            associationBarService.insert(associationBar);
-//        }
-//        logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
-//        for (LawFirm lawFirm : data.lawFirmCreation()) {
-//            lawFirmService.insert(lawFirm);
-//        }
-//        logger.info("Updating Attorney's city by attorney ID");
-
+        logger.info("Inserting data into Association_Bars Table");
+        for (AssociationBar associationBar : data.associationBarCreation()) {
+            associationBarService.insert(associationBar);
+        }
+        logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
+        for (LawFirm lawFirm : data.lawFirmCreation()) {
+            lawFirmService.insert(lawFirm);
+        }
+        logger.info("Finding Attorney by ID");
         ArrayList<Attorney> attorneyList =  attorneyService.findById(1001);
-
         if(attorneyList!=null)
         {
             for(Attorney attorney : attorneyList){
@@ -42,9 +40,7 @@ public class Main {
                 logger.info("LawFirm: "+attorney.getLawFirmId());
             }
         }
-
-
-        logger.info("Same country attorneys");
+        logger.info("Finding Attorney By country Name");
         ArrayList<Attorney> attorneyList1 =  attorneyService.findByCountry("USA");
         if(attorneyList1!=null){
             for(Attorney attorney : attorneyList1){
@@ -55,9 +51,7 @@ public class Main {
                 logger.info("LawFirm: "+attorney.getLawFirmId());
             }
         }
-
-
-        logger.info("Deleting from 1 record from attorney Table as well as Attorney Association bar table since attorney id is a foreign Key");
+        logger.info("Deleting attorney from attorney Table as well as from Attorney Association bar table since attorney id is a foreign Key");
         attorneyService.deleteById(1000);
 
 //        logger.info("**********************");
