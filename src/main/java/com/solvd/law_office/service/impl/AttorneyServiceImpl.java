@@ -8,6 +8,7 @@ import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class AttorneyServiceImpl implements AttorneyService {
     private final AttorneyRepository attorneyRepository;
@@ -34,8 +35,8 @@ public class AttorneyServiceImpl implements AttorneyService {
 
     }
 
-    public ArrayList<Attorney> findById(int attorneyId) {
-        ArrayList<Attorney> attorneyList = attorneyRepository.findById(attorneyId);
+    public Optional<Attorney> findById(int attorneyId) {
+        Optional<Attorney> attorneyList = attorneyRepository.findById(attorneyId);
         return attorneyList;
     }
 
@@ -43,6 +44,17 @@ public class AttorneyServiceImpl implements AttorneyService {
     public ArrayList<Attorney> findByCountry(String country) {
         ArrayList<Attorney> attorneyList = attorneyRepository.findByCountry(country);
         return attorneyList;    }
+
+    @Override
+    public void updateCityById(int attorneyId, String city) {
+        attorneyRepository.updateCityById(attorneyId,city);
+    }
+
+    @Override
+    public void addAssociationBar(int attorneyId, int associationBarId) {
+        attorneyAssociationBarService.addAssociationBar(attorneyId,associationBarId);
+    }
+
 
     public ArrayList<Attorney> findAll() {
         ArrayList<Attorney> attorneyList = attorneyRepository.findAll();

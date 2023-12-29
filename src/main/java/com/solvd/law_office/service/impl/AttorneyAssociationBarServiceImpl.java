@@ -20,4 +20,9 @@ public class AttorneyAssociationBarServiceImpl implements AttorneyAssociationBar
     public void deleteById(int attorneyId) {
         this.attorneyAssociationBarRepository.deleteById(attorneyId);
     }
+
+    @Override
+    public void addAssociationBar(int attorneyId, int associationBarId) {
+        this.attorneyAssociationBarRepository.addAssociationBarId(attorneyId,associationBarId);
+    }
 }

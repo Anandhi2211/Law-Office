@@ -18,7 +18,7 @@ public class AttorneyRepositoryMyBatisImpl implements AttorneyRepository {
     }
 
     @Override
-    public ArrayList<Attorney> findById(int attorneyId) {
+    public Optional<Attorney> findById(int attorneyId) {
 
         try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
             AttorneyRepository attorneyRepository = sqlSession.getMapper(AttorneyRepository.class);

@@ -30,7 +30,7 @@
     </select>
 
     <update id="updateCityById" >
-        UPDATE attorneys SET city = #{city.city} WHERE attorney_id = #{attorney.attorneyId};
+        UPDATE attorneys SET city = #{city} WHERE attorney_id = #{attorneyId};
     </update>
 
     <delete id="deleteById">

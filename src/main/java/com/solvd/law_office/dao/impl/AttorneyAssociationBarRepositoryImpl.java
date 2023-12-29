@@ -36,4 +36,9 @@ public class AttorneyAssociationBarRepositoryImpl implements AttorneyAssociation
     public void deleteById(int attorneyId) {
 
     }
+
+    @Override
+    public void addAssociationBarId(int attorneyId, int associationBarId) {
+
+    }
 }

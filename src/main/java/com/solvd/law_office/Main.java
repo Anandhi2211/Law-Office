@@ -4,14 +4,13 @@ import com.solvd.law_office.bin.AreaOfPractice;
 import com.solvd.law_office.bin.AssociationBar;
 import com.solvd.law_office.bin.Attorney;
 import com.solvd.law_office.bin.LawFirm;
-import com.solvd.law_office.service.impl.AreaOfPracticeServiceImpl;
-import com.solvd.law_office.service.impl.AssociationBarServiceImpl;
-import com.solvd.law_office.service.impl.AttorneyServiceImpl;
-import com.solvd.law_office.service.impl.LawFirmServiceImpl;
+import com.solvd.law_office.service.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -20,6 +19,7 @@ public class Main {
         DataGenerator data = new DataGenerator();
         LawFirmServiceImpl lawFirmService = new LawFirmServiceImpl();
         AttorneyServiceImpl attorneyService = new AttorneyServiceImpl();
+        AttorneyAssociationBarServiceImpl attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
         AssociationBarServiceImpl associationBarService = new AssociationBarServiceImpl();
         AreaOfPracticeServiceImpl areaOfPracticesService = new AreaOfPracticeServiceImpl();
         logger.info("Inserting data into Association_Bars Table");
@@ -31,9 +31,10 @@ public class Main {
             lawFirmService.insert(lawFirm);
         }
         logger.info("Finding Attorney by ID");
-        ArrayList<Attorney> attorneyList = attorneyService.findById(1001);
-        if (attorneyList != null) {
-            for (Attorney attorney : attorneyList) {
+        Optional<Attorney> attorneyList = attorneyService.findById(1001);
+        if (attorneyList.isPresent()) {
+            ArrayList<Attorney> newList = (ArrayList<Attorney>) attorneyList.stream().collect(Collectors.toList());
+            for (Attorney attorney : newList) {
                 logger.info("Name: " + attorney.getAttorneyName());
                 logger.info("Id: " + attorney.getAttorneyId());
                 logger.info("country: " + attorney.getCountry());
@@ -55,10 +56,13 @@ public class Main {
         }
         logger.info("Deleting 1 Association bar from Association bar table as well as attorney Association bar table");
         associationBarService.deleteById(101);
+        logger.info("Updating Attorney city");
+        attorneyService.updateCityById(1000, "Dayton");
+        logger.info("Adding Association Bar to an attorney");
+        attorneyAssociationBarService.addAssociationBar(1000, 102);
 
 //        logger.info("Deleting attorney from attorney Table as well as from Attorney Association bar table since attorney id is a foreign Key");
 //        attorneyService.deleteById(1001);
-
 //        logger.info("**********************");
 //        logger.info("Displaying LawFirms Table");
 //        ArrayList<LawFirm> lawFirmList = lawFirmService.findAll();

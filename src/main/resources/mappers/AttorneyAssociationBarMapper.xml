@@ -13,6 +13,14 @@
         delete from attorney_association_bars where association_bar_id = #{associationBarId}
     </delete>
 
+
+
+    <insert id="addAssociationBarId" useGeneratedKeys="true">
+        insert into attorney_association_bars(attorney_id,association_bar_id)
+        values (#{attorneyId},#{associationBarId})
+    </insert>
+
+
     <resultMap id="AttorneyAssociationBarResultMap" type="com.solvd.law_office.bin.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>
         <result column="association_bar_id" property="associationBarId"/>

@@ -15,7 +15,6 @@ public class AttorneyAssociationBarRepositoryMyBatisImpl implements AttorneyAsso
         }
 
     }
-
     @Override
     public void deleteById(int attorneyId) {
             try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
@@ -23,4 +22,13 @@ public class AttorneyAssociationBarRepositoryMyBatisImpl implements AttorneyAsso
                 attorneyAssociationBarRepository.deleteById(attorneyId);
             }
     }
+
+    @Override
+    public void addAssociationBarId(int attorneyId, int associationBarId) {
+        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+            AttorneyAssociationBarRepository attorneyAssociationBarRepository = sqlSession.getMapper(AttorneyAssociationBarRepository.class);
+            attorneyAssociationBarRepository.addAssociationBarId(attorneyId,associationBarId);
+        }
+    }
+
 }
