@@ -6,6 +6,5 @@ import org.apache.ibatis.annotations.Param;
 
 public interface AttorneyAssociationBarRepository {
     void insert(@Param("associationBarId") int associationBarId, @Param("attorney") Attorney attorney);
-
     void deleteById( int attorneyId);
 }

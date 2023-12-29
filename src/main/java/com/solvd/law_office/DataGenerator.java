@@ -1,9 +1,6 @@
 package com.solvd.law_office;
 
-import com.solvd.law_office.bin.AssociationBar;
-import com.solvd.law_office.bin.Attorney;
-import com.solvd.law_office.bin.Client;
-import com.solvd.law_office.bin.LawFirm;
+import com.solvd.law_office.bin.*;
 
 import java.util.ArrayList;
 
@@ -139,5 +136,14 @@ public class DataGenerator {
         associationBarArrayList.add(associationBar);
 
         return associationBarArrayList;
+    }
+
+    public ArrayList<AreaOfPractice> AreaOfPractices() {
+        ArrayList<AreaOfPractice> areaOfPracticeList = new ArrayList<>();
+        AreaOfPractice areaOfPractice = new AreaOfPractice();
+        areaOfPractice.setAreaOfPracticeId(10);
+        areaOfPractice.setAreaOfPracticeName("Criminal Law");
+        areaOfPracticeList.add(areaOfPractice);
+        return areaOfPracticeList;
     }
 }

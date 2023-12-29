@@ -22,6 +22,5 @@ public class AttorneyAssociationBarRepositoryMyBatisImpl implements AttorneyAsso
                 AttorneyAssociationBarRepository attorneyAssociationBarRepository = sqlSession.getMapper(AttorneyAssociationBarRepository.class);
                 attorneyAssociationBarRepository.deleteById(attorneyId);
             }
-
     }
 }

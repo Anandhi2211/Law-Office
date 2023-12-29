@@ -31,4 +31,9 @@ public class AssociationBarRepositoryImpl implements AssociationBarRepository {
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
+
+    @Override
+    public void deleteById(int associationBarId) {
+
+    }
 }

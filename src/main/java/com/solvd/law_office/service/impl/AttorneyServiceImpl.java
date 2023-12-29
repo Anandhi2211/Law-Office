@@ -3,6 +3,7 @@ package com.solvd.law_office.service.impl;
 import com.solvd.law_office.bin.Attorney;
 import com.solvd.law_office.dao.AttorneyRepository;
 import com.solvd.law_office.dao.impl.AttorneyRepositoryMyBatisImpl;
+import com.solvd.law_office.service.AttorneyAreaOfPracticeService;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;
 
@@ -11,10 +12,12 @@ import java.util.ArrayList;
 public class AttorneyServiceImpl implements AttorneyService {
     private final AttorneyRepository attorneyRepository;
     private final AttorneyAssociationBarService attorneyAssociationBarService;
+    private final AttorneyAreaOfPracticeService attorneyAreaOfPracticeService;
 
     public AttorneyServiceImpl() {
         this.attorneyRepository = new AttorneyRepositoryMyBatisImpl();
         this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
+        this.attorneyAreaOfPracticeService = new AttorneyAreaOfPracticeServiceImpl();
     }
 
     @Override
@@ -26,6 +29,7 @@ public class AttorneyServiceImpl implements AttorneyService {
     @Override
     public void deleteById(int attorneyId) {
         attorneyAssociationBarService.deleteById(attorneyId);
+        attorneyAreaOfPracticeService.deleteById(attorneyId);
             attorneyRepository.deleteById(attorneyId);
 
     }

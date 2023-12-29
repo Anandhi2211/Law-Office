@@ -19,4 +19,10 @@ public class AssociationBarServiceImpl implements AssociationBarService {
         associationBarRepository.insert(associationBar);
         return associationBar;
     }
+
+    @Override
+    public void deleteById(int associationBarId) {
+        attorneyAssociationBarService.deleteById(associationBarId);
+        associationBarRepository.deleteById(associationBarId);
+    }
 }
