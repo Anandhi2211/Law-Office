@@ -2,8 +2,6 @@ package com.solvd.law_office.dao.impl;
 
 import com.solvd.law_office.bin.AssociationBar;
 import com.solvd.law_office.dao.AssociationBarRepository;
-import com.solvd.law_office.dao.AttorneyAssociationBarRepository;
-import com.solvd.law_office.dao.AttorneyRepository;
 import com.solvd.law_office.dao.DaoConfig;
 import org.apache.ibatis.session.SqlSession;
 

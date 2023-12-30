@@ -1,0 +1,56 @@
+<law-firm>
+    <id>100</id>
+    <name>AAA</name>
+    <address></address>
+    <country></country>
+    <city></city>
+    <attorneys>
+        <association-bars>
+
+        </association-bars>
+    </attorneys>
+    <clients>
+        <client id = "200">
+            <name>Thamarai</name>
+            <country>USA</country>
+            <city>Cincinnati</city>
+            <cases>
+                <case id ="5000">
+                    <description>Hired a builder to renovate Kitchen which he totally ruined it</description>
+                    <category_id>1</category_id>
+                    <court_id>11</court_id>
+                    <attorney_id>1001</attorney_id>
+                </case>
+                <case id = "5005">
+                    <description>some random threaten calls coming</description>
+                    <category_id>3</category_id>
+                    <court_id>33</court_id>
+                    <attorney_id>1001</attorney_id>
+                </case>
+            </cases>
+        </client>
+        <client id = "203">
+            <name>Rajeshwari</name>
+            <country>USA</country>
+            <city>charlotte</city>
+            <cases>
+                <case id ="5003">
+                    <description>someone trying to treaten and ask money</description>
+                    <category_id>3</category_id>
+                    <court_id>11</court_id>
+                    <attorney_id>1002</attorney_id>
+                </case>
+                <case id = "5004">
+                    <description>Money gone in share market</description>
+                    <category_id>2</category_id>
+                    <court_id>22</court_id>
+                    <attorney_id>1005</attorney_id>
+                </case>
+            </cases>
+        </client>
+    </clients>
+
+
+</law-firm>
+
+

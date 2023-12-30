@@ -18,11 +18,8 @@ public class DaoConfig {
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
     public static SqlSessionFactory getSessionFactory() {
         return sessionFactory;
     }
-
-
 }

@@ -1,0 +1,46 @@
+<case-court-judges>
+    <case-categorys>
+        <case-category>
+            <id>4</id>
+            <name>Family</name>
+        </case-category>
+
+        <case-category>
+            <id>5</id>
+            <name>Military</name>
+        </case-category>
+
+    </case-categorys>
+    <judges>
+        <judge>
+            <judge_id>5555</judge_id>
+            <judge_name>Kumar</judge_name>
+        </judge>
+            <judge_id>6666</judge_id>
+            <judge_name>Kiran</judge_name>
+        <judge>
+            <judge_id>7777</judge_id>
+            <judge_name>Anil</judge_name>
+        </judge>
+    </judges>
+    <courts>
+        <court id ="44">
+            <country>USA</country>
+            <city>Dalls</city>
+            <judge_id>6666</judge_id>
+        </court>
+
+        <court id ="55">
+            <country>USA</country>
+            <city>NewYork</city>
+            <judge_id>7777</judge_id>
+        </court>
+    </courts>
+
+    <cases>
+        <case id="100">
+
+        </case>
+    </cases>
+
+</case-court-judges>

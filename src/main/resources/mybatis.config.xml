@@ -24,7 +24,5 @@
         <mapper resource="mappers/AreaOfPracticeMapper.xml"/>
         <mapper resource="mappers/AttorneyAreaOfPracticeMapper.xml"/>
 
-
-
     </mappers>
 </configuration>
