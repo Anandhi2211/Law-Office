@@ -1,14 +1,22 @@
 package com.solvd.law_office.bin;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 
+@XmlRootElement(name ="attorney")
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Attorney    {
+    @XmlAttribute(name = "id")
     private int attorneyId;
     private String attorneyName;
     private String country;
     private String city;
     private int lawFirmId;
     private ArrayList<Integer> clientIdList;
+    @XmlElementWrapper(name ="associationBarIdList")
+    @XmlElement(name ="associationBarId")
     private ArrayList<Integer> associationBarIdList;
     public int getLawFirmId() {
         return this.lawFirmId;

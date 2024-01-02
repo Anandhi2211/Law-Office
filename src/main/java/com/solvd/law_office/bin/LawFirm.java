@@ -1,15 +1,35 @@
 package com.solvd.law_office.bin;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 
+
+@XmlRootElement(name="lawfirm")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LawFirm {
     private int lawFirmId;
     private String lawFirmName;
     private String address;
     private String country;
     private String city;
+    @XmlElementWrapper(name = "attorneyList")
+    @XmlElement(name="attorney")
     private ArrayList<Attorney> attorneyList;
+    @XmlElementWrapper(name="awardList")
+    @XmlElement(name="award")
+    private ArrayList<Award> awardList;
     private ArrayList<Client> clientList;
+
+    public ArrayList<Award> getAwardList() {
+        return this.awardList;
+    }
+
+    public void setAwardList(Award award) {
+        this.awardList.add(award);
+    }
+
+
     public int getLawFirmId() {
         return this.lawFirmId;
     }

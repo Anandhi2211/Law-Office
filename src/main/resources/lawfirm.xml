@@ -2,7 +2,6 @@
                   xsi:noNameSpaceSchemaLocation="lawfirm.xsd">
 
     <courts>
-
         <court id ="44">
             <country>USA</country>
             <city>Dalls</city>
@@ -36,6 +35,5 @@
                 </case>
             </cases>
         </court>
-
     </courts>
 </lawfirm>

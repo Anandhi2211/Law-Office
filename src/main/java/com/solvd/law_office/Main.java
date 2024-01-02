@@ -3,6 +3,7 @@ package com.solvd.law_office;
 import com.solvd.law_office.bin.*;
 import com.solvd.law_office.service.CourtService;
 import com.solvd.law_office.service.impl.*;
+import jakarta.xml.bind.JAXBContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
@@ -68,33 +69,29 @@ public class Main {
 //        attorneyService.updateCityById(1000, "Dayton");
 //        logger.info("Adding Association Bar to an attorney");
 //        attorneyAssociationBarService.addAssociationBar(1000, 102);
-
-        DomParser domParser = new DomParser();
-        domParser.initializer("src/main/resources/lawfirm.xml");
-
-        ArrayList<Court> courtList;
-        courtList = domParser.courtParser();
-
-        JudgeServiceImpl judgeService = new JudgeServiceImpl();
-        CaseServiceImpl caseService = new CaseServiceImpl();
-        CourtService courtService = new CourtServiceImpl();
-        for(Court court : courtList){
-//            logger.info(court);
-            Judge judge = court.getJudge();
-            judgeService.insert(judge);
-            courtService.insert(court,judge.getJudgeId());
-
-
-
-
-            ArrayList<CaseFiled> caseFiledList = court.getCaseFiledList();
-            for(CaseFiled caseFiled : caseFiledList){
-                caseService.insert(caseFiled);
-            }
-
-        }
+//        DomParser domParser = new DomParser();
+//        domParser.initializer("src/main/resources/lawfirm.xml");
+//        ArrayList<Court> courtList;
+//        courtList = domParser.courtParser();
+//        JudgeServiceImpl judgeService = new JudgeServiceImpl();
+//        CaseServiceImpl caseService = new CaseServiceImpl();
+//        CourtService courtService = new CourtServiceImpl();
+//        for (Court court : courtList) {
+//            Judge judge = court.getJudge();
+//            judgeService.insert(judge);
+//            courtService.insert(court, judge.getJudgeId());
+//            ArrayList<CaseFiled> caseFiledList = court.getCaseFiledList();
+//            for (CaseFiled caseFiled : caseFiledList) {
+//                caseService.insert(caseFiled);
+//            }
+//
+//        }
+        File file = new File("src/main/resources/lawfirmjaxb.xml");
+        JaxbParser jaxbParser = new JaxbParser();
+        jaxbParser.initializer(file);
 
 
 
-        }
+
+    }
 }

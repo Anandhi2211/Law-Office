@@ -7,8 +7,6 @@
         insert into cases(case_id,case_description,client_id,attorney_id,case_category_id,court_id)
         values (#{case.caseFiledId},#{case.caseDescription},#{case.clientId},#{case.attorneyId},#{case.caseCategoryId},#{case.courtId})
     </insert>
-
-
     <resultMap id="CaseFiledResultMap" type="com.solvd.law_office.bin.CaseFiled" autoMapping="false">
         <id column="case_id" property="caseFiledId"/>
         <result column="case_description" property="caseDescription"/>
@@ -17,7 +15,4 @@
         <result column="case_category_id" property="caseCategoryId"/>
         <result column="court_id" property="courtId"/>
     </resultMap>
-
-
-
 </mapper>
