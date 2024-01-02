@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="case-type">
+        <xs:all>
+            <xs:element name="case_description" type="xs:string"/>
+            <xs:element name="client_id" type="xs:int"/>
+            <xs:element name="attorney_id" type="xs:int"/>
+            <xs:element name="case_category_id" type="xs:int"/>
+            <xs:element name="court_id" type="xs:int"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="cases-type">
+        <xs:sequence>
+            <xs:element name="case" type="case-type">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="judge-type">
+        <xs:all>
+            <xs:element name="judge_name" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="court-Type">
+        <xs:all>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="judge" type="judge-type"/>
+            <xs:element name="cases" type="cases-type"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="lawfirmType">
+        <xs:sequence>
+            <xs:element name="courts" type="court-Type">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="lawfirm" type="lawfirmType"/>
+</xs:schema>

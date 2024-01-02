@@ -1,0 +1,41 @@
+<lawfirm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNameSpaceSchemaLocation="lawfirm.xsd">
+
+    <courts>
+
+        <court id ="44">
+            <country>USA</country>
+            <city>Dalls</city>
+            <judge id="6666" name = "Kiran"/>
+            <cases>
+                <case id="5010">
+                    <case_description>Military violence</case_description>
+                    <client_id>205</client_id>
+                    <attorney_id>1005</attorney_id>
+                    <case_category_id>1</case_category_id>
+                </case>
+                <case id="5011">
+                    <case_description>Money gone in share market</case_description>
+                    <client_id>202</client_id>
+                    <attorney_id>1002</attorney_id>
+                    <case_category_id>2</case_category_id>
+                </case>
+            </cases>
+        </court>
+
+        <court id ="55">
+            <country>USA</country>
+            <city>NewYork</city>
+            <judge id="7777" name = "Anil"/>
+            <cases>
+                <case id="5009">
+                    <case_description>Money gone in share market</case_description>
+                    <client_id>204</client_id>
+                    <attorney_id>1002</attorney_id>
+                    <case_category_id>2</case_category_id>
+                </case>
+            </cases>
+        </court>
+
+    </courts>
+</lawfirm>

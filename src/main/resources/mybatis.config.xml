@@ -23,6 +23,12 @@
         <mapper resource="mappers/AttorneyAssociationBarMapper.xml"/>
         <mapper resource="mappers/AreaOfPracticeMapper.xml"/>
         <mapper resource="mappers/AttorneyAreaOfPracticeMapper.xml"/>
+        <mapper resource="mappers/JudgeMapper.xml"/>
+        <mapper resource="mappers/CourtMapper.xml"/>
+        <mapper resource="mappers/CaseFiledMapper.xml"/>
+
+
+
 
     </mappers>
 </configuration>

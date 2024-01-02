@@ -1,16 +1,17 @@
 <case-court-judges>
-    <case-categorys>
-        <case-category>
-            <id>4</id>
-            <name>Family</name>
-        </case-category>
 
-        <case-category>
-            <id>5</id>
-            <name>Military</name>
-        </case-category>
+<!--    <case-categorys>-->
+<!--        <case-category>-->
+<!--            <id>4</id>-->
+<!--            <name>Family</name>-->
+<!--        </case-category>-->
 
-    </case-categorys>
+<!--        <case-category>-->
+<!--            <id>5</id>-->
+<!--            <name>Military</name>-->
+<!--        </case-category>-->
+<!--    </case-categorys>-->
+
     <judges>
         <judge>
             <judge_id>5555</judge_id>
@@ -23,13 +24,13 @@
             <judge_name>Anil</judge_name>
         </judge>
     </judges>
+
     <courts>
         <court id ="44">
             <country>USA</country>
             <city>Dalls</city>
             <judge_id>6666</judge_id>
         </court>
-
         <court id ="55">
             <country>USA</country>
             <city>NewYork</city>
@@ -38,9 +39,21 @@
     </courts>
 
     <cases>
-        <case id="100">
-
+        <case id="5009">
+            <case_description>Money gone in share market</case_description>
+            <client_id>204</client_id>
+            <attorney_id>1002</attorney_id>
+            <case_category_id>2</case_category_id>
+            <court_id>55</court_id>
         </case>
+        <case id="5010">
+            <case_description>Military violence</case_description>
+            <client_id>205</client_id>
+            <attorney_id>1005</attorney_id>
+            <case_category_id>5</case_category_id>
+            <court_id>44</court_id>
+        </case>
+
     </cases>
 
 </case-court-judges>
