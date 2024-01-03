@@ -3,15 +3,6 @@ package com.solvd.law_office.bin;
 public class Judge {
     private int judgeId;
     private String judgeName;
-
-    @Override
-    public String toString() {
-        return "Judge{" +
-                "judgeId=" + judgeId +
-                ", judgeName='" + judgeName + '\'' +
-                '}';
-    }
-
     public Judge() {
     }
 

@@ -14,7 +14,14 @@ public class Attorney    {
     private String country;
     private String city;
     private int lawFirmId;
-    private ArrayList<Integer> clientIdList;
+
+    public ArrayList<Client> getClientList() {
+        return this.clientList;
+    }
+    public void setClientList(Client client) {
+        this.clientList.add(client);
+    }
+    private ArrayList<Client> clientList;
     @XmlElementWrapper(name ="associationBarIdList")
     @XmlElement(name ="associationBarId")
     private ArrayList<Integer> associationBarIdList;
@@ -23,12 +30,6 @@ public class Attorney    {
     }
     public void setLawFirmId(int lawFirmId) {
         this.lawFirmId = lawFirmId;
-    }
-    public ArrayList<Integer> getClientIdList() {
-        return this.clientIdList;
-    }
-    public void setClientIdList(Integer clientId) {
-        this.clientIdList.add(clientId);
     }
     public void setAssociationBarIdList( Integer associationBarId) {
         if(this.associationBarIdList==null){

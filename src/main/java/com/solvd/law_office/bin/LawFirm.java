@@ -28,8 +28,6 @@ public class LawFirm {
     public void setAwardList(Award award) {
         this.awardList.add(award);
     }
-
-
     public int getLawFirmId() {
         return this.lawFirmId;
     }

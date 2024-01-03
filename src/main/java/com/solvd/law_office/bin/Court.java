@@ -3,17 +3,6 @@ package com.solvd.law_office.bin;
 import java.util.ArrayList;
 
 public class Court {
-    @Override
-    public String toString() {
-        return "Court{" +
-                "courtId=" + courtId +
-                ", country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                ", judge=" + judge +
-                ", caseFiledList=" + caseFiledList +
-                '}';
-    }
-
     private int courtId;
     private String country;
     private String city;

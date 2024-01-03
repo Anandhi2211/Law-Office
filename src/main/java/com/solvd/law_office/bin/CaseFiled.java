@@ -1,21 +1,12 @@
 package com.solvd.law_office.bin;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+
 public class CaseFiled {
     private int caseFiledId;
     private String caseDescription;
-
-    @Override
-    public String toString() {
-        return "CaseFiled{" +
-                "caseFiledId=" + caseFiledId +
-                ", caseDescription='" + caseDescription + '\'' +
-                ", clientId=" + clientId +
-                ", courtId=" + courtId +
-                ", caseCategoryId=" + caseCategoryId +
-                ", attorneyId=" + attorneyId +
-                '}';
-    }
-
     private int clientId;
     private int courtId;
     private int caseCategoryId;

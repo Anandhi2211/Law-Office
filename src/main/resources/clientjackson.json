@@ -1,0 +1,34 @@
+{
+  "clientId": 208,
+  "clientName": "Sumedha",
+  "country": "USA",
+  "city": "Apex",
+  "caseFiledList": [
+    {
+      "caseFiledId": 5012,
+      "caseDescription": "some random threaten calls coming",
+      "attorneyId": 1010,
+      "caseCategoryId": 2,
+      "courtId": 33
+    },
+    {
+      "caseFiledId": 5013,
+      "caseDescription": "applied load to a bank and it bankrupted",
+      "attorneyId": 1009,
+      "caseCategoryId": 1,
+      "courtId": 22
+    }
+  ],
+  "billDetailList": [
+    {
+      "billInvoiceNumber": 65986554,
+      "billAmount": 3500,
+      "lawFirmId": 102
+    },
+    {
+      "billInvoiceNumber": 78542154,
+      "billAmount": 4500,
+      "lawFirmId": 101
+    }
+  ]
+}
