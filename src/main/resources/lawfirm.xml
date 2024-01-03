@@ -1,5 +1,5 @@
 <lawfirm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:noNameSpaceSchemaLocation="lawfirm.xsd">
+                  xsi:noNamespaceSchemaLocation="lawfirm.xsd">
 
     <courts>
         <court id ="44">

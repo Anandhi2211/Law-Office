@@ -91,12 +91,12 @@ public class Main {
         }
 
 
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.readValue(file,LawDivison.class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            mapper.readValue(file,LawDivison.class);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 }

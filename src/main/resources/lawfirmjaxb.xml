@@ -1,5 +1,8 @@
-<lawfirmjaxb xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNameSpaceSchemaLocation="lawfirmjaxb.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<lawfirm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="lawfirmjaxb.xsd">
 
     <lawFirmId>106</lawFirmId>
     <lawFirmName>Norris Persinger</lawFirmName>
@@ -25,7 +28,6 @@
                 <associationBarId>106</associationBarId>
             </associationBarIdList>
         </attorney>
-
         <attorney id ="1013">
             <attorneyName>Kadhir</attorneyName>
             <country>USA</country>
@@ -36,7 +38,6 @@
                 <associationBarId>106</associationBarId>
             </associationBarIdList>
         </attorney>
-
         <attorney id ="1014">
             <attorneyName>Kumar</attorneyName>
             <country>USA</country>
@@ -48,4 +49,4 @@
             </associationBarIdList>
         </attorney>
     </attorneyList>
-</lawfirmjaxb>
+</lawfirm>

@@ -2,39 +2,38 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-
     <xs:complexType name="associationBarIdListType">
         <xs:sequence>
-            <xs:element name="associationBarId" type="xs:int"/>
+            <xs:element name="associationBarId" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="attorneyType">
-        <xs:all>
+        <xs:sequence>
             <xs:element name="attorneyName" type="xs:string"/>
             <xs:element name="country" type="xs:string"/>
             <xs:element name="city" type="xs:string"/>
             <xs:element name="associationBarIdList" type="associationBarIdListType"/>
-        </xs:all>
+        </xs:sequence>
         <xs:attribute name="id" type="xs:int"/>
     </xs:complexType>
 
     <xs:complexType name="attorneyListType">
         <xs:sequence>
-            <xs:element name="attorney" type="attorneyType"/>
+            <xs:element name="attorney" type="attorneyType" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="awardType">
-        <xs:all>
-            <xs:element name="awardName" type="xs:string"/>
-        </xs:all>
+    <xs:complexType name="awardType" >
+        <xs:sequence>
+            <xs:element name="awardName" type="xs:string" />
+        </xs:sequence>
         <xs:attribute name="id" type="xs:int"/>
     </xs:complexType>
     
     <xs:complexType name="awardListType">
         <xs:sequence>
-            <xs:element name="award" type="awardType"/>
+            <xs:element name="award" type="awardType" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
