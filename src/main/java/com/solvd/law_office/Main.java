@@ -1,7 +1,5 @@
 package com.solvd.law_office;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.law_office.bin.*;
 import com.solvd.law_office.service.CourtService;
 import com.solvd.law_office.service.impl.*;
@@ -9,8 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
-import java.io.IOException;
-import java.lang.ref.Reference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +19,6 @@ public class Main {
         DataGenerator data = new DataGenerator();
         LawFirmServiceImpl lawFirmService = new LawFirmServiceImpl();
         AttorneyServiceImpl attorneyService = new AttorneyServiceImpl();
-        AwardServiceImpl awardService = new AwardServiceImpl();
         LawFirmAwardServiceImpl lawFirmAwardService = new LawFirmAwardServiceImpl();
         AttorneyAssociationBarServiceImpl attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
         AssociationBarServiceImpl associationBarService = new AssociationBarServiceImpl();
