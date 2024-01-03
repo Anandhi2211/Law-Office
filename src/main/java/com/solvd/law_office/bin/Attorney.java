@@ -36,10 +36,13 @@ public class Attorney    {
         }
         this.associationBarIdList.add(associationBarId);    }
     public ArrayList<Integer> getAssociationBarIdList() {
+        if(this.associationBarIdList == null){
+            this.associationBarIdList = new ArrayList<>();
+        }
         return this.associationBarIdList;
     }
     public int getAttorneyId() {
-        return attorneyId;
+        return this.attorneyId;
     }
     public void setAttorneyId(int attorneyId) {
         this.attorneyId = attorneyId;

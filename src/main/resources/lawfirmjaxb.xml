@@ -1,33 +1,7 @@
-<lawfirm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<lawfirmjaxb xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNameSpaceSchemaLocation="lawfirmjaxb.xsd">
 
-<!--<awards>-->
-<!--    <award id ="7">-->
-<!--        <award_name>Troutman Pepper</award_name>-->
-<!--    </award>-->
-<!--    <award id ="8">-->
-<!--        <award_name>Sidley Austin</award_name>-->
-<!--    </award>-->
-<!--    <award id ="9">-->
-<!--        <award_name>Fox Rothschild</award_name>-->
-<!--    </award>-->
-<!--    <award id ="10">-->
-<!--        <award_name>Honigman</award_name>-->
-<!--    </award>-->
-<!--</awards>-->
-<!--<lawfirmaward>-->
-<!--    <law_firm_id>102</law_firm_id>-->
-<!--    <award_id>3</award_id>-->
-<!--    <law_firm_id>102</law_firm_id>-->
-<!--    <award_id>3</award_id>-->
-<!--    <law_firm_id>104</law_firm_id>-->
-<!--    <award_id>4</award_id>-->
-<!--    <law_firm_id>104</law_firm_id>-->
-<!--    <award_id>9</award_id>-->
-<!--    <law_firm_id>104</law_firm_id>-->
-<!--    <award_id>8</award_id>-->
-<!--</lawfirmaward>-->
-    <lawFirmId>105</lawFirmId>
+    <lawFirmId>106</lawFirmId>
     <lawFirmName>Norris Persinger</lawFirmName>
     <address>153 Glen Street</address>
     <country>USA</country>
@@ -45,11 +19,10 @@
             <attorneyName>Vishnu</attorneyName>
             <country>USA</country>
             <city>cincinnati</city>
-
             <associationBarIdList>
                 <associationBarId>110</associationBarId>
                 <associationBarId>115</associationBarId>
-                <associationBarId>102</associationBarId>
+                <associationBarId>106</associationBarId>
             </associationBarIdList>
         </attorney>
 
@@ -57,22 +30,22 @@
             <attorneyName>Kadhir</attorneyName>
             <country>USA</country>
             <city>Charlotte</city>
-            <associatiobBarIdList>
+            <associationBarIdList>
                 <associationBarId>109</associationBarId>
                 <associationBarId>100</associationBarId>
                 <associationBarId>106</associationBarId>
-            </associatiobBarIdList>
+            </associationBarIdList>
         </attorney>
 
         <attorney id ="1014">
             <attorneyName>Kumar</attorneyName>
             <country>USA</country>
             <city>Concord</city>
-            <associatiobBarIdList>
+            <associationBarIdList>
                 <associationBarId>111</associationBarId>
                 <associationBarId>106</associationBarId>
-                <associationBarId>101</associationBarId>
-            </associatiobBarIdList>
+                <associationBarId>103</associationBarId>
+            </associationBarIdList>
         </attorney>
     </attorneyList>
-</lawfirm>
+</lawfirmjaxb>
