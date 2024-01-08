@@ -4,7 +4,6 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 
-
 @XmlRootElement(name="lawfirm")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LawFirm {
@@ -20,11 +19,9 @@ public class LawFirm {
     @XmlElement(name="award")
     private ArrayList<Award> awardList;
     private ArrayList<Client> clientList;
-
     public ArrayList<Award> getAwardList() {
         return this.awardList;
     }
-
     public void setAwardList(Award award) {
         this.awardList.add(award);
     }

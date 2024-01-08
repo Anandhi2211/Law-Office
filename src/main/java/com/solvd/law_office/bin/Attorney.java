@@ -14,17 +14,16 @@ public class Attorney    {
     private String country;
     private String city;
     private int lawFirmId;
-
+    private ArrayList<Client> clientList;
+    @XmlElementWrapper(name ="associationBarIdList")
+    @XmlElement(name ="associationBarId")
+    private ArrayList<Integer> associationBarIdList;
     public ArrayList<Client> getClientList() {
         return this.clientList;
     }
     public void setClientList(Client client) {
         this.clientList.add(client);
     }
-    private ArrayList<Client> clientList;
-    @XmlElementWrapper(name ="associationBarIdList")
-    @XmlElement(name ="associationBarId")
-    private ArrayList<Integer> associationBarIdList;
     public int getLawFirmId() {
         return this.lawFirmId;
     }

@@ -1,12 +1,7 @@
 package com.solvd.law_office.bin;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import java.util.ArrayList;
-import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
@@ -45,7 +40,7 @@ public class Client {
     }
     @JsonProperty("caseFiledList")
     public ArrayList<CaseFiled> getCaseFiledList() {
-        if(this.caseFiledList==null){
+        if (this.caseFiledList == null) {
             this.caseFiledList = new ArrayList<>();
         }
         return this.caseFiledList;
@@ -56,7 +51,7 @@ public class Client {
     }
     @JsonProperty("billDetailList")
     public ArrayList<BillDetails> getBillDetailList() {
-        if(this.billDetailList == null){
+        if (this.billDetailList == null) {
             this.billDetailList = new ArrayList<>();
         }
         return this.billDetailList;

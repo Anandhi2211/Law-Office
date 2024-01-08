@@ -12,19 +12,15 @@ public class Award {
     @XmlAttribute(name ="id")
     private int awardId;
     private String awardName;
-
     public int getAwardId() {
         return awardId;
     }
-
     public void setAwardId(int awardId) {
         this.awardId = awardId;
     }
-
     public String getAwardName() {
         return awardName;
     }
-
     public void setAwardName(String awardName) {
         this.awardName = awardName;
     }

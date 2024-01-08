@@ -99,6 +99,7 @@ public class Main {
         file = new File("src/main/resources/clientjackson.json");
         JacksonParser jacksonParser = new JacksonParser();
         List<Client> clients = jacksonParser.readXmlFile(file);
+        //Code to load into DB
         jacksonParser.writeXmlFile(clients);
 
 

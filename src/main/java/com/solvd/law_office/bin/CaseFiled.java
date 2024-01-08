@@ -11,7 +11,6 @@ public class CaseFiled {
     private int courtId;
     private int caseCategoryId;
     private int attorneyId;
-
     public int getCaseFiledId() {
         return caseFiledId;
     }
