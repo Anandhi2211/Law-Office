@@ -79,14 +79,14 @@ public class Main {
             }
         }
 
-        SaxParser saxParser = new SaxParser();
-        File file = new File("src/main/resources/lawfirmDom.xml");
-        saxParser.readXmlFile(file);
+//        SaxParser saxParser = new SaxParser();
+//        File file = new File("src/main/resources/lawfirmDom.xml");
+//        saxParser.readXmlFile(file);
+//
+//
 
 
-
-
-        file = new File("src/main/resources/lawfirmjaxb.xml");
+        File file = new File("src/main/resources/lawfirmjaxb.xml");
         JaxbParser jaxbParser = new JaxbParser();
         LawFirm lawFirm = jaxbParser.readingXmlJaxb(file);
         lawFirmService.insert(lawFirm);
