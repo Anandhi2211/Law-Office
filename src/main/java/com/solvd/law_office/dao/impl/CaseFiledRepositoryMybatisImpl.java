@@ -8,10 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 
 public class CaseFiledRepositoryMybatisImpl implements CaseFiledRepository {
     @Override
-    public void insert(CaseFiled caseFiled) {
+    public void insert(CaseFiled caseFiled, int clientId) {
         try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
             CaseFiledRepository caseFiledRepository = sqlSession.getMapper(CaseFiledRepository.class);
-            caseFiledRepository.insert(caseFiled);
+            caseFiledRepository.insert(caseFiled,clientId);
         }
     }
 }

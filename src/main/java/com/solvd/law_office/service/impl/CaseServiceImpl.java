@@ -12,10 +12,8 @@ public class CaseServiceImpl implements CaseService {
         this.caseFiledRepository = new CaseFiledRepositoryMybatisImpl();
     }
 
-
-    @Override
-    public CaseFiled insert(CaseFiled caseFiled) {
-        this.caseFiledRepository.insert(caseFiled);
+    public CaseFiled insert(CaseFiled caseFiled, int clientId) {
+        this.caseFiledRepository.insert(caseFiled,clientId);
         return caseFiled;
     }
 }

@@ -1,10 +1,7 @@
 package com.solvd.law_office;
 
-import com.solvd.law_office.bin.Attorney;
-import com.solvd.law_office.bin.CaseFiled;
 import com.solvd.law_office.bin.Court;
 import com.solvd.law_office.bin.Judge;
-import org.apache.ibatis.annotations.Case;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;

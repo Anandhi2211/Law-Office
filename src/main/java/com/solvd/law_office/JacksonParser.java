@@ -21,28 +21,12 @@ public class JacksonParser {
         ObjectMapper mapper = new ObjectMapper();
         List<Client> clientList;
         try {
-            clientList = mapper.readValue(file, new TypeReference<List<Client>>(){});
-            for(Client client : clientList){
-                logger.info(client.getClientId());
-//                String json = mapper.writeValueAsString(client);
-//                logger.info(json);
-            }
-
-//            logger.info(client.getClientId());
-//            logger.info(client.getClientName());
-//            logger.info(client.getCountry());
-//            logger.info(client.getCity());
-//            for(CaseFiled caseFiled : client.getCaseFiledList()){
-//                logger.info(caseFiled.getCaseFiledId());
-//                logger.info(caseFiled.getAttorneyId());
-//                logger.info(caseFiled.getCaseCategoryId());
-//                logger.info(caseFiled.getCourtId());
-//                logger.info(caseFiled.getCaseDescription());
-//            }
-//            for(BillDetails billDetails:client.getBillDetailList()){
-//                logger.info(billDetails.getBillInvoiceNumber());
-//                logger.info(billDetails.getBillAmount());
-//                logger.info(billDetails.getLawFirmId());
+            clientList = mapper.readValue(file, new TypeReference<>() {
+            });
+//            for(Client client : clientList){
+//                logger.info(client.getClientId());
+////                String json = mapper.writeValueAsString(client);
+////                logger.info(json);
 //            }
         } catch (IOException e) {
             throw new RuntimeException(e);

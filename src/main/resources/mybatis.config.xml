@@ -27,5 +27,9 @@
         <mapper resource="mappers/CourtMapper.xml"/>
         <mapper resource="mappers/CaseFiledMapper.xml"/>
         <mapper resource="mappers/LawFirmAwardMapper.xml"/>
+        <mapper resource="mappers/ClientMapper.xml"/>
+        <mapper resource="mappers/BillDetailsMapper.xml"/>
+
+
     </mappers>
 </configuration>

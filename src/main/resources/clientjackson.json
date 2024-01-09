@@ -22,12 +22,12 @@
       ],
       "billDetailList": [
         {
-          "billInvoiceNumber": 65986554,
+          "invoiceNumber": 65986554,
           "billAmount": 3500,
           "lawFirmId": 102
         },
         {
-          "billInvoiceNumber": 78542154,
+          "invoiceNumber": 78542154,
           "billAmount": 4500,
           "lawFirmId": 101
         }
@@ -56,12 +56,12 @@
       ],
       "billDetailList": [
         {
-          "billInvoiceNumber": 65986554,
+          "invoiceNumber": 656554,
           "billAmount": 3500,
           "lawFirmId": 102
         },
         {
-          "billInvoiceNumber": 78542154,
+          "invoiceNumber": 785154,
           "billAmount": 4500,
           "lawFirmId": 101
         }

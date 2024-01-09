@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.law_office.dao.BillDetailsRepository">
+
+    <insert id="insert" keyColumn="invoice_no" keyProperty="invoiceNumber" >
+        insert into bill_details(invoice_no,bill_amount,law_firm_id,client_id)
+        values (#{bill.invoiceNumber},#{bill.billAmount},#{bill.lawFirmId},#{clientId})
+    </insert>
+
+
+    <resultMap id="BillDetailsResultMap" type="com.solvd.law_office.bin.BillDetails" autoMapping="false">
+        <id column="invoice_no" property="invoiceNumber"/>
+        <result column="bill_amount" property="billAmount"/>
+        <result column="law_firm_id" property="lawFirmId"/>
+        <result column="client_id" property="clientId"/>
+    </resultMap>
+</mapper>

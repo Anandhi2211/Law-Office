@@ -2,7 +2,6 @@ package com.solvd.law_office.service.impl;
 
 import com.solvd.law_office.bin.AssociationBar;
 import com.solvd.law_office.dao.AssociationBarRepository;
-import com.solvd.law_office.dao.impl.AssociationBarRepositoryImpl;
 import com.solvd.law_office.dao.impl.AssociationBarRepositoryMyBatisImpl;
 import com.solvd.law_office.service.AssociationBarService;
 import com.solvd.law_office.service.AttorneyAssociationBarService;

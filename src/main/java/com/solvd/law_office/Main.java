@@ -1,6 +1,7 @@
 package com.solvd.law_office;
 
 import com.solvd.law_office.bin.*;
+import com.solvd.law_office.bin.Judge;
 import com.solvd.law_office.service.CourtService;
 import com.solvd.law_office.service.impl.*;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +21,7 @@ public class Main {
         LawFirmServiceImpl lawFirmService = new LawFirmServiceImpl();
         AttorneyServiceImpl attorneyService = new AttorneyServiceImpl();
         LawFirmAwardServiceImpl lawFirmAwardService = new LawFirmAwardServiceImpl();
+        ClientServiceImpl clientServiceImpl = new ClientServiceImpl();
         AttorneyAssociationBarServiceImpl attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
         AssociationBarServiceImpl associationBarService = new AssociationBarServiceImpl();
         AreaOfPracticeServiceImpl areaOfPracticesService = new AreaOfPracticeServiceImpl();
@@ -62,6 +64,7 @@ public class Main {
         logger.info("Adding Association Bar to an attorney");
         attorneyAssociationBarService.addAssociationBar(1000, 102);
 
+
         DomParser domParser = new DomParser();
         domParser.initializer("src/main/resources/lawfirmDom.xml");
         ArrayList<Court> courtList;
@@ -75,17 +78,14 @@ public class Main {
             courtService.insert(court, judge.getJudgeId());
             ArrayList<CaseFiled> caseFiledList = court.getCaseFiledList();
             for (CaseFiled caseFiled : caseFiledList) {
-                caseService.insert(caseFiled);
+                caseService.insert(caseFiled,caseFiled.getClientId());
             }
         }
-
 //        SaxParser saxParser = new SaxParser();
 //        File file = new File("src/main/resources/lawfirmDom.xml");
 //        saxParser.readXmlFile(file);
 //
 //
-
-
         File file = new File("src/main/resources/lawfirmjaxb.xml");
         JaxbParser jaxbParser = new JaxbParser();
         LawFirm lawFirm = jaxbParser.readingXmlJaxb(file);
@@ -95,15 +95,13 @@ public class Main {
         }
 
 
-
         file = new File("src/main/resources/clientjackson.json");
         JacksonParser jacksonParser = new JacksonParser();
         List<Client> clients = jacksonParser.readXmlFile(file);
-        //Code to load into DB
+
+        for(Client client : clients){
+            clientServiceImpl.insert(client);
+        }
         jacksonParser.writeXmlFile(clients);
-
-
-
-
     }
 }

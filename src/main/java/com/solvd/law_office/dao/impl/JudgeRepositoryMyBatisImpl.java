@@ -1,7 +1,6 @@
 package com.solvd.law_office.dao.impl;
 
 import com.solvd.law_office.bin.Judge;
-import com.solvd.law_office.dao.AreaOfPracticeRepository;
 import com.solvd.law_office.dao.DaoConfig;
 import com.solvd.law_office.dao.JudgeRepository;
 import org.apache.ibatis.session.SqlSession;

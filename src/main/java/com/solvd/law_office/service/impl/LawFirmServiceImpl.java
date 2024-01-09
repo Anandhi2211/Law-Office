@@ -3,7 +3,6 @@ package com.solvd.law_office.service.impl;
 import com.solvd.law_office.bin.Attorney;
 import com.solvd.law_office.bin.LawFirm;
 import com.solvd.law_office.dao.LawFirmRepository;
-import com.solvd.law_office.dao.impl.LawFirmRepositoryImpl;
 import com.solvd.law_office.dao.impl.LawFirmRepositoryMyBatisImpl;
 import com.solvd.law_office.service.AttorneyAssociationBarService;
 import com.solvd.law_office.service.AttorneyService;

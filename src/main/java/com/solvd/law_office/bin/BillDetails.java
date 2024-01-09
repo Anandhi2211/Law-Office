@@ -1,15 +1,18 @@
 package com.solvd.law_office.bin;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class BillDetails {
-    private int billInvoiceNumber;
+    private int invoiceNumber;
     private int billAmount;
     private int lawFirmId;
     private int clientId;
-    public int getBillInvoiceNumber() {
-        return billInvoiceNumber;
+    public int getInvoiceNumber() {
+        return invoiceNumber;
     }
-    public void setBillInvoiceNumber(int billInvoiceNumber) {
-        this.billInvoiceNumber = billInvoiceNumber;
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
     }
     public int getBillAmount() {
         return billAmount;

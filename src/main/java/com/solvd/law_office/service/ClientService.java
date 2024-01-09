@@ -1,7 +1,7 @@
 package com.solvd.law_office.service;
 
-import com.solvd.law_office.bin.CaseFiled;
+import com.solvd.law_office.bin.Client;
 
 public interface ClientService {
-    void insert(CaseFiled caseFiled, int lawFirmId);
+    Client insert(Client client);
 }

@@ -5,7 +5,7 @@
 
     <insert id="insert" keyColumn="case_id" keyProperty="caseId">
         insert into cases(case_id,case_description,client_id,attorney_id,case_category_id,court_id)
-        values (#{case.caseFiledId},#{case.caseDescription},#{case.clientId},#{case.attorneyId},#{case.caseCategoryId},#{case.courtId})
+        values (#{case.caseFiledId},#{case.caseDescription},#{clientId},#{case.attorneyId},#{case.caseCategoryId},#{case.courtId})
     </insert>
     <resultMap id="CaseFiledResultMap" type="com.solvd.law_office.bin.CaseFiled" autoMapping="false">
         <id column="case_id" property="caseFiledId"/>
