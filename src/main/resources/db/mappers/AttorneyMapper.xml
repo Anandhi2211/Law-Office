@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.law_office.db.dao.AttorneyRepository">
+
+    <insert id="insert" keyColumn="attorney_id" keyProperty="attorneyId" >
+        insert into attorneys(attorney_id,attorney_name,country,city,attorney_law_firm_id)
+        values (#{attorney.attorneyId},#{attorney.attorneyName},#{attorney.country},#{attorney.city},#{lawFirmId})
+    </insert>
+
+    <sql id="attorneySelect">
+        select a.attorney_id, a.attorney_name,a.country,a.city,a.attorney_law_firm_id
+        from attorneys a
+
+    </sql>
+
+    <select id="findById" resultMap="AttorneyResultMap">
+        <include refid="attorneySelect"/>
+        where attorney_id = #{attorneyId}
+    </select>
+
+    <select id="findByCountry" resultMap="AttorneyResultMap">
+        <include refid="attorneySelect"/>
+        where country = #{country}
+    </select>
+
+    <select id="findByName" resultMap="AttorneyResultMap">
+        <include refid="attorneySelect"/>
+        where attorney_name = #{attorney.attorneyName}
+    </select>
+
+    <update id="updateCityById" >
+        UPDATE attorneys SET city = #{city} WHERE attorney_id = #{attorneyId};
+    </update>
+
+    <delete id="deleteById">
+        delete from attorneys where attorney_id = #{attorneyId}
+    </delete>
+
+    <resultMap id="AttorneyResultMap" type="com.solvd.law_office.db.bin.Attorney" autoMapping="false">
+        <id column="attorney_id" property="attorneyId"/>
+        <result column="attorney_name" property="attorneyName"/>
+        <result column="country" property="country"/>
+        <result column="city" property="city"/>
+        <result column="attorney_law_firm_id" property="lawFirmId"/>
+    </resultMap>
+</mapper>

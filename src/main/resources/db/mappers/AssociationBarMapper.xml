@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.law_office.db.dao.AssociationBarRepository">
+
+    <insert id="insert" keyColumn="association_bar_id" keyProperty="associationBarId" useGeneratedKeys="true">
+        insert into association_bars(association_bar_id,association_bar_name)
+        values (#{associationBarId},#{associationBarName})
+    </insert>
+
+    <delete id="deleteByAssociationBarId">
+        delete from association_bars where association_bar_id = #{associationBarId}
+    </delete>
+
+
+    <resultMap id="AssociationBarResultMap" type="com.solvd.law_office.db.bin.AssociationBar" autoMapping="false">
+        <id column="association_bar_id" property="associationBarId"/>
+        <result column="association_bar_name" property="associationBarName"/>
+    </resultMap>
+
+
+
+</mapper>

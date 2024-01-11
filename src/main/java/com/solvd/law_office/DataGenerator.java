@@ -1,6 +1,9 @@
 package com.solvd.law_office;
 
-import com.solvd.law_office.bin.*;
+import com.solvd.law_office.db.bin.AreaOfPractice;
+import com.solvd.law_office.db.bin.AssociationBar;
+import com.solvd.law_office.db.bin.Attorney;
+import com.solvd.law_office.db.bin.LawFirm;
 
 import java.util.ArrayList;
 
@@ -21,7 +24,7 @@ public class DataGenerator {
         attorney.setCountry("USA");
         attorney.setCity("Charlotte");
         attorney.setAssociationBarIdList(100);
-        attorney.setAssociationBarIdList(101);
+        attorney.setAssociationBarIdList(106);
         attorney.setAssociationBarIdList(102);
         lawFirm.setAttorneyList(attorney);
 
@@ -47,7 +50,7 @@ public class DataGenerator {
         attorney.setCountry("USA");
         attorney.setCity("cincinnati");
         attorney.setAssociationBarIdList(100);
-        attorney.setAssociationBarIdList(101);
+        attorney.setAssociationBarIdList(105);
 
         lawFirm.setAttorneyList(attorney);
 

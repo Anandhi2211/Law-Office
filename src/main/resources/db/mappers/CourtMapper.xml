@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.law_office.db.dao.CourtRepository">
+
+    <insert id="insert" keyColumn="court_id" keyProperty="courtId">
+        insert into courts(court_id,country,city,judge_id)
+        values (#{court.courtId},#{court.country},#{court.city},#{judgeId})
+    </insert>
+
+    <resultMap id="CourtResultMap" type="com.solvd.law_office.db.bin.Court" autoMapping="false">
+        <id column="court_id" property="courtId"/>
+        <result column="country" property="country"/>
+        <result column="city" property="city"/>
+        <result column="judge_id" property="judgeId"/>
+    </resultMap>
+
+</mapper>

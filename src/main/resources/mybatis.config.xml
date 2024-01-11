@@ -17,19 +17,17 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mappers/AssociationBarMapper.xml"/>
-        <mapper resource="mappers/LawFirmMapper.xml"/>
-        <mapper resource="mappers/AttorneyMapper.xml"/>
-        <mapper resource="mappers/AttorneyAssociationBarMapper.xml"/>
-        <mapper resource="mappers/AreaOfPracticeMapper.xml"/>
-        <mapper resource="mappers/AttorneyAreaOfPracticeMapper.xml"/>
-        <mapper resource="mappers/JudgeMapper.xml"/>
-        <mapper resource="mappers/CourtMapper.xml"/>
-        <mapper resource="mappers/CaseFiledMapper.xml"/>
-        <mapper resource="mappers/LawFirmAwardMapper.xml"/>
-        <mapper resource="mappers/ClientMapper.xml"/>
-        <mapper resource="mappers/BillDetailsMapper.xml"/>
-
-
+        <mapper resource="db/mappers/AssociationBarMapper.xml"/>
+        <mapper resource="db/mappers/LawFirmMapper.xml"/>
+        <mapper resource="db/mappers/AttorneyMapper.xml"/>
+        <mapper resource="db/mappers/AttorneyAssociationBarMapper.xml"/>
+        <mapper resource="db/mappers/AreaOfPracticeMapper.xml"/>
+        <mapper resource="db/mappers/AttorneyAreaOfPracticeMapper.xml"/>
+        <mapper resource="db/mappers/JudgeMapper.xml"/>
+        <mapper resource="db/mappers/CourtMapper.xml"/>
+        <mapper resource="db/mappers/CaseFiledMapper.xml"/>
+        <mapper resource="db/mappers/LawFirmAwardMapper.xml"/>
+        <mapper resource="db/mappers/ClientMapper.xml"/>
+        <mapper resource="db/mappers/BillDetailsMapper.xml"/>
     </mappers>
 </configuration>
