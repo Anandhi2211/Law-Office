@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public interface AttorneyRepository {
+public interface AttorneyDao {
 
     void insert(@Param("attorney") Attorney attorney, @Param("lawFirmId") int lawFirmId);
     Optional<Attorney> findById(int attorneyId);

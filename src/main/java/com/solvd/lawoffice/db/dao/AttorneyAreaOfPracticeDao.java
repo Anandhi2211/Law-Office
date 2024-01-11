@@ -1,5 +1,5 @@
 package com.solvd.lawoffice.db.dao;
 
-public interface AttorneyAreaOfPracticeRepository {
+public interface AttorneyAreaOfPracticeDao {
     void deleteById(int attorneyId);
 }

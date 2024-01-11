@@ -1,8 +1,8 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
+import com.solvd.lawoffice.db.dao.AttorneyAssociationBarDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.dao.AttorneyAssociationBarRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarRepository {
+public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao {
     private static final Logger logger = LogManager.getLogger(AttorneyAssociationBarDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
     static final String INSERT_QUERY = "insert into attorney_association_bars values (?,?)";

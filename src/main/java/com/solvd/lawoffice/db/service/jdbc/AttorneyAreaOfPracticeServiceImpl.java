@@ -1,15 +1,15 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.dao.AttorneyAreaOfPracticeRepository;
-import com.solvd.lawoffice.db.service.mybatis.AttorneyAreaOfPracticeRepositoryMyBatisImpl;
+import com.solvd.lawoffice.db.dao.AttorneyAreaOfPracticeDao;
+import com.solvd.lawoffice.db.service.mybatis.AttorneyAreaOfPracticeDaoMyBatisImpl;
 import com.solvd.lawoffice.db.service.AttorneyAreaOfPracticeService;
 
 public class AttorneyAreaOfPracticeServiceImpl implements AttorneyAreaOfPracticeService {
 
-    private final AttorneyAreaOfPracticeRepository areaOfPracticeRepository ;
+    private final AttorneyAreaOfPracticeDao areaOfPracticeRepository ;
 
     public AttorneyAreaOfPracticeServiceImpl() {
-        this.areaOfPracticeRepository = new AttorneyAreaOfPracticeRepositoryMyBatisImpl();
+        this.areaOfPracticeRepository = new AttorneyAreaOfPracticeDaoMyBatisImpl();
     }
 
     @Override

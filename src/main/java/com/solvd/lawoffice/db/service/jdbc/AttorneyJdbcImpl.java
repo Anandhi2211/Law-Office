@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
 import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.dao.AttorneyRepository;
+import com.solvd.lawoffice.db.dao.AttorneyDao;
 import com.solvd.lawoffice.db.dao.jdbc.AttorneyDaoImpl;
 import com.solvd.lawoffice.db.service.AttorneyAreaOfPracticeService;
 import com.solvd.lawoffice.db.service.AttorneyAssociationBarService;
@@ -11,19 +11,19 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class AttorneyJdbcImpl implements AttorneyService {
-    private final AttorneyRepository attorneyRepository;
+    private final AttorneyDao attorneyDao;
     private final AttorneyAssociationBarService attorneyAssociationBarService;
     private final AttorneyAreaOfPracticeService attorneyAreaOfPracticeService;
 
     public AttorneyJdbcImpl() {
-        this.attorneyRepository = new AttorneyDaoImpl();
+        this.attorneyDao = new AttorneyDaoImpl();
         this.attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
         this.attorneyAreaOfPracticeService = new AttorneyAreaOfPracticeServiceImpl();
     }
 
     @Override
     public Attorney insert(Attorney attorney, int lawFirmId) {
-        attorneyRepository.insert(attorney, lawFirmId);
+        attorneyDao.insert(attorney, lawFirmId);
         return attorney;
     }
 
@@ -31,23 +31,23 @@ public class AttorneyJdbcImpl implements AttorneyService {
     public void deleteById(int attorneyId) {
         attorneyAssociationBarService.deleteById(attorneyId);
         attorneyAreaOfPracticeService.deleteById(attorneyId);
-            attorneyRepository.deleteById(attorneyId);
+            attorneyDao.deleteById(attorneyId);
 
     }
 
     public Optional<Attorney> findById(int attorneyId) {
-        Optional<Attorney> attorneyList = attorneyRepository.findById(attorneyId);
+        Optional<Attorney> attorneyList = attorneyDao.findById(attorneyId);
         return attorneyList;
     }
 
     @Override
     public ArrayList<Attorney> findByCountry(String country) {
-        ArrayList<Attorney> attorneyList = attorneyRepository.findByCountry(country);
+        ArrayList<Attorney> attorneyList = attorneyDao.findByCountry(country);
         return attorneyList;    }
 
     @Override
     public void updateCityById(int attorneyId, String city) {
-        attorneyRepository.updateCityById(attorneyId,city);
+        attorneyDao.updateCityById(attorneyId,city);
     }
 
     @Override
@@ -57,7 +57,7 @@ public class AttorneyJdbcImpl implements AttorneyService {
 
 
     public ArrayList<Attorney> findAll() {
-        ArrayList<Attorney> attorneyList = attorneyRepository.findAll();
+        ArrayList<Attorney> attorneyList = attorneyDao.findAll();
         return attorneyList;
     }
 

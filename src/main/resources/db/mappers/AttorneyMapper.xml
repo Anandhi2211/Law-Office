@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.lawoffice.db.dao.AttorneyRepository">
+<mapper namespace="com.solvd.lawoffice.db.dao.AttorneyDao">
 
     <insert id="insert" keyColumn="attorney_id" keyProperty="attorneyId" >
         insert into attorneys(attorney_id,attorney_name,country,city,attorney_law_firm_id)

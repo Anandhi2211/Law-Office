@@ -2,7 +2,7 @@ package com.solvd.lawoffice.db.dao.jdbc;
 
 
 import com.solvd.lawoffice.db.bin.AssociationBar;
-import com.solvd.lawoffice.db.dao.AssociationBarRepository;
+import com.solvd.lawoffice.db.dao.AssociationBarDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AssociationBarDaoImpl implements AssociationBarRepository {
+public class AssociationBarDaoImpl implements AssociationBarDao {
     private static final Logger logger = LogManager.getLogger(AssociationBarDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
 

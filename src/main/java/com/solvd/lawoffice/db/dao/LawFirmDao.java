@@ -4,7 +4,7 @@ import com.solvd.lawoffice.db.bin.LawFirm;
 
 import java.util.ArrayList;
 
-public interface LawFirmRepository {
+public interface LawFirmDao {
     void insert(LawFirm lawFirm);
 
     ArrayList<LawFirm> findAll();

@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
 import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.dao.AttorneyRepository;
+import com.solvd.lawoffice.db.dao.AttorneyDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class AttorneyDaoImpl implements AttorneyRepository {
+public class AttorneyDaoImpl implements AttorneyDao {
     private static final Logger logger = LogManager.getLogger(AttorneyDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
 

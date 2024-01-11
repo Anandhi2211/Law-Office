@@ -1,20 +1,20 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
 import com.solvd.lawoffice.db.bin.Award;
-import com.solvd.lawoffice.db.dao.AwardRepository;
-import com.solvd.lawoffice.db.service.mybatis.AwardRepositoryMyBatisImpl;
+import com.solvd.lawoffice.db.dao.AwardDao;
+import com.solvd.lawoffice.db.service.mybatis.AwardDaoMyBatisImpl;
 import com.solvd.lawoffice.db.service.AwardService;
 
 public class AwardServiceImpl implements AwardService {
-    private final AwardRepository awardRepository;
+    private final AwardDao awardDao;
 
     public AwardServiceImpl() {
-        this.awardRepository = new AwardRepositoryMyBatisImpl();
+        this.awardDao = new AwardDaoMyBatisImpl();
     }
 
     @Override
     public Award insert(Award award) {
-       this.awardRepository.insert(award);
+       this.awardDao.insert(award);
        return award;
     }
 }

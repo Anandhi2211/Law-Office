@@ -3,21 +3,21 @@ package com.solvd.lawoffice.db.service.jdbc;
 
 
 import com.solvd.lawoffice.db.bin.Court;
-import com.solvd.lawoffice.db.dao.CourtRepository;
+import com.solvd.lawoffice.db.dao.CourtDao;
 import com.solvd.lawoffice.db.service.CourtService;
 import com.solvd.lawoffice.db.service.mybatis.CourtMyBatisImpl;
 
 public class CourtServiceImpl implements CourtService {
 
-    private final CourtRepository courtRepository;
+    private final CourtDao courtDao;
 
     public CourtServiceImpl() {
-        this.courtRepository = new CourtMyBatisImpl();
+        this.courtDao = new CourtMyBatisImpl();
     }
 
     @Override
     public Court insert(Court court, int judgeId) {
-        this.courtRepository.insert(court,judgeId);
+        this.courtDao.insert(court,judgeId);
         return court;
     }
 }

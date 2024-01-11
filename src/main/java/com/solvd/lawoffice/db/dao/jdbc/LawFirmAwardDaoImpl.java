@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
 import com.solvd.lawoffice.db.bin.Award;
-import com.solvd.lawoffice.db.dao.LawFirmAwardRepository;
+import com.solvd.lawoffice.db.dao.LawFirmAwardDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LawFirmAwardDaoImpl implements LawFirmAwardRepository {
+public class LawFirmAwardDaoImpl implements LawFirmAwardDao {
     private static final Logger logger = LogManager.getLogger(LawFirmAwardDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
 

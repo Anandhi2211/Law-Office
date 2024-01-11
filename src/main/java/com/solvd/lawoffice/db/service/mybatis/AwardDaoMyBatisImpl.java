@@ -1,9 +1,9 @@
 package com.solvd.lawoffice.db.service.mybatis;
 
 import com.solvd.lawoffice.db.bin.Award;
-import com.solvd.lawoffice.db.dao.AwardRepository;
+import com.solvd.lawoffice.db.dao.AwardDao;
 
-public class AwardRepositoryMyBatisImpl implements AwardRepository {
+public class AwardDaoMyBatisImpl implements AwardDao {
     @Override
     public void insert(Award award) {
 
