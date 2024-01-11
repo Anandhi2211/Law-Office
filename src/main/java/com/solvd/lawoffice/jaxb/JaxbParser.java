@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.jaxb;
 
-import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.Attorney;
+import com.solvd.lawoffice.db.binary.LawFirm;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;

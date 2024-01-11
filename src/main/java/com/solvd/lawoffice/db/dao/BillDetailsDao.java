@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao;
 
-import com.solvd.lawoffice.db.bin.BillDetails;
+import com.solvd.lawoffice.db.binary.BillDetails;
 import org.apache.ibatis.annotations.Param;
 
 public interface BillDetailsDao {

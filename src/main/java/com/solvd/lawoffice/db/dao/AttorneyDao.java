@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao;
 
-import com.solvd.lawoffice.db.bin.Attorney;
+import com.solvd.lawoffice.db.binary.Attorney;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
@@ -15,5 +15,4 @@ public interface AttorneyDao {
     void updateCityById(@Param("attorneyId") int attorney_id,@Param("city") String city);
     void addAssociationBar(int attorney_id, int associationBarId);
     ArrayList<Attorney> findAll();
-    ArrayList<Attorney> findByCountry(String country);
 }

@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.bin.Attorney;
+import com.solvd.lawoffice.db.binary.Attorney;
 import com.solvd.lawoffice.db.dao.AttorneyDao;
 import com.solvd.lawoffice.db.dao.jdbc.AttorneyDaoImpl;
 import com.solvd.lawoffice.db.service.AttorneyAreaOfPracticeService;
@@ -41,13 +41,8 @@ public class AttorneyJdbcImpl implements AttorneyService {
     }
 
     @Override
-    public ArrayList<Attorney> findByCountry(String country) {
-        ArrayList<Attorney> attorneyList = attorneyDao.findByCountry(country);
-        return attorneyList;    }
-
-    @Override
     public void updateCityById(int attorneyId, String city) {
-        attorneyDao.updateCityById(attorneyId,city);
+        this.attorneyDao.updateCityById(attorneyId,city);
     }
 
     @Override

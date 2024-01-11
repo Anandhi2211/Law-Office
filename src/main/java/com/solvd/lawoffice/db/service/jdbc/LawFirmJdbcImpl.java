@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.Attorney;
+import com.solvd.lawoffice.db.binary.LawFirm;
 import com.solvd.lawoffice.db.dao.LawFirmDao;
 import com.solvd.lawoffice.db.dao.jdbc.LawFirmDaoImpl;
 import com.solvd.lawoffice.db.service.AttorneyAssociationBarService;
@@ -33,7 +33,7 @@ public class LawFirmJdbcImpl implements LawFirmService {
                 this.attorneyService.insert(attorney, lawFirm.getLawFirmId());
                 if(attorney.getAssociationBarIdList()!=null){
                     for(Integer associationBarId : attorney.getAssociationBarIdList()){
-                        this.attorneyAssociationBarService.insert(associationBarId, attorney);
+                        this.attorneyAssociationBarService.insert(associationBarId, attorney.getAttorneyId());
                     }
                 }
             }

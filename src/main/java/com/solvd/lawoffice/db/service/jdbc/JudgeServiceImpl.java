@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.bin.Judge;
+import com.solvd.lawoffice.db.binary.Judge;
 import com.solvd.lawoffice.db.dao.JudgeDao;
 import com.solvd.lawoffice.db.service.JudgeService;
 import com.solvd.lawoffice.db.service.mybatis.JudgeMyBatisImpl;

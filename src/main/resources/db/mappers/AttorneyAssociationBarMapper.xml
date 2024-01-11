@@ -5,7 +5,7 @@
 
     <insert id="insert" useGeneratedKeys="true">
         insert into attorney_association_bars(attorney_id,association_bar_id)
-        values (#{attorney.attorneyId},#{associationBarId})
+        values (#{attorneyId},#{associationBarId})
     </insert>
 
     <delete id="deleteByAssociationBarId">
@@ -17,7 +17,7 @@
         values (#{attorneyId},#{associationBarId})
     </insert>
 
-    <resultMap id="AttorneyAssociationBarResultMap" type="com.solvd.lawoffice.db.bin.Attorney" autoMapping="false">
+    <resultMap id="AttorneyAssociationBarResultMap" type="com.solvd.lawoffice.db.binary.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>
         <result column="association_bar_id" property="associationBarId"/>
     </resultMap>

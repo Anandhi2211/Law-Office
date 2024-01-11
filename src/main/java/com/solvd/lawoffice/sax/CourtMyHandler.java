@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.sax;
 
-import com.solvd.lawoffice.db.bin.Court;
-import com.solvd.lawoffice.db.bin.Judge;
+import com.solvd.lawoffice.db.binary.Court;
+import com.solvd.lawoffice.db.binary.Judge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;

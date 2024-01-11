@@ -2,7 +2,7 @@ package com.solvd.lawoffice.jackson;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.solvd.lawoffice.db.bin.Client;
+import com.solvd.lawoffice.db.binary.Client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

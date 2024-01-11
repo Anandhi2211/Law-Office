@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.mybatis;
 
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.LawFirm;
 import com.solvd.lawoffice.db.dao.LawFirmDao;
 import com.solvd.lawoffice.db.util.DaoConfig;
 import org.apache.ibatis.session.SqlSession;

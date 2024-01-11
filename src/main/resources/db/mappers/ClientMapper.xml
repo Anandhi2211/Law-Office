@@ -9,7 +9,7 @@
     values (#{client.clientId},#{client.clientName},#{client.country},#{client.city})
 </insert>
 
-    <resultMap id="ClientResultMap" type="com.solvd.lawoffice.db.bin.Client" autoMapping="false">
+    <resultMap id="ClientResultMap" type="com.solvd.lawoffice.db.binary.Client" autoMapping="false">
         <id column="client_id" property="clientId"/>
         <result column="client_name" property="clientName"/>
         <result column="country" property="country"/>

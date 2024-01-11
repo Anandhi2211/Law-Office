@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-import com.solvd.lawoffice.db.bin.Award;
+import com.solvd.lawoffice.db.binary.Award;
 import com.solvd.lawoffice.db.dao.LawFirmAwardDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;

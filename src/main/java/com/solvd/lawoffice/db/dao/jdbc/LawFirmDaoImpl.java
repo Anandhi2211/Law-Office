@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.LawFirm;
 import com.solvd.lawoffice.db.dao.LawFirmDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
@@ -37,13 +37,22 @@ public class LawFirmDaoImpl implements LawFirmDao {
         }
     }
     public ArrayList<LawFirm> findAll() {
-        ArrayList<LawFirm> lawFirmsList;
         Connection connection = CONNECTION_POOL.getConnection();
+        ArrayList<LawFirm> lawFirmsList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("Select * from law_firms");
             ResultSet resultSet = preparedStatement.executeQuery();
-            lawFirmsList = displayTheResults(resultSet);
+            while (resultSet.next()) {
+                LawFirm lawFirm = new LawFirm();
+                lawFirm.setLawFirmId(resultSet.getInt("law_firm_id"));
+                lawFirm.setLawFirmName(resultSet.getString("law_firm_name"));
+                lawFirm.setAddress(resultSet.getString("address"));
+                lawFirm.setCountry(resultSet.getString("country"));
+                lawFirm.setCity(resultSet.getString("city"));
+                lawFirmsList.add(lawFirm);
+            }
+//            lawFirmsList = displayTheResults(resultSet);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

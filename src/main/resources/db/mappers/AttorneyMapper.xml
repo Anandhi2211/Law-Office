@@ -37,7 +37,7 @@
         delete from attorneys where attorney_id = #{attorneyId}
     </delete>
 
-    <resultMap id="AttorneyResultMap" type="com.solvd.lawoffice.db.bin.Attorney" autoMapping="false">
+    <resultMap id="AttorneyResultMap" type="com.solvd.lawoffice.db.binary.Attorney" autoMapping="false">
         <id column="attorney_id" property="attorneyId"/>
         <result column="attorney_name" property="attorneyName"/>
         <result column="country" property="country"/>

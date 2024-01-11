@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.mybatis;
 
-import com.solvd.lawoffice.db.bin.Attorney;
+import com.solvd.lawoffice.db.binary.Attorney;
 import com.solvd.lawoffice.db.dao.AttorneyDao;
 import com.solvd.lawoffice.db.util.DaoConfig;
 import org.apache.ibatis.session.SqlSession;
@@ -66,10 +66,4 @@ public class AttorneyMyBatisImpl implements AttorneyDao {
         return null;
     }
 
-    @Override
-    public ArrayList<Attorney> findByCountry(String country) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
-            AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
-            return attorneyDao.findByCountry(country);
-        }    }
 }

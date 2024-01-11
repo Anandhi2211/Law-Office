@@ -13,7 +13,7 @@
     </delete>
 
 
-    <resultMap id="AssociationBarResultMap" type="com.solvd.lawoffice.db.bin.AssociationBar" autoMapping="false">
+    <resultMap id="AssociationBarResultMap" type="com.solvd.lawoffice.db.binary.AssociationBar" autoMapping="false">
         <id column="association_bar_id" property="associationBarId"/>
         <result column="association_bar_name" property="associationBarName"/>
     </resultMap>

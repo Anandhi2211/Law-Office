@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao;
 
-import com.solvd.lawoffice.db.bin.AssociationBar;
+import com.solvd.lawoffice.db.binary.AssociationBar;
 
 public interface AssociationBarDao {
     void insert(AssociationBar associationBar);

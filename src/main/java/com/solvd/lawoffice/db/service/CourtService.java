@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service;
 
-import com.solvd.lawoffice.db.bin.Court;
+import com.solvd.lawoffice.db.binary.Court;
 
 public interface CourtService {
 

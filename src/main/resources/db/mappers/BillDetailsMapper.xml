@@ -9,7 +9,7 @@
     </insert>
 
 
-    <resultMap id="BillDetailsResultMap" type="com.solvd.lawoffice.db.bin.BillDetails" autoMapping="false">
+    <resultMap id="BillDetailsResultMap" type="com.solvd.lawoffice.db.binary.BillDetails" autoMapping="false">
         <id column="invoice_no" property="invoiceNumber"/>
         <result column="bill_amount" property="billAmount"/>
         <result column="law_firm_id" property="lawFirmId"/>

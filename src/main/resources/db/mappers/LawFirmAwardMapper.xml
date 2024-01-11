@@ -8,7 +8,7 @@
         values (#{lawFirmId},#{award.awardId})
     </insert>
 
-    <resultMap id="LawFirmAwardResultMap" type="com.solvd.lawoffice.db.bin.Award" autoMapping="false">
+    <resultMap id="LawFirmAwardResultMap" type="com.solvd.lawoffice.db.binary.Award" autoMapping="false">
         <result column="award_id" property="awardId"/>
         <result column="law_firm_id" property="lawFirmId"/>
     </resultMap>

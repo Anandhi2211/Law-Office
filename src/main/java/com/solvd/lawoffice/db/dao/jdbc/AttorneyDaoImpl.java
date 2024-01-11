@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-import com.solvd.lawoffice.db.bin.Attorney;
+import com.solvd.lawoffice.db.binary.Attorney;
 import com.solvd.lawoffice.db.dao.AttorneyDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
@@ -17,8 +17,8 @@ public class AttorneyDaoImpl implements AttorneyDao {
 
     @Override
     public void insert(Attorney attorney, int lawFirmId) {
-
         Connection connection = CONNECTION_POOL.getConnection();
+        ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into attorneys values (?,?,?,?,?)");
@@ -28,18 +28,52 @@ public class AttorneyDaoImpl implements AttorneyDao {
             preparedStatement.setString(4, attorney.getCity());
             preparedStatement.setInt(5, lawFirmId);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
+            resultset = preparedStatement.executeQuery();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (SQLException e) {
+                    resultset = null;
+                }
+            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
-
     @Override
     public Optional<Attorney> findById(int attorney_id) {
-
-        return null;
+        Connection connection = CONNECTION_POOL.getConnection();
+        ResultSet resultset = null;
+        Attorney attorney = null;
+        try {
+            attorney = new Attorney();
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("select * from attorneys where attorney_id =" + attorney_id);
+            resultset = preparedStatement.executeQuery();
+            while (resultset.next()) {
+                attorney = new Attorney();
+                attorney.setAttorneyId(resultset.getInt("attorney_id"));
+                attorney.setAttorneyName(resultset.getString("attorney_name"));
+                attorney.setCountry(resultset.getString("country"));
+                attorney.setCity(resultset.getString("city"));
+                attorney.setLawFirmId(resultset.getInt("attorney_law_firm_id"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (SQLException e) {
+                    resultset = null;
+                }
+            }
+            CONNECTION_POOL.releaseConnection(connection);
+        }
+        return Optional.of(attorney);
     }
 
     @Override
@@ -54,7 +88,28 @@ public class AttorneyDaoImpl implements AttorneyDao {
 
     @Override
     public void updateCityById(int attorney_id, String city) {
-
+        Connection connection = CONNECTION_POOL.getConnection();
+        ResultSet resultset = null;
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("update attorneys set city = ? where attorney_id = ?");
+            preparedStatement.setString(1,city);
+            preparedStatement.setInt(2,attorney_id);
+            int numberOfRowsCreated = preparedStatement.executeUpdate();
+//            resultset = preparedStatement.executeUpdate();
+            logger.info("Number of rows Updated: " + numberOfRowsCreated);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (SQLException e) {
+                    resultset = null;
+                }
+            }
+            CONNECTION_POOL.releaseConnection(connection);
+        }
     }
 
     @Override
@@ -73,16 +128,10 @@ public class AttorneyDaoImpl implements AttorneyDao {
             attorneyList = displayTheResults(resultSet);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             CONNECTION_POOL.releaseConnection(connection);
         }
         return attorneyList;
-    }
-
-    @Override
-    public ArrayList<Attorney> findByCountry(String country) {
-        return null;
     }
 
     private ArrayList<Attorney> displayTheResults(ResultSet resultSet) {

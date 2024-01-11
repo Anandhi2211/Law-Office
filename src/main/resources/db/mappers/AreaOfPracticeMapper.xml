@@ -9,7 +9,7 @@
     </insert>
 
 
-    <resultMap id="AreaOfPracticeResultMap" type="com.solvd.lawoffice.db.bin.AreaOfPractice" autoMapping="false">
+    <resultMap id="AreaOfPracticeResultMap" type="com.solvd.lawoffice.db.binary.AreaOfPractice" autoMapping="false">
         <id column="area_of_practice_id" property="areaOfPracticeId"/>
         <result column="area_of_practice_name" property="areaOfPracticeName"/>
     </resultMap>

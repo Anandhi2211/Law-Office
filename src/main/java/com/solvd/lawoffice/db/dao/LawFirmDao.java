@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao;
 
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.LawFirm;
 
 import java.util.ArrayList;
 

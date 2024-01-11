@@ -1,9 +1,9 @@
 package com.solvd.lawoffice;
 
-import com.solvd.lawoffice.db.bin.AreaOfPractice;
-import com.solvd.lawoffice.db.bin.AssociationBar;
-import com.solvd.lawoffice.db.bin.Attorney;
-import com.solvd.lawoffice.db.bin.LawFirm;
+import com.solvd.lawoffice.db.binary.AreaOfPractice;
+import com.solvd.lawoffice.db.binary.AssociationBar;
+import com.solvd.lawoffice.db.binary.Attorney;
+import com.solvd.lawoffice.db.binary.LawFirm;
 
 import java.util.ArrayList;
 
@@ -157,7 +157,7 @@ public class DataGenerator {
         return associationBarArrayList;
     }
 
-    public ArrayList<AreaOfPractice> AreaOfPractices() {
+    public ArrayList<AreaOfPractice> AreaOfPracticesMyBatis() {
         ArrayList<AreaOfPractice> areaOfPracticeList = new ArrayList<>();
         AreaOfPractice areaOfPractice = new AreaOfPractice();
         areaOfPractice.setAreaOfPracticeId(10);
@@ -165,4 +165,14 @@ public class DataGenerator {
         areaOfPracticeList.add(areaOfPractice);
         return areaOfPracticeList;
     }
+
+//    public ArrayList<AreaOfPractice> AreaOfPracticesJdbc() {
+//        ArrayList<AreaOfPractice> areaOfPracticeList = new ArrayList<>();
+//        AreaOfPractice areaOfPractice = new AreaOfPractice();
+//        areaOfPractice.setAreaOfPracticeId(11);
+//        areaOfPractice.setAreaOfPracticeName("lestate Law");
+//        areaOfPracticeList.add(areaOfPractice);
+//        return areaOfPracticeList;
+//    }
+
 }

@@ -8,7 +8,7 @@
         values (#{case.caseFiledId},#{case.caseDescription},#{clientId},#{case.attorneyId},#{case.caseCategoryId},#{case.courtId})
     </insert>
 
-    <resultMap id="CaseFiledResultMap" type="com.solvd.lawoffice.db.bin.CaseFiled" autoMapping="false">
+    <resultMap id="CaseFiledResultMap" type="com.solvd.lawoffice.db.binary.CaseFiled" autoMapping="false">
         <id column="case_id" property="caseFiledId"/>
         <result column="case_description" property="caseDescription"/>
         <result column="client_id" property="clientId"/>

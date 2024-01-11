@@ -1,4 +1,4 @@
-package com.solvd.lawoffice.db.bin;
+package com.solvd.lawoffice.db.binary;
 
 import jakarta.xml.bind.annotation.*;
 

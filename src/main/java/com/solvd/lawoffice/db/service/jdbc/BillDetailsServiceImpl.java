@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.bin.BillDetails;
+import com.solvd.lawoffice.db.binary.BillDetails;
 import com.solvd.lawoffice.db.dao.BillDetailsDao;
 import com.solvd.lawoffice.db.service.mybatis.BillDetailsMyBatisImpl;
 import com.solvd.lawoffice.db.service.BillDetailsService;

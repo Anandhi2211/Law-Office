@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.dao;
 
-import com.solvd.lawoffice.db.bin.CaseFiled;
+import com.solvd.lawoffice.db.binary.CaseFiled;
 import org.apache.ibatis.annotations.Param;
 
 public interface CaseFiledDao {

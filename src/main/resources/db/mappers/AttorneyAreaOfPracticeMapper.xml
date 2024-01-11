@@ -13,7 +13,7 @@
         delete from attorney_area_of_practices where attorney_id = #{attorneyId}
     </delete>
 
-    <resultMap id="AttorneyAreaOfPracticeResultMap" type="com.solvd.lawoffice.db.bin.Attorney" autoMapping="false">
+    <resultMap id="AttorneyAreaOfPracticeResultMap" type="com.solvd.lawoffice.db.binary.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>
     </resultMap>
 </mapper>

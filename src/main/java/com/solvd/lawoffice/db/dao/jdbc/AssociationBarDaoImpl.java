@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
 
-import com.solvd.lawoffice.db.bin.AssociationBar;
+import com.solvd.lawoffice.db.binary.AssociationBar;
 import com.solvd.lawoffice.db.dao.AssociationBarDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;

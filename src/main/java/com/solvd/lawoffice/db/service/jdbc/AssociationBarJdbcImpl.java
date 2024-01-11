@@ -1,6 +1,6 @@
 package com.solvd.lawoffice.db.service.jdbc;
 
-import com.solvd.lawoffice.db.bin.AssociationBar;
+import com.solvd.lawoffice.db.binary.AssociationBar;
 import com.solvd.lawoffice.db.dao.AssociationBarDao;
 import com.solvd.lawoffice.db.dao.jdbc.AssociationBarDaoImpl;
 import com.solvd.lawoffice.db.service.AssociationBarService;

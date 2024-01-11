@@ -2,7 +2,6 @@ package com.solvd.lawoffice.db.dao.jdbc;
 
 import com.solvd.lawoffice.db.dao.AttorneyAssociationBarDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
-import com.solvd.lawoffice.db.bin.Attorney;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,13 +16,13 @@ public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao 
     static final String INSERT_QUERY = "insert into attorney_association_bars values (?,?)";
     static final String DELETE_BY_ASSOCIATION_BAR_ID_QUERY = "delete from attorney_association_bars where association_bar_id=";
     @Override
-    public void insert(int associationBar, Attorney attorney) {
+    public void insert(int associationBar, int attorneyId) {
 
         Connection connection = CONNECTION_POOL.getConnection();
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement(INSERT_QUERY);
-            preparedStatement.setInt(1, attorney.getAttorneyId());
+            preparedStatement.setInt(1, attorneyId);
             preparedStatement.setInt(2, associationBar);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
@@ -60,7 +59,6 @@ public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao 
 
     @Override
     public void addAssociationBarId(int attorneyId, int associationBarId) {
-
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
         try {
