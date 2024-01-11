@@ -2,9 +2,7 @@ package com.solvd.lawoffice.db;
 
 import com.solvd.lawoffice.DataGenerator;
 import com.solvd.lawoffice.db.bin.*;
-import com.solvd.lawoffice.db.service.jdbc.AssociationBarJdbcImpl;
-import com.solvd.lawoffice.db.service.jdbc.LawFirmAwardServiceImpl;
-import com.solvd.lawoffice.db.service.jdbc.LawFirmJdbcImpl;
+import com.solvd.lawoffice.db.service.jdbc.*;
 import com.solvd.lawoffice.db.service.mybatis.*;
 import com.solvd.lawoffice.dom.DomParser;
 import com.solvd.lawoffice.jackson.JacksonParser;
@@ -29,11 +27,12 @@ public class Main {
         LawFirmJdbcImpl lawFirmJdbc = new LawFirmJdbcImpl();
         LawFirmMyBatisImpl lawFirmMyBatis = new LawFirmMyBatisImpl();
         AttorneyMyBatisImpl attorneyMyBatis = new AttorneyMyBatisImpl();
+        AttorneyJdbcImpl attorneyJdbc = new AttorneyJdbcImpl();
         LawFirmAwardServiceImpl lawFirmAwardService = new LawFirmAwardServiceImpl();
         AttorneyAssociationBarMyBatisImpl attorneyAssociationBarMyBatis = new AttorneyAssociationBarMyBatisImpl();
+        AttorneyAssociationBarJdbcImpl attorneyAssociationBarJdbc = new AttorneyAssociationBarJdbcImpl();
         AssociationBarMyBatisImpl associationBarMyBatis = new AssociationBarMyBatisImpl();
         AssociationBarJdbcImpl associationBarJdbc = new AssociationBarJdbcImpl();
-
 
         /*HARD CODED VALUES MYBatis & Jdbc*/
         logger.info("Inserting data into Association_Bars Table");
@@ -45,23 +44,22 @@ public class Main {
         associationBarMyBatis.deleteByAssociationBarId(101);
 //        associationBarJdbc.deleteById(101);
 
-
         /*Using MyBatis loading Class objects into DB*/
         logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
         for (LawFirm lawFirm : data.lawFirmMyBatisData()) {
             lawFirmMyBatis.insert(lawFirm);
-            if(lawFirm.getAttorneyList()!=null){
-                for(Attorney attorney : lawFirm.getAttorneyList()){
-                    attorneyMyBatis.insert(attorney,lawFirm.getLawFirmId());
-                    if(attorney.getAssociationBarIdList()!=null){
-                        for(Integer associationBarId : attorney.getAssociationBarIdList()){
-                            attorneyAssociationBarMyBatis.insert(associationBarId,attorney);
-                        }
-                    }
+            for (Attorney attorney : lawFirm.getAttorneyList()) {
+                attorneyMyBatis.insert(attorney, lawFirm.getLawFirmId());
+                for (Integer associationBarId : attorney.getAssociationBarIdList()) {
+                    attorneyAssociationBarMyBatis.insert(associationBarId, attorney);
                 }
             }
         }
-
+        /*Using JDBC Inserting class Objects into DB*/
+        logger.info("Inserting data into Law_firms, Attorneys, AttorneyAssociationBar Tables");
+        for (LawFirm lawFirm : data.lawFirmJdbcData()) {
+            lawFirmJdbc.insert(lawFirm);
+        }
 
 //        logger.info("Finding Attorney by ID");
 //        Optional<Attorney> attorneyList = attorneyService.findById(1001);
@@ -106,7 +104,7 @@ public class Main {
             courtMyBatis.insert(court, judge.getJudgeId());
             ArrayList<CaseFiled> caseFiledList = court.getCaseFiledList();
             for (CaseFiled caseFiled : caseFiledList) {
-                caseFiledMyBatis.insert(caseFiled,caseFiled.getClientId());
+                caseFiledMyBatis.insert(caseFiled, caseFiled.getClientId());
             }
         }
 
@@ -120,9 +118,9 @@ public class Main {
         LawFirm lawFirm = jaxbParser.readingXmlJaxb(file);
         /*Using JDBC Implementation loading class objects into DB*/
         lawFirmJdbc.insert(lawFirm);
-        for(Award award : lawFirm.getAwardList()){
-            logger.info(award.getAwardId() +"  "+lawFirm.getLawFirmId());
-            lawFirmAwardService.insert(award,lawFirm.getLawFirmId());
+        for (Award award : lawFirm.getAwardList()) {
+            logger.info(award.getAwardId() + "  " + lawFirm.getLawFirmId());
+            lawFirmAwardService.insert(award, lawFirm.getLawFirmId());
         }
 //
 //
@@ -131,16 +129,16 @@ public class Main {
         JacksonParser jacksonParser = new JacksonParser();
         List<Client> clients = jacksonParser.readXmlFile(new File("src/main/resources/jackson/clientjackson.json"));
         /*Using MyBatis loading class objects into DB*/
-        for(Client client : clients){
+        for (Client client : clients) {
             clientMyBatis.insert(client);
-            for(CaseFiled caseFiled : client.getCaseFiledList()){
-                caseFiledMyBatis.insert(caseFiled,client.getClientId());
+            for (CaseFiled caseFiled : client.getCaseFiledList()) {
+                caseFiledMyBatis.insert(caseFiled, client.getClientId());
             }
-            for(BillDetails billDetails : client.getBillDetailList()){
-                billDetailsMyBatis.insert(billDetails,client.getClientId());
+            for (BillDetails billDetails : client.getBillDetailList()) {
+                billDetailsMyBatis.insert(billDetails, client.getClientId());
             }
         }
-       /*Writing class Objects into Json File*/
+        /*Writing class Objects into Json File*/
         jacksonParser.writeXmlFile(clients);
     }
 }

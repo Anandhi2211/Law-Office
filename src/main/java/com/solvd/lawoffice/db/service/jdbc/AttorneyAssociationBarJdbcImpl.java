@@ -5,9 +5,9 @@ import com.solvd.lawoffice.db.dao.AttorneyAssociationBarRepository;
 import com.solvd.lawoffice.db.dao.jdbc.AttorneyAssociationBarDaoImpl;
 import com.solvd.lawoffice.db.service.AttorneyAssociationBarService;
 
-public class AttorneyAssociationBarServiceImpl implements AttorneyAssociationBarService {
+public class AttorneyAssociationBarJdbcImpl implements AttorneyAssociationBarService {
     private final AttorneyAssociationBarRepository attorneyAssociationBarRepository;
-    public AttorneyAssociationBarServiceImpl() {
+    public AttorneyAssociationBarJdbcImpl() {
 //        this.attorneyAssociationBarRepository = new AttorneyAssociationBarRepositoryMyBatisImpl();
         this.attorneyAssociationBarRepository = new AttorneyAssociationBarDaoImpl();
 

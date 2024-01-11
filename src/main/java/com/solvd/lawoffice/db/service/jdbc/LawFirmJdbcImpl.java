@@ -20,9 +20,9 @@ public class LawFirmJdbcImpl implements LawFirmService {
 
     public LawFirmJdbcImpl() {
         this.lawFirmRepository = new LawFirmDaoImpl();
-        this.attorneyService = new AttorneyServiceImpl();
+        this.attorneyService = new AttorneyJdbcImpl();
         this.clientService = new ClientJdbcImpl();
-        this. attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
+        this. attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
     }
     @Override
     public LawFirm insert(LawFirm lawFirm) {

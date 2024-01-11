@@ -12,7 +12,7 @@ public class AssociationBarJdbcImpl implements AssociationBarService {
     private final AttorneyAssociationBarService attorneyAssociationBarService;
     public AssociationBarJdbcImpl() {
         this.associationBarRepository = new AssociationBarDaoImpl();
-        this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
+        this.attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
     }
     @Override
     public AssociationBar insert(AssociationBar associationBar) {

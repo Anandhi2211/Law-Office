@@ -10,14 +10,14 @@ import com.solvd.lawoffice.db.service.AttorneyService;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class AttorneyServiceImpl implements AttorneyService {
+public class AttorneyJdbcImpl implements AttorneyService {
     private final AttorneyRepository attorneyRepository;
     private final AttorneyAssociationBarService attorneyAssociationBarService;
     private final AttorneyAreaOfPracticeService attorneyAreaOfPracticeService;
 
-    public AttorneyServiceImpl() {
+    public AttorneyJdbcImpl() {
         this.attorneyRepository = new AttorneyDaoImpl();
-        this.attorneyAssociationBarService = new AttorneyAssociationBarServiceImpl();
+        this.attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
         this.attorneyAreaOfPracticeService = new AttorneyAreaOfPracticeServiceImpl();
     }
 
