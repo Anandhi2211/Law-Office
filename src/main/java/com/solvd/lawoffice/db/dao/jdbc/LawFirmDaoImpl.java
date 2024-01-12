@@ -15,30 +15,40 @@ import java.util.ArrayList;
 public class LawFirmDaoImpl implements LawFirmDao {
     private static final Logger logger = LogManager.getLogger(LawFirmDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
+    static final String INSERT_QUERY = "INSERT INTO law_firms VALUES (?,?,?,?,?)";
 
     @Override
     public void insert(LawFirm lawFirm) {
         Connection connection = CONNECTION_POOL.getConnection();
+        ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO law_firms VALUES (?,?,?,?,?)");
+                    .prepareStatement(INSERT_QUERY);
             preparedStatement.setInt(1, lawFirm.getLawFirmId());
             preparedStatement.setString(2, lawFirm.getLawFirmName());
             preparedStatement.setString(3, lawFirm.getAddress());
             preparedStatement.setString(4, lawFirm.getCountry());
             preparedStatement.setString(5, lawFirm.getCity());
-            int numberOfRecords = preparedStatement.executeUpdate();
-            logger.info("No of Record inserted: " + numberOfRecords);
+            preparedStatement.execute();
+//            logger.info("No of Record inserted: " + numberOfRecords);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        finally {
+            logger.error("incorrect Query");
+        } finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (SQLException e) {
+                    resultset = null;
+                }
+            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
+
     public ArrayList<LawFirm> findAll() {
         Connection connection = CONNECTION_POOL.getConnection();
         ArrayList<LawFirm> lawFirmsList = new ArrayList<>();
+        ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("Select * from law_firms");
@@ -54,13 +64,20 @@ public class LawFirmDaoImpl implements LawFirmDao {
             }
 //            lawFirmsList = displayTheResults(resultSet);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        finally {
+            logger.error("incorrect Query");
+        } finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (SQLException e) {
+                    resultset = null;
+                }
+            }
             CONNECTION_POOL.releaseConnection(connection);
         }
         return lawFirmsList;
     }
+
     private ArrayList<LawFirm> displayTheResults(ResultSet resultSet) {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
         try {
@@ -74,7 +91,7 @@ public class LawFirmDaoImpl implements LawFirmDao {
                 lawFirmList.add(lawFirm);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            logger.error("incorrect Query");
         }
         return lawFirmList;
     }

@@ -4,15 +4,15 @@ package com.solvd.lawoffice.db.service.jdbc;
 
 import com.solvd.lawoffice.db.binary.Court;
 import com.solvd.lawoffice.db.dao.CourtDao;
+import com.solvd.lawoffice.db.dao.jdbc.CourtDaoImpl;
 import com.solvd.lawoffice.db.service.CourtService;
-import com.solvd.lawoffice.db.service.mybatis.CourtMyBatisImpl;
 
-public class CourtServiceImpl implements CourtService {
+public class CourtJdbcImpl implements CourtService {
 
     private final CourtDao courtDao;
 
-    public CourtServiceImpl() {
-        this.courtDao = new CourtMyBatisImpl();
+    public CourtJdbcImpl() {
+        this.courtDao = new CourtDaoImpl();
     }
 
     @Override

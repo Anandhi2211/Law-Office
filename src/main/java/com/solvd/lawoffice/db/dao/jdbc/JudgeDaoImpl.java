@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-import com.solvd.lawoffice.db.binary.Award;
-import com.solvd.lawoffice.db.dao.LawFirmAwardDao;
+import com.solvd.lawoffice.db.binary.Judge;
+import com.solvd.lawoffice.db.dao.JudgeDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,20 +11,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LawFirmAwardDaoImpl implements LawFirmAwardDao {
-    private static final Logger logger = LogManager.getLogger(LawFirmAwardDaoImpl.class);
+public class JudgeDaoImpl implements JudgeDao {
+    private static final Logger logger = LogManager.getLogger(JudgeDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
-    static final String INSERT_QUERY = "insert into law_firm_has_awards values (?,?)";
+    static final String INSERT_QUERY = "insert into judges values (?,?)";
 
     @Override
-    public void insert(Award award, int lawFirmId) {
+    public void insert(Judge judge) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement(INSERT_QUERY);
-            preparedStatement.setInt(1, lawFirmId);
-            preparedStatement.setInt(2, award.getAwardId());
+            preparedStatement.setInt(1, judge.getJudgeId());
+            preparedStatement.setString(2, judge.getJudgeName());
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
             resultset = preparedStatement.executeQuery();

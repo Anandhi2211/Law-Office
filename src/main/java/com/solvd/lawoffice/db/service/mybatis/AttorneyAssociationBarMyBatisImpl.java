@@ -20,12 +20,4 @@ public class AttorneyAssociationBarMyBatisImpl implements AttorneyAssociationBar
                 attorneyAssociationBarDao.deleteByAssociationBarId(associationBarId);
             }
     }
-
-    @Override
-    public void addAssociationBarId(int attorneyId, int associationBarId) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
-            AttorneyAssociationBarDao attorneyAssociationBarDao = sqlSession.getMapper(AttorneyAssociationBarDao.class);
-            attorneyAssociationBarDao.addAssociationBarId(attorneyId,associationBarId);
-        }
-    }
 }

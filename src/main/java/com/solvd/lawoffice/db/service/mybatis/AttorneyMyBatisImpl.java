@@ -53,15 +53,6 @@ public class AttorneyMyBatisImpl implements AttorneyDao {
     }
 
     @Override
-    public void addAssociationBar(int attorney_id, int associationBarId) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
-            AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
-//             attorneyDao.findByName(attorneyName);
-        }
-
-    }
-
-    @Override
     public ArrayList<Attorney> findAll() {
         return null;
     }

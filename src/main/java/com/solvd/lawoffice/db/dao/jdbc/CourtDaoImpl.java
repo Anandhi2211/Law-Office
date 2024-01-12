@@ -1,7 +1,7 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-import com.solvd.lawoffice.db.binary.Award;
-import com.solvd.lawoffice.db.dao.LawFirmAwardDao;
+import com.solvd.lawoffice.db.binary.Court;
+import com.solvd.lawoffice.db.dao.CourtDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,23 +11,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LawFirmAwardDaoImpl implements LawFirmAwardDao {
-    private static final Logger logger = LogManager.getLogger(LawFirmAwardDaoImpl.class);
+public class CourtDaoImpl implements CourtDao {
+    private static final Logger logger = LogManager.getLogger(CourtDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
-    static final String INSERT_QUERY = "insert into law_firm_has_awards values (?,?)";
+    static final String INSERT_QUERY = "insert into courts values (?,?,?,?)";
 
     @Override
-    public void insert(Award award, int lawFirmId) {
+    public void insert(Court court, int judgeId) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement(INSERT_QUERY);
-            preparedStatement.setInt(1, lawFirmId);
-            preparedStatement.setInt(2, award.getAwardId());
-            int numberOfRowsCreated = preparedStatement.executeUpdate();
-            logger.info("Number of rows inserted: " + numberOfRowsCreated);
-            resultset = preparedStatement.executeQuery();
+            preparedStatement.setInt(1, court.getCourtId());
+            preparedStatement.setString(2, court.getCountry());
+            preparedStatement.setString(3, court.getCity());
+            preparedStatement.setInt(4, judgeId);
+            preparedStatement.executeUpdate();
+//            preparedStatement.executeQuery();
+//            logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {

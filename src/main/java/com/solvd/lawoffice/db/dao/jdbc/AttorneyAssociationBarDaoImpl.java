@@ -15,10 +15,11 @@ public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao 
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
     static final String INSERT_QUERY = "insert into attorney_association_bars values (?,?)";
     static final String DELETE_BY_ASSOCIATION_BAR_ID_QUERY = "delete from attorney_association_bars where association_bar_id=";
+
     @Override
     public void insert(int associationBar, int attorneyId) {
-
         Connection connection = CONNECTION_POOL.getConnection();
+        ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement(INSERT_QUERY);
@@ -27,27 +28,10 @@ public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao 
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            CONNECTION_POOL.releaseConnection(connection);
-        }
-    }
-
-    @Override
-    public void deleteByAssociationBarId(int associationBarId) {
-        Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
-        try {
-            PreparedStatement preparedStatement = connection
-                    .prepareStatement(DELETE_BY_ASSOCIATION_BAR_ID_QUERY+associationBarId);
-            int numberOfRowsCreated = preparedStatement.executeUpdate();
-            logger.info("Number of rows affected: " + numberOfRowsCreated);
-            resultset = preparedStatement.executeQuery();
-        } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if(resultset != null){
-                try{
+            if (resultset != null) {
+                try {
                     resultset.close();
                 } catch (SQLException e) {
                     resultset = null;
@@ -58,20 +42,20 @@ public class AttorneyAssociationBarDaoImpl implements AttorneyAssociationBarDao 
     }
 
     @Override
-    public void addAssociationBarId(int attorneyId, int associationBarId) {
+    public void deleteByAssociationBarId(int associationBarId) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("insert into attorney_association_bars(");
+                    .prepareStatement(DELETE_BY_ASSOCIATION_BAR_ID_QUERY + associationBarId);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows affected: " + numberOfRowsCreated);
             resultset = preparedStatement.executeQuery();
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if(resultset != null){
-                try{
+            if (resultset != null) {
+                try {
                     resultset.close();
                 } catch (SQLException e) {
                     resultset = null;

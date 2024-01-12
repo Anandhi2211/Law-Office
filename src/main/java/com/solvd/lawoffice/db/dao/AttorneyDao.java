@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public interface AttorneyDao {
-
     void insert(@Param("attorney") Attorney attorney, @Param("lawFirmId") int lawFirmId);
     Optional<Attorney> findById(int attorneyId);
     Optional<Attorney> findByName(String attorneyName);
     void deleteById( int attorney_id);
     void updateCityById(@Param("attorneyId") int attorney_id,@Param("city") String city);
-    void addAssociationBar(int attorney_id, int associationBarId);
     ArrayList<Attorney> findAll();
 }

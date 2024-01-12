@@ -22,7 +22,7 @@ public class LawFirmJdbcImpl implements LawFirmService {
         this.lawFirmDao = new LawFirmDaoImpl();
         this.attorneyService = new AttorneyJdbcImpl();
         this.clientService = new ClientJdbcImpl();
-        this. attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
+        this.attorneyAssociationBarService = new AttorneyAssociationBarJdbcImpl();
     }
     @Override
     public LawFirm insert(LawFirm lawFirm) {

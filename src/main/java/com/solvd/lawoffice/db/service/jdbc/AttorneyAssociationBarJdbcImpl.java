@@ -22,9 +22,4 @@ public class AttorneyAssociationBarJdbcImpl implements AttorneyAssociationBarSer
     public void deleteById(int associationBarId) {
         this.attorneyAssociationBarDao.deleteByAssociationBarId(associationBarId);
     }
-
-    @Override
-    public void addAssociationBar(int attorneyId, int associationBarId) {
-        this.attorneyAssociationBarDao.addAssociationBarId(attorneyId,associationBarId);
-    }
 }

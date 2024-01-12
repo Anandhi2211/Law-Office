@@ -1,0 +1,70 @@
+[
+    {
+      "clientId": 208,
+      "clientName": "Sumedha",
+      "country": "USA",
+      "city": "Apex",
+      "caseFiledList": [
+        {
+          "caseFiledId": 5017,
+          "caseDescription": "some random threaten calls coming",
+          "attorneyId": 1004,
+          "caseCategoryId": 2,
+          "courtId": 33
+        },
+        {
+          "caseFiledId": 5018,
+          "caseDescription": "applied load to a bank and it bankrupted",
+          "attorneyId": 1003,
+          "caseCategoryId": 1,
+          "courtId": 22
+        }
+      ],
+      "billDetailList": [
+        {
+          "invoiceNumber": 69986554,
+          "billAmount": 3500,
+          "lawFirmId": 102
+        },
+        {
+          "invoiceNumber": 78852154,
+          "billAmount": 4500,
+          "lawFirmId": 101
+        }
+      ]
+    },
+    {
+      "clientId": 209,
+      "clientName": "Anitha",
+      "country": "USA",
+      "city": "Raleigh",
+      "CaseFiledList": [
+        {
+          "caseFiledId": 5019,
+          "caseDescription": "some random threaten calls coming",
+          "attorneyId": 1003,
+          "caseCategoryId": 2,
+          "courtId": 44
+        },
+        {
+          "caseFiledId": 5020,
+          "caseDescription": "applied load to a bank and it bankrupted",
+          "attorneyId": 1001,
+          "caseCategoryId": 1,
+          "courtId": 22
+        }
+      ],
+      "billDetailList": [
+        {
+          "invoiceNumber": 6565554,
+          "billAmount": 3500,
+          "lawFirmId": 102
+        },
+        {
+          "invoiceNumber": 334345,
+          "billAmount": 4500,
+          "lawFirmId": 101
+        }
+      ]
+    }
+  ]

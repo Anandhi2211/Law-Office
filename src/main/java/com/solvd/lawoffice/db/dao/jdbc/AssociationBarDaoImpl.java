@@ -1,6 +1,5 @@
 package com.solvd.lawoffice.db.dao.jdbc;
 
-
 import com.solvd.lawoffice.db.binary.AssociationBar;
 import com.solvd.lawoffice.db.dao.AssociationBarDao;
 import com.solvd.lawoffice.db.util.ConnectionPool;
@@ -15,6 +14,8 @@ import java.sql.SQLException;
 public class AssociationBarDaoImpl implements AssociationBarDao {
     private static final Logger logger = LogManager.getLogger(AssociationBarDaoImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
+    static final String INSERT_QUERY = "insert into association_bars values (?,?)";
+    static final String DELETE_QUERY = "delete from association_bars where association_bar_id =";
 
     @Override
     public void insert(AssociationBar associationBar) {
@@ -22,7 +23,7 @@ public class AssociationBarDaoImpl implements AssociationBarDao {
         ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("insert into association_bars values (?,?)");
+                    .prepareStatement(INSERT_QUERY);
             preparedStatement.setInt(1, associationBar.getAssociationBarId());
             preparedStatement.setString(2, associationBar.getAssociationBarName());
             int numberOfRowsCreated = preparedStatement.executeUpdate();
@@ -48,7 +49,7 @@ public class AssociationBarDaoImpl implements AssociationBarDao {
         ResultSet resultset = null;
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("delete from association_bars where association_bar_id =" + associationBarId);
+                    .prepareStatement(DELETE_QUERY + associationBarId);
             int numberOfRowsCreated = preparedStatement.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
             resultset = preparedStatement.executeQuery();

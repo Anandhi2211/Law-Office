@@ -2,14 +2,14 @@ package com.solvd.lawoffice.db.service.jdbc;
 
 import com.solvd.lawoffice.db.binary.CaseFiled;
 import com.solvd.lawoffice.db.dao.CaseFiledDao;
-import com.solvd.lawoffice.db.service.mybatis.CaseFiledMyBatisImpl;
+import com.solvd.lawoffice.db.dao.jdbc.CaseFiledDaoImpl;
 import com.solvd.lawoffice.db.service.CaseService;
 
-public class CaseServiceImpl implements CaseService {
+public class CaseFiledJdbcImpl implements CaseService {
     private final CaseFiledDao caseFiledDao;
 
-    public CaseServiceImpl() {
-        this.caseFiledDao = new CaseFiledMyBatisImpl();
+    public CaseFiledJdbcImpl() {
+        this.caseFiledDao = new CaseFiledDaoImpl();
     }
 
     public CaseFiled insert(CaseFiled caseFiled, int clientId) {

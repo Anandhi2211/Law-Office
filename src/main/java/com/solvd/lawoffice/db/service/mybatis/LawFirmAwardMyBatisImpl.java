@@ -5,7 +5,7 @@ import com.solvd.lawoffice.db.util.DaoConfig;
 import com.solvd.lawoffice.db.dao.LawFirmAwardDao;
 import org.apache.ibatis.session.SqlSession;
 
-public class LawFirmAwardDaoMyBatisImpl implements LawFirmAwardDao {
+public class LawFirmAwardMyBatisImpl implements LawFirmAwardDao {
     @Override
     public void insert(Award award, int lawFirmId) {
 

@@ -47,7 +47,7 @@ public class AttorneyJdbcImpl implements AttorneyService {
 
     @Override
     public void addAssociationBar(int attorneyId, int associationBarId) {
-        attorneyAssociationBarService.addAssociationBar(attorneyId,associationBarId);
+        attorneyAssociationBarService.insert(attorneyId,associationBarId);
     }
 
 
