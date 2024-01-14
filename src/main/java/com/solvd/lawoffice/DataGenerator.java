@@ -1,9 +1,9 @@
 package com.solvd.lawoffice;
 
-import com.solvd.lawoffice.db.binary.AreaOfPractice;
-import com.solvd.lawoffice.db.binary.AssociationBar;
-import com.solvd.lawoffice.db.binary.Attorney;
-import com.solvd.lawoffice.db.binary.LawFirm;
+import com.solvd.lawoffice.binary.AreaOfPractice;
+import com.solvd.lawoffice.binary.AssociationBar;
+import com.solvd.lawoffice.binary.Attorney;
+import com.solvd.lawoffice.binary.LawFirm;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.lawoffice.db.dao.BillDetailsDao">
+<mapper namespace="com.solvd.lawoffice.dao.BillDetailsDao">
 
     <insert id="insert" keyColumn="invoice_no" keyProperty="invoiceNumber" >
         insert into bill_details(invoice_no,bill_amount,law_firm_id,client_id)
@@ -9,7 +9,7 @@
     </insert>
 
 
-    <resultMap id="BillDetailsResultMap" type="com.solvd.lawoffice.db.binary.BillDetails" autoMapping="false">
+    <resultMap id="BillDetailsResultMap" type="com.solvd.lawoffice.binary.BillDetails" autoMapping="false">
         <id column="invoice_no" property="invoiceNumber"/>
         <result column="bill_amount" property="billAmount"/>
         <result column="law_firm_id" property="lawFirmId"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.lawoffice.db.dao.AttorneyAreaOfPracticeDao">
+<mapper namespace="com.solvd.lawoffice.dao.AttorneyAreaOfPracticeDao">
 
     <insert id="insert" useGeneratedKeys="true">
         insert into attorney_area_of_practices(area_of_practice_id,attorney_id)
@@ -13,7 +13,7 @@
         delete from attorney_area_of_practices where attorney_id = #{attorneyId}
     </delete>
 
-    <resultMap id="AttorneyAreaOfPracticeResultMap" type="com.solvd.lawoffice.db.binary.Attorney" autoMapping="false">
+    <resultMap id="AttorneyAreaOfPracticeResultMap" type="com.solvd.lawoffice.binary.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>
     </resultMap>
 </mapper>

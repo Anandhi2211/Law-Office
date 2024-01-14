@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.lawoffice.db.dao.JudgeDao">
+<mapper namespace="com.solvd.lawoffice.dao.JudgeDao">
 
     <insert id="insert" keyColumn="judge_id" keyProperty="judgeId" useGeneratedKeys="true">
         insert into judges(judge_id,judge_name)
         values (#{judgeId},#{judgeName})
     </insert>
 
-    <resultMap id="JudgeResultMap" type="com.solvd.lawoffice.db.binary.Judge" autoMapping="false">
+    <resultMap id="JudgeResultMap" type="com.solvd.lawoffice.binary.Judge" autoMapping="false">
         <id column="judge_id" property="judgeId"/>
         <result column="judge_name" property="judgeName"/>
     </resultMap>

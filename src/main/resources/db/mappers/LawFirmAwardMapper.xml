@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.lawoffice.db.dao.LawFirmAwardDao">
+<mapper namespace="com.solvd.lawoffice.dao.LawFirmAwardDao">
 
     <insert id="insert" useGeneratedKeys="true">
         insert into law_firm_has_awards(law_firm_id,award_id)
         values (#{lawFirmId},#{award.awardId})
     </insert>
 
-    <resultMap id="LawFirmAwardResultMap" type="com.solvd.lawoffice.db.binary.Award" autoMapping="false">
+    <resultMap id="LawFirmAwardResultMap" type="com.solvd.lawoffice.binary.Award" autoMapping="false">
         <result column="award_id" property="awardId"/>
         <result column="law_firm_id" property="lawFirmId"/>
     </resultMap>
