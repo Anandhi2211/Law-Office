@@ -19,6 +19,7 @@ public class JudgeServiceImpl implements JudgeService {
         }    }
     @Override
     public Judge insert(Judge judge) {
+
         this.judgeDao.insert(judge);
         return judge;
     }

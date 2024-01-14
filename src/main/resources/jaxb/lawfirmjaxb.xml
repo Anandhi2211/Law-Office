@@ -23,8 +23,8 @@
             <country>USA</country>
             <city>cincinnati</city>
             <associationBarIdList>
-                <associationBarId>110</associationBarId>
-                <associationBarId>115</associationBarId>
+                <associationBarId>103</associationBarId>
+                <associationBarId>102</associationBarId>
                 <associationBarId>106</associationBarId>
             </associationBarIdList>
         </attorney>
@@ -35,7 +35,7 @@
             <associationBarIdList>
                 <associationBarId>109</associationBarId>
                 <associationBarId>100</associationBarId>
-                <associationBarId>106</associationBarId>
+                <associationBarId>105</associationBarId>
             </associationBarIdList>
         </attorney>
         <attorney id ="1014">
@@ -43,7 +43,7 @@
             <country>USA</country>
             <city>Concord</city>
             <associationBarIdList>
-                <associationBarId>111</associationBarId>
+                <associationBarId>105</associationBarId>
                 <associationBarId>106</associationBarId>
                 <associationBarId>103</associationBarId>
             </associationBarIdList>
