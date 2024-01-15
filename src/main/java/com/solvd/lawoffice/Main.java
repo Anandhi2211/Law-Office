@@ -79,7 +79,6 @@ public class Main {
         attorneyService.deleteAttorneyById(1000);
         logger.info("Updating Attorney city");
         attorneyService.updateCityById(1000, "Troy1");
-
         /**
          * Area OF Practice
          * Insertion
