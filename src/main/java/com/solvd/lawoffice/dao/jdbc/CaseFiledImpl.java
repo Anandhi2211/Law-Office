@@ -8,18 +8,15 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CaseFiledImpl implements CaseFiledDao {
     private static final Logger logger = LogManager.getLogger(CaseFiledImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
     static final String INSERT_QUERY = "insert into cases values (?,?,?,?,?,?)";
-
     @Override
     public void insert(CaseFiled caseFiled, int clientId) {
         Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
         try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, caseFiled.getCaseFiledId());
@@ -29,18 +26,10 @@ public class CaseFiledImpl implements CaseFiledDao {
             ps.setInt(5, caseFiled.getCaseCategoryId());
             ps.setInt(6, caseFiled.getCourtId());
             int numberOfRowsCreated = ps.executeUpdate();
-//            resultset = ps.executeQuery();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if (resultset != null) {
-                try {
-                    resultset.close();
-                } catch (SQLException e) {
-                    resultset = null;
-                }
-            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }

@@ -15,7 +15,7 @@ public class AttorneyImpl implements AttorneyDao {
     private static final Logger logger = LogManager.getLogger(AttorneyImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
     static final String INSERT_QUERY = "insert into attorneys values (?,?,?,?,?)";
-    static final String FIND_BY_ID_QUERY = "select * from attorneys where attorney_id =";
+    static final String FIND_BY_ID_QUERY = "select * from attorneys where attorney_id =?";
     static final String UPDATE_CITY_QUERY = "update attorneys set city = ? where attorney_id = ?";
     static final String FIND_ALL_QUERY = "Select * from attorneys";
     static final String DELETE_BY_ID = "Delete * from attorneys where attorney_id = ?";
@@ -24,7 +24,6 @@ public class AttorneyImpl implements AttorneyDao {
     @Override
     public void insert(Attorney attorney, int lawFirmId) {
         Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
         try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, attorney.getAttorneyId());
@@ -33,18 +32,10 @@ public class AttorneyImpl implements AttorneyDao {
             ps.setString(4, attorney.getCity());
             ps.setInt(5, lawFirmId);
             int numberOfRowsCreated = ps.executeUpdate();
-//            resultset = ps.executeQuery();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if (resultset != null) {
-                try {
-                    resultset.close();
-                } catch (SQLException e) {
-                    resultset = null;
-                }
-            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
@@ -55,7 +46,8 @@ public class AttorneyImpl implements AttorneyDao {
         ResultSet resultset = null;
         Attorney attorney = null;
         try (PreparedStatement ps = connection
-                .prepareStatement(FIND_BY_ID_QUERY + attorney_id)) {
+                .prepareStatement(FIND_BY_ID_QUERY)) {
+            ps.setInt(1, attorney_id);
             attorney = new Attorney();
             resultset = ps.executeQuery();
             while (resultset.next()) {
@@ -84,24 +76,15 @@ public class AttorneyImpl implements AttorneyDao {
     @Override
     public void updateCityById(int attorney_id, String city) {
         Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
         try (PreparedStatement ps = connection
                 .prepareStatement(UPDATE_CITY_QUERY)) {
             ps.setString(1, city);
             ps.setInt(2, attorney_id);
             int numberOfRowsCreated = ps.executeUpdate();
-//            resultset = ps.executeQuery();
             logger.info("Number of rows Updated: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if (resultset != null) {
-                try {
-                    resultset.close();
-                } catch (SQLException e) {
-                    resultset = null;
-                }
-            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
@@ -185,7 +168,6 @@ public class AttorneyImpl implements AttorneyDao {
     @Override
     public void deleteById(int attorney_id) {
         Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
         try (PreparedStatement ps = connection
                 .prepareStatement(DELETE_BY_ID)) {
             ps.setInt(1, attorney_id);
@@ -194,13 +176,6 @@ public class AttorneyImpl implements AttorneyDao {
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if (resultset != null) {
-                try {
-                    resultset.close();
-                } catch (SQLException e) {
-                    resultset = null;
-                }
-            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }

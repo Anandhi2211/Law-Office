@@ -20,7 +20,6 @@ public class LawFirmImpl implements LawFirmDao {
     @Override
     public void insert(LawFirm lawFirm) {
         Connection connection = CONNECTION_POOL.getConnection();
-        ResultSet resultset = null;
         try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, lawFirm.getLawFirmId());
@@ -33,13 +32,6 @@ public class LawFirmImpl implements LawFirmDao {
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {
-            if (resultset != null) {
-                try {
-                    resultset.close();
-                } catch (SQLException e) {
-                    resultset = null;
-                }
-            }
             CONNECTION_POOL.releaseConnection(connection);
         }
     }
