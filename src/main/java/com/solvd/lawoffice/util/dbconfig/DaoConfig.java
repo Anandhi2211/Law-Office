@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DaoConfig {
-    private static final SqlSessionFactory sessionFactory ;
+    private static final SqlSessionFactory sessionFactory;
 
-    static{
+    static {
         try (InputStream is = Resources.getResourceAsStream("mybatis.config.xml")) {
             sessionFactory = new SqlSessionFactoryBuilder()
                     .build(is);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     public static SqlSessionFactory getSessionFactory() {
         return sessionFactory;
     }

@@ -20,13 +20,13 @@ public class LawFirmAwardImpl implements LawFirmAwardDao {
     public void insert(Award award, int lawFirmId) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, lawFirmId);
             ps.setInt(2, award.getAwardId());
             int numberOfRowsCreated = ps.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
-            resultset = ps.executeQuery();
+//            resultset = ps.executeQuery();
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {

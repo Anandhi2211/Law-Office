@@ -9,9 +9,14 @@
     </insert>
 
 
-    <delete id="deleteById">
+    <delete id="deleteAttorneyById">
         delete from attorney_area_of_practices where attorney_id = #{attorneyId}
     </delete>
+
+    <delete id="deleteByAreaOfPracticeId">
+        delete from attorney_area_of_practices where area_of_practice_id = #{areaOfPracticeId}
+    </delete>
+
 
     <resultMap id="AttorneyAreaOfPracticeResultMap" type="com.solvd.lawoffice.binary.Attorney" autoMapping="false">
         <result column="attorney_id" property="attorneyId"/>

@@ -20,14 +20,14 @@ public class ClientImpl implements ClientDao {
     public void insert(Client client) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, client.getClientId());
             ps.setString(2, client.getClientName());
             ps.setString(3, client.getCountry());
             ps.setString(4, client.getCity());
             int numberOfRowsCreated = ps.executeUpdate();
-            resultset = ps.executeQuery();
+//            resultset = ps.executeQuery();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");

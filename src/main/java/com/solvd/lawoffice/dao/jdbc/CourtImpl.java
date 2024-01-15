@@ -1,6 +1,7 @@
 package com.solvd.lawoffice.dao.jdbc;
 
 import com.solvd.lawoffice.binary.Court;
+import com.solvd.lawoffice.binary.Judge;
 import com.solvd.lawoffice.dao.CourtDao;
 import com.solvd.lawoffice.util.dbconfig.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
@@ -17,17 +18,17 @@ public class CourtImpl implements CourtDao {
     static final String INSERT_QUERY = "insert into courts values (?,?,?,?)";
 
     @Override
-    public void insert(Court court, int judgeId) {
+    public void insert(Court court, Judge judge) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, court.getCourtId());
             ps.setString(2, court.getCountry());
             ps.setString(3, court.getCity());
-            ps.setInt(4, judgeId);
+            ps.setInt(4, judge.getJudgeId());
             int numberOfRowsCreated = ps.executeUpdate();
-          resultset = ps.executeQuery();
+//          resultset = ps.executeQuery();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
         } catch (SQLException e) {
             logger.error("incorrect Query");

@@ -508,11 +508,11 @@ insert into bill_details (invoice_no, bill_amount, law_firm_id, client_id) value
 insert into bill_details (invoice_no, bill_amount, law_firm_id, client_id) values(888888,6000,103,201);
 insert into bill_details (invoice_no, bill_amount, law_firm_id, client_id) values(999999,8500,100,203);
 
-   /* alter table clients
+   alter table clients
 drop constraint fk_client_law_firm;
 
 alter table clients
-drop column law_firm_id;*/
+drop column law_firm_id;
 
 insert into law_firm_has_clients values (100,201);
 insert into law_firm_has_clients values (100,203);

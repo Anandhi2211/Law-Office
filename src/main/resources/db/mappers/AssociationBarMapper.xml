@@ -5,7 +5,7 @@
 
     <insert id="insert" keyColumn="association_bar_id" keyProperty="associationBarId" useGeneratedKeys="true">
         insert into association_bars(association_bar_id,association_bar_name)
-        values (#{associationBarId},#{associationBarName})
+        values (#{associationBar.associationBarId},#{associationBar.associationBarName})
     </insert>
 
     <delete id="deleteByAssociationBarId">

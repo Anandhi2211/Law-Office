@@ -9,7 +9,7 @@ public class ClientImpl implements ClientDao {
     @Override
     public void insert(Client client) {
 
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             ClientDao clientDao = sqlSession.getMapper(ClientDao.class);
             clientDao.insert(client);
         }

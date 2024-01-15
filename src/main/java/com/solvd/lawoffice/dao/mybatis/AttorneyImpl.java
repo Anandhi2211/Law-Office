@@ -11,16 +11,15 @@ import java.util.Optional;
 public class AttorneyImpl implements AttorneyDao {
     @Override
     public void insert(Attorney attorney, int lawFirmId) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
-            attorneyDao.insert(attorney,lawFirmId);
+            attorneyDao.insert(attorney, lawFirmId);
         }
     }
 
     @Override
     public Optional<Attorney> findById(int attorneyId) {
-
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
             return attorneyDao.findById(attorneyId);
         }
@@ -28,7 +27,7 @@ public class AttorneyImpl implements AttorneyDao {
 
     @Override
     public Optional<Attorney> findByName(String attorneyName) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
             return attorneyDao.findByName(attorneyName);
         }
@@ -36,25 +35,25 @@ public class AttorneyImpl implements AttorneyDao {
 
     @Override
     public void deleteById(int attorney_id) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
             attorneyDao.deleteById(attorney_id);
         }
-
     }
 
     @Override
-    public void updateCityById( int attorney_id,String city) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+    public void updateCityById(int attorney_id, String city) {
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
-            attorneyDao.updateCityById( attorney_id, city);
+            attorneyDao.updateCityById(attorney_id, city);
         }
-
     }
 
     @Override
     public ArrayList<Attorney> findAll() {
-        return null;
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
+            AttorneyDao attorneyDao = sqlSession.getMapper(AttorneyDao.class);
+            return attorneyDao.findAll();
+        }
     }
-
 }

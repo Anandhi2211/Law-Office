@@ -21,7 +21,7 @@ public class LawFirmImpl implements LawFirmDao {
     public void insert(LawFirm lawFirm) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, lawFirm.getLawFirmId());
             ps.setString(2, lawFirm.getLawFirmName());
@@ -29,7 +29,6 @@ public class LawFirmImpl implements LawFirmDao {
             ps.setString(4, lawFirm.getCountry());
             ps.setString(5, lawFirm.getCity());
             int numberOfRecords = ps.executeUpdate();
-            resultset = ps.executeQuery();
             logger.info("No of Record inserted: " + numberOfRecords);
         } catch (SQLException e) {
             logger.error("incorrect Query");
@@ -49,7 +48,7 @@ public class LawFirmImpl implements LawFirmDao {
         Connection connection = CONNECTION_POOL.getConnection();
         ArrayList<LawFirm> lawFirmsList = new ArrayList<>();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement("Select * from law_firms")) {
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {

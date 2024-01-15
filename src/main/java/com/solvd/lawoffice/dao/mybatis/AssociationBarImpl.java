@@ -10,14 +10,15 @@ public class AssociationBarImpl implements AssociationBarDao {
     @Override
     public void insert(AssociationBar associationBar) {
 
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AssociationBarDao associationBarDao = sqlSession.getMapper(AssociationBarDao.class);
             associationBarDao.insert(associationBar);
         }
     }
+
     @Override
     public void deleteByAssociationBarId(int associationBarId) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             AttorneyAssociationBarDao attorneyAssociationBarDao = sqlSession.getMapper(AttorneyAssociationBarDao.class);
             attorneyAssociationBarDao.deleteByAssociationBarId(associationBarId);
             AssociationBarDao associationBarDao = sqlSession.getMapper(AssociationBarDao.class);

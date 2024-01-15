@@ -8,6 +8,8 @@
         values (#{case.caseFiledId},#{case.caseDescription},#{clientId},#{case.attorneyId},#{case.caseCategoryId},#{case.courtId})
     </insert>
 
+
+
     <resultMap id="CaseFiledResultMap" type="com.solvd.lawoffice.binary.CaseFiled" autoMapping="false">
         <id column="case_id" property="caseFiledId"/>
         <result column="case_description" property="caseDescription"/>

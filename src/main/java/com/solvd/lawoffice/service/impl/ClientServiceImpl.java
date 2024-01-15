@@ -13,12 +13,13 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ClientServiceImpl implements ClientService {
     private final CaseService caseService;
-    private BillDetailsDao billDetailsDao ;
+    private BillDetailsDao billDetailsDao;
     private final ClientDao clientDao;
+
     public ClientServiceImpl() {
         final String path = ConfigUtil.getPathToDaoImplFolder();
         try {
-            this.clientDao = (ClientDao) Class.forName(path+"ClientImpl").getConstructor().newInstance();
+            this.clientDao = (ClientDao) Class.forName(path + "ClientImpl").getConstructor().newInstance();
         } catch (InstantiationException | InvocationTargetException | IllegalAccessException | NoSuchMethodException |
                  ClassNotFoundException e) {
             throw new RuntimeException(e);
@@ -26,21 +27,21 @@ public class ClientServiceImpl implements ClientService {
         this.caseService = new CaseFiledServiceImpl();
 
         try {
-            this.billDetailsDao = (BillDetailsDao) Class.forName(path+"BillDetailsImpl").getConstructor().newInstance();
+            this.billDetailsDao = (BillDetailsDao) Class.forName(path + "BillDetailsImpl").getConstructor().newInstance();
         } catch (InstantiationException | InvocationTargetException | IllegalAccessException | NoSuchMethodException |
                  ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
+
     @Override
     public Client insert(Client client) {
         this.clientDao.insert(client);
-        for(CaseFiled caseFiled : client.getCaseFiledList()){
-            this.caseService.insert(caseFiled,client.getClientId());
+        for (CaseFiled caseFiled : client.getCaseFiledList()) {
+            this.caseService.insert(caseFiled, client.getClientId());
         }
-        for(BillDetails billDetails : client.getBillDetailList()){
-            this.billDetailsDao.insert(billDetails,client.getClientId());
+        for (BillDetails billDetails : client.getBillDetailList()) {
+            this.billDetailsDao.insert(billDetails, client.getClientId());
         }
         return client;
     }

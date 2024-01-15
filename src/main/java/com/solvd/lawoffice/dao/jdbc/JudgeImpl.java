@@ -20,13 +20,13 @@ public class JudgeImpl implements JudgeDao {
     public void insert(Judge judge) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, judge.getJudgeId());
             ps.setString(2, judge.getJudgeName());
             int numberOfRowsCreated = ps.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
-            resultset = ps.executeQuery();
+//            resultset = ps.executeQuery();
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {

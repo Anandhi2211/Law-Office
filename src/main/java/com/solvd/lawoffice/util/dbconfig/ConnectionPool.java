@@ -10,13 +10,11 @@ import java.util.stream.IntStream;
 public class ConnectionPool {
     private static ConnectionPool connectionPool = null;
     private List<Connection> connectionsList = new ArrayList<>();
-
     public ConnectionPool() {
         IntStream.range(1, 5).forEach(i -> {
             connectionsList.add(createNewConnectionForPool());
         });
     }
-
     private Connection createNewConnectionForPool() {
         Connection connection = null;
         try {
@@ -32,14 +30,12 @@ public class ConnectionPool {
         }
         return connection;
     }
-
     public static ConnectionPool getInstance() {
         if (connectionPool == null) {
             connectionPool = new ConnectionPool();
         }
         return connectionPool;
     }
-
     public synchronized Connection getConnection() {
         Connection connection = null;
         if (connectionsList.size() > 0) {
@@ -48,7 +44,6 @@ public class ConnectionPool {
         }
         return connection;
     }
-
     public synchronized void releaseConnection(Connection connection) {
         connectionsList.add(connection);
     }

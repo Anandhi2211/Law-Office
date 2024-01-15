@@ -7,11 +7,11 @@ import org.apache.ibatis.session.SqlSession;
 
 public class BillDetailsImpl implements BillDetailsDao {
     @Override
-    public void insert(BillDetails billDetails,int clientId) {
+    public void insert(BillDetails billDetails, int clientId) {
 
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             BillDetailsDao billDetailsDao = sqlSession.getMapper(BillDetailsDao.class);
-            billDetailsDao.insert(billDetails,clientId);
+            billDetailsDao.insert(billDetails, clientId);
         }
     }
 }

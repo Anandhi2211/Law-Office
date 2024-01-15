@@ -8,66 +8,7 @@ import com.solvd.lawoffice.binary.LawFirm;
 import java.util.ArrayList;
 
 public class DataGenerator {
-
-    public ArrayList<LawFirm> lawFirmMyBatisData() {
-        ArrayList<LawFirm> lawFirmList = new ArrayList<>();
-        LawFirm lawFirm = new LawFirm();
-        lawFirm.setLawFirmId(105);
-        lawFirm.setLawFirmName("Amarnath Co");
-        lawFirm.setAddress("20 Glen street");
-        lawFirm.setCountry("USA");
-        lawFirm.setCity("Charlotte");
-
-        Attorney attorney = new Attorney();
-        attorney.setAttorneyId(1008);
-        attorney.setAttorneyName("Sumedha");
-        attorney.setCountry("USA");
-        attorney.setCity("Charlotte");
-        attorney.setAssociationBarIdList(100);
-        attorney.setAssociationBarIdList(106);
-        attorney.setAssociationBarIdList(102);
-        lawFirm.setAttorneyList(attorney);
-
-        attorney = new Attorney();
-        attorney.setAttorneyId(1009);
-        attorney.setAttorneyName("Kavinya");
-        attorney.setCountry("USA");
-        attorney.setCity("Harrisburg");
-        lawFirm.setAttorneyList(attorney);
-        lawFirmList.add(lawFirm);
-
-        lawFirm = new LawFirm();
-//        client = new Client();
-        lawFirm.setLawFirmId(107);
-        lawFirm.setLawFirmName("Anand and Laks");
-        lawFirm.setAddress("202 Paris LANE");
-        lawFirm.setCountry("USA");
-        lawFirm.setCity("ohio");
-
-        attorney = new Attorney();
-        attorney.setAttorneyId(1010);
-        attorney.setAttorneyName("Nithya");
-        attorney.setCountry("USA");
-        attorney.setCity("cincinnati");
-        attorney.setAssociationBarIdList(100);
-        attorney.setAssociationBarIdList(105);
-
-        lawFirm.setAttorneyList(attorney);
-
-        attorney = new Attorney();
-        attorney.setAttorneyId(1011);
-        attorney.setAttorneyName("Suganya");
-        attorney.setCountry("USA");
-        attorney.setCity("Dayton");
-        attorney.setAssociationBarIdList(102);
-        attorney.setAssociationBarIdList(104);
-        lawFirm.setAttorneyList(attorney);
-        lawFirmList.add(lawFirm);
-
-        return lawFirmList;
-    }
-
-    public ArrayList<LawFirm> lawFirmJdbcData() {
+    public ArrayList<LawFirm> lawFirmData() {
         ArrayList<LawFirm> lawFirmList = new ArrayList<>();
         LawFirm lawFirm = new LawFirm();
         lawFirm.setLawFirmId(108);
@@ -95,7 +36,6 @@ public class DataGenerator {
         lawFirmList.add(lawFirm);
 
         lawFirm = new LawFirm();
-//        client = new Client();
         lawFirm.setLawFirmId(109);
         lawFirm.setLawFirmName("Anand and Laks");
         lawFirm.setAddress("202 Paris LANE");
@@ -124,8 +64,6 @@ public class DataGenerator {
 
         return lawFirmList;
     }
-
-
 
     public ArrayList<AssociationBar> associationBarCreation() {
         ArrayList<AssociationBar> associationBarArrayList = new ArrayList<>();
@@ -157,7 +95,7 @@ public class DataGenerator {
         return associationBarArrayList;
     }
 
-    public ArrayList<AreaOfPractice> AreaOfPracticesMyBatis() {
+    public ArrayList<AreaOfPractice> AreaOfPractices() {
         ArrayList<AreaOfPractice> areaOfPracticeList = new ArrayList<>();
         AreaOfPractice areaOfPractice = new AreaOfPractice();
         areaOfPractice.setAreaOfPracticeId(10);
@@ -165,14 +103,4 @@ public class DataGenerator {
         areaOfPracticeList.add(areaOfPractice);
         return areaOfPracticeList;
     }
-
-//    public ArrayList<AreaOfPractice> AreaOfPracticesJdbc() {
-//        ArrayList<AreaOfPractice> areaOfPracticeList = new ArrayList<>();
-//        AreaOfPractice areaOfPractice = new AreaOfPractice();
-//        areaOfPractice.setAreaOfPracticeId(11);
-//        areaOfPractice.setAreaOfPracticeName("lestate Law");
-//        areaOfPracticeList.add(areaOfPractice);
-//        return areaOfPracticeList;
-//    }
-
 }

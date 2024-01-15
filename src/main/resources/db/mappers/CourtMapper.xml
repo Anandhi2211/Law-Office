@@ -5,7 +5,7 @@
 
     <insert id="insert" keyColumn="court_id" keyProperty="courtId">
         insert into courts(court_id,country,city,judge_id)
-        values (#{court.courtId},#{court.country},#{court.city},#{judgeId})
+        values (#{court.courtId},#{court.country},#{court.city},#{judge.judgeId})
     </insert>
 
     <resultMap id="CourtResultMap" type="com.solvd.lawoffice.binary.Court" autoMapping="false">

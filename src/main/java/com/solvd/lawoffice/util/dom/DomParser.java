@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class DomParser {
     private static final Logger logger = LogManager.getLogger(Main.class);
     private Document document;
+
     public void initializer(String filePath) {
         DocumentBuilderFactory factory =
                 DocumentBuilderFactory.newInstance();
@@ -28,7 +29,6 @@ public class DomParser {
             DocumentBuilder builder = factory.newDocumentBuilder();
             this.document = builder.parse(filePath);
             this.document.getDocumentElement().normalize();
-
         } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -36,7 +36,6 @@ public class DomParser {
 
     public ArrayList<Court> courtParser() {
         ArrayList<Court> courtArrayList = new ArrayList<>();
-        logger.info("Root Element " + this.document.getDocumentElement().getNodeName());
         NodeList courtList = this.document.getElementsByTagName("court");
         for (int temp = 0; temp < courtList.getLength(); temp++) {
             Court court = new Court();
@@ -46,24 +45,24 @@ public class DomParser {
                 court.setCourtId(Integer.parseInt(courtElement.getAttribute("id")));
                 court.setCountry(courtElement.getElementsByTagName("country").item(0).getTextContent());
                 court.setCity(courtElement.getElementsByTagName("city").item(0).getTextContent());
-                ArrayList<CaseFiled> caseFiledArrayList = caseList(courtElement,"case");
-                for (CaseFiled caseFiled : caseFiledArrayList){
+                ArrayList<CaseFiled> caseFiledArrayList = caseList(courtElement, "case");
+                for (CaseFiled caseFiled : caseFiledArrayList) {
                     court.setCaseFiledList(caseFiled);
                 }
-                Judge judge = judgeDetails(courtElement,"judge");
+                Judge judge = judgeDetails(courtElement, "judge");
                 court.setJudge(judge);
             }
             courtArrayList.add(court);
         }
-        return  courtArrayList;
+        return courtArrayList;
     }
 
     private Judge judgeDetails(Element courtElement, String Case) {
         Judge judge = new Judge();
         NodeList judgeList = courtElement.getElementsByTagName(Case);
-        for(int temp = 0;temp < judgeList.getLength();temp ++){
+        for (int temp = 0; temp < judgeList.getLength(); temp++) {
             Node judgeNode = judgeList.item(temp);
-            if(judgeNode.getNodeType()==judgeNode.ELEMENT_NODE){
+            if (judgeNode.getNodeType() == judgeNode.ELEMENT_NODE) {
                 Element judgeElement = (Element) judgeNode;
                 judge.setJudgeId(Integer.parseInt(judgeElement.getAttribute("id")));
                 judge.setJudgeName(judgeElement.getAttribute("name"));
@@ -71,6 +70,7 @@ public class DomParser {
         }
         return judge;
     }
+
     private ArrayList<CaseFiled> caseList(Element courtElement, String Case) {
         ArrayList<CaseFiled> caseFiledArrayList = new ArrayList<>();
         NodeList caseNodeList = ((Element) courtElement).getElementsByTagName(Case);

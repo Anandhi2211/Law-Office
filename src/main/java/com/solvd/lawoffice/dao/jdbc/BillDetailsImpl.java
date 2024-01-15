@@ -14,12 +14,13 @@ import java.sql.SQLException;
 public class BillDetailsImpl implements BillDetailsDao {
     private static final Logger logger = LogManager.getLogger(BillDetailsImpl.class);
     private static final ConnectionPool CONNECTION_POOL = ConnectionPool.getInstance();
-    static final String INSERT_QUERY ="insert into bill_details values (?,?,?,?)" ;
+    static final String INSERT_QUERY = "insert into bill_details values (?,?,?,?)";
+
     @Override
     public void insert(BillDetails billDetails, int clientId) {
         Connection connection = CONNECTION_POOL.getConnection();
         ResultSet resultset = null;
-        try(PreparedStatement ps = connection
+        try (PreparedStatement ps = connection
                 .prepareStatement(INSERT_QUERY)) {
             ps.setInt(1, billDetails.getInvoiceNumber());
             ps.setInt(2, billDetails.getBillAmount());
@@ -27,7 +28,7 @@ public class BillDetailsImpl implements BillDetailsDao {
             ps.setInt(4, clientId);
             int numberOfRowsCreated = ps.executeUpdate();
             logger.info("Number of rows inserted: " + numberOfRowsCreated);
-            resultset = ps.executeQuery();
+//            resultset = ps.executeQuery();
         } catch (SQLException e) {
             logger.error("incorrect Query");
         } finally {

@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 public class JudgeImpl implements JudgeDao {
     @Override
     public void insert(Judge judge) {
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             JudgeDao judgeDao = sqlSession.getMapper(JudgeDao.class);
             judgeDao.insert(judge);
         }

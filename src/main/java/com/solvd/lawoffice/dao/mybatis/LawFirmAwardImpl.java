@@ -9,9 +9,9 @@ public class LawFirmAwardImpl implements LawFirmAwardDao {
     @Override
     public void insert(Award award, int lawFirmId) {
 
-        try(SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)){
+        try (SqlSession sqlSession = DaoConfig.getSessionFactory().openSession(true)) {
             LawFirmAwardDao lawFirmAwardDao = sqlSession.getMapper(LawFirmAwardDao.class);
-            lawFirmAwardDao.insert(award,lawFirmId);
+            lawFirmAwardDao.insert(award, lawFirmId);
         }
     }
 }

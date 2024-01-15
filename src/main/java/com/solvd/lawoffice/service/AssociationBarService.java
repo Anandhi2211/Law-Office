@@ -4,5 +4,6 @@ import com.solvd.lawoffice.binary.AssociationBar;
 
 public interface AssociationBarService {
     AssociationBar insert(AssociationBar associationBar);
-    void deleteById(int associationBarId);
+
+    void deleteByAssociationBarId(int associationBarId);
 }

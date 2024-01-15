@@ -12,6 +12,7 @@ import java.util.List;
 
 public class JacksonParser {
     private static final Logger logger = LogManager.getLogger(JacksonParser.class);
+
     public List<Client> readXmlFile(File file) {
         ObjectMapper mapper = new ObjectMapper();
         List<Client> clientList;
@@ -28,8 +29,8 @@ public class JacksonParser {
         ObjectMapper mapper = new ObjectMapper();
         try {
             File file = new File("src/main/resources/jackson/clientjacksonOUTPUT.json");
-            if(!file.exists()){
-                mapper.writeValue(file,clients);
+            if (!file.exists()) {
+                mapper.writeValue(file, clients);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
