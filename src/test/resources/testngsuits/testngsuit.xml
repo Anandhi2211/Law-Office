@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Association Bar" verbose="1" parallel="tests" thread-count="3">
+<suite name="Association Bar" verbose="1" parallel="tests" thread-count="10">
     
     <listeners>
         <listener class-name="com.sovd.lawoffice.listeners.TestNgListener"/>
