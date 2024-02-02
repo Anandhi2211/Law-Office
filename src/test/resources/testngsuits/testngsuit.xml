@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Association Bar" verbose="1" parallel="tests" thread-count="3">
+    
+    <listeners>
+        <listener class-name="com.sovd.lawoffice.listeners.TestNgListener"/>
+    </listeners>
+    
+    <test name="Law firm" parallel="methods" thread-count="2">
+        <classes>
+            <class name="com.sovd.lawoffice.AssociationBarTest"/>
+            <class name="com.sovd.lawoffice.LawFirmTest"/>
+            <class name="com.sovd.lawoffice.LawFirmAwardTest"/>
+            <class name="com.sovd.lawoffice.AreaOfPracticeTest"/>
+            <class name="com.sovd.lawoffice.AttorneyTest"/>
+            <class name="com.sovd.lawoffice.AwardTest"/>
+            <class name="com.sovd.lawoffice.CasesTest"/>
+            <class name="com.sovd.lawoffice.CourtTest"/>
+            <class name="com.sovd.lawoffice.JudgeTest"/>
+        </classes>
+    </test>
+</suite>
